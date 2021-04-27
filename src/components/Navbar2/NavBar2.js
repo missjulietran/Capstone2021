@@ -1,5 +1,5 @@
 
-import {NavBar, Nav} from 'react-bootstrap';
+import {Nav} from 'react-bootstrap';
 import React, { useState } from "react";
 import "./NavBar2.css";
 import {LinkContainer} from 'react-router-bootstrap'

@@ -1,0 +1,34 @@
+/* .bg-dark {
+    background-color: #ffffff;
+} */
+
+/* .navbar-dark .navbar-brand {
+  color: rgb(0, 0, 0);
+  padding: 2rem;
+} */
+
+.navbar {
+  padding: 1rem;
+  color: green;
+}
+/* 
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+.right {
+  color: black;
+} */ 
+
+.logo {
+  color: green!important;
+}
+
+/* body {
+  color: red;
+} */
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(0,0,0)!important;
+}

@@ -13,14 +13,23 @@ import Consulting from "./components/pages/Consulting";
 import Footer from "./components/Footer";
 import InventoryForm from "./components/InventoryForm";
 import EventForm from "./components/EventForm";
-import { GlobalStyle } from "./globalStyles";
+import HomePage from "./components/HomePage";
+// import {Events} from "./components/pages/Events";
+import {Brands} from "./components/pages/Brands";
+import {Categories} from './components/pages/Categories'
+import {SignUp} from './components/pages/SignUp'
+import {LogIn} from "./components/pages/LogIn";
+
+
 
 function App() {
   return (
     <Router>
-      <GlobalStyle />
       <Navbar />
       <Navbar2 />
+
+      <Route path='/' exact component={Home} />
+      {/* <HomePage />  */}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/services" component={Services} />
@@ -31,6 +40,14 @@ function App() {
         <Route path="/consulting" component={Consulting} />
         <Route path="/inventoryupload" component={InventoryForm} />
         <Route path="/eventupload" component={EventForm} />
+      {/* <Route path="/LogIn" component={LogIn} />
+      <Route path="/SignUp" component={SignUp} /> */}
+      {/* <Route path="/Events" component={Events} /> */}
+      <Route path="/Brands" component={Brands} />
+      <Route path="/Categories" component={Categories} />
+        <Route path="/About" component={About} />
+        <Route path="/Cart" component={Cart} />
+        <Route path="/Contact" component={Contact} />
       </Switch>
       {/* <Footer /> */}
     </Router>

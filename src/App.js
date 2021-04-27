@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
@@ -13,13 +14,11 @@ import Consulting from "./components/pages/Consulting";
 import Footer from "./components/Footer";
 import InventoryForm from "./components/InventoryForm";
 import EventForm from "./components/EventForm";
-import HomePage from "./components/HomePage";
 // import {Events} from "./components/pages/Events";
 import {Brands} from "./components/pages/Brands";
 import {Categories} from './components/pages/Categories'
 import {SignUp} from './components/pages/SignUp'
 import {LogIn} from "./components/pages/LogIn";
-
 
 
 function App() {
@@ -31,6 +30,14 @@ function App() {
       <Route path='/' exact component={Home} />
       {/* <HomePage />  */}
       <Switch>
+{/* //       <Route path="/LogIn" component={LogIn} />
+//       <Route path="/SignUp" component={SignUp} /> */}
+      {/* <Route path="/Events" component={Events} /> */}
+      <Route path="/Brands" component={Brands} />
+      <Route path="/Categories" component={Categories} />
+        <Route path="/About" component={About} />
+        <Route path="/Cart" component={Cart} />
+        <Route path="/Contact" component={Contact} />
         <Route path="/" exact component={Home} />
         <Route path="/services" component={Services} />
         <Route path="/products" component={Products} />
@@ -48,6 +55,7 @@ function App() {
         <Route path="/About" component={About} />
         <Route path="/Cart" component={Cart} />
         <Route path="/Contact" component={Contact} />
+
       </Switch>
       {/* <Footer /> */}
     </Router>

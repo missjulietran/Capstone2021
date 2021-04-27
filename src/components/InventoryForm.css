@@ -1,0 +1,10 @@
+.inventoryForm {
+  margin: 50px;
+}
+.inventoryBtnBox {
+  justify-content: right;
+}
+.inventoryCancelBtn {
+  background-color: grey;
+  margin-right: 10px;
+}

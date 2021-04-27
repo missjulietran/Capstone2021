@@ -1,6 +1,11 @@
 import axios from "axios";
-import { POST_IMAGE_ACTION, HANDLE_SUBMISSION_ACTION } from "../types/template";
+import {
+  POST_IMAGE_ACTION,
+  HANDLE_SUBMISSION_ACTION,
+  HANDLE_EVENT_SUBMISSION_ACTION,
+} from "../types/template";
 
+// INVENTORY
 export function handleSubmissionAction({
   name,
   category,
@@ -10,7 +15,6 @@ export function handleSubmissionAction({
   price,
   best_before_date,
   descriptions,
-  image,
 }) {
   return {
     type: HANDLE_SUBMISSION_ACTION,
@@ -23,35 +27,60 @@ export function handleSubmissionAction({
       price,
       best_before_date,
       descriptions,
-      image,
     },
   };
 }
-export const handleSubmissionThunk = (inventoryData) => {
-  return async (dispatch) => {
-    try {
-      await axios.post(`http://localhost:8080/upload`, inventoryData);
-      // dispatch(postImageAction(data));
-    } catch (err) {
-      console.log("handle", err);
-    }
+export function postImageAction(image) {
+  return {
+    type: POST_IMAGE_ACTION,
+    payload: image,
+  };
+}
+
+export const postImageThunk = (data, inventoryData) => {
+  return (dispatch) => {
+    return axios
+      .post(`http://localhost:8080/uploadImage`, data) //URL
+      .then((data) => {
+        console.log(data);
+        console.log(inventoryData);
+        return axios
+          .post(`http://localhost:8080/upload`, inventoryData) //URL
+          .then(() => {
+            console.log("inventory done");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .then(() => {
+        console.log("uploaded done");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 };
-// export function postImageAction(image) {
-//   return {
-//     type: POST_IMAGE_ACTION,
-//     payload: image,
-//   };
-// }
 
-// export const postImageThunk = (data) => {
-//   return async (dispatch) => {
-//     try {
-//       await axios.post(`http://localhost:8080/uploadImage`, data);
-//       // dispatch(postImageAction(data));
-//     } catch (err) {
-//       console.log(err);
-//     }
+// EVENT
+export function handleEventSubmissionAction({ start, end }) {
+  return {
+    type: HANDLE_EVENT_SUBMISSION_ACTION,
+    date: { start, end },
+  };
+}
+export const handleEventSubmissionThunk = (date) => {
+  return (dispatch) => {
+    return axios
+      .post(`http://localhost:8080/upload`, date)
+      .then(() => {
+        console.log("inventory done");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
 // axios
 //   .post(`http://localhost:8080/uploadImage`, data)
 //   .then((res) => {

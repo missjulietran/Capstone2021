@@ -11,7 +11,8 @@ import SignUp from "./components/pages/SignUp";
 import Marketing from "./components/pages/Marketing";
 import Consulting from "./components/pages/Consulting";
 import Footer from "./components/Footer";
-import TemplateContainer from "./components/TemplateContainer";
+import InventoryForm from "./components/InventoryForm";
+import EventForm from "./components/EventForm";
 import { GlobalStyle } from "./globalStyles";
 
 function App() {
@@ -28,8 +29,10 @@ function App() {
         <Route path="/sign-up" component={SignUp} />
         <Route path="/marketing" component={Marketing} />
         <Route path="/consulting" component={Consulting} />
+        <Route path="/inventoryupload" component={InventoryForm} />
+        <Route path="/eventupload" component={EventForm} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

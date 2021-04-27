@@ -2,19 +2,19 @@ import { POST_IMAGE_ACTION, HANDLE_SUBMISSION_ACTION } from "../types/template";
 
 const initialState = {
   imageURL: [],
-  inventoryData: [],
+  inventory: [],
 };
 
 const templateReducer = (state = initialState, action) => {
   switch (action.type) {
     case HANDLE_SUBMISSION_ACTION:
       return {
-        inventoryData: state.inventoryData.concat(...action.inventoryData),
+        inventory: state.inventory.concat(...action.inventoryData),
       };
-    // case POST_IMAGE_ACTION:
-    //   return {
-    //     image: state.imageURL.concat(...action.payload),
-    //   };
+    case POST_IMAGE_ACTION:
+      return {
+        imageURL: state.imageURL.concat(...action.payload),
+      };
     // case LOAD_LINK_SUCCESS_ACTION:
     //   return {
     //     linkList: state.linkList.concat(...action.payload),

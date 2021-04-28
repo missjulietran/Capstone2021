@@ -21,6 +21,11 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto"></Nav>
           <Nav className={styles.right}>
+          <LinkContainer to="/GiveBack">
+              <Nav.Link eventKey={2} href="/GiveBack">
+                Give Back
+              </Nav.Link>
+            </LinkContainer>
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/Account">
                 Account Settings <i class="fas fa-cog pull-right"></i>
@@ -31,18 +36,18 @@ function NavBar() {
                 </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
-            <LinkContainer to="/LogIn">
-              <Nav.Link eventKey={2} href="/LogIn">
+            <LinkContainer to="/BuyerSeller">
+              <Nav.Link eventKey={3} href="/BuyerSeller">
                 Log In
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/SignUp">
-              <Nav.Link eventKey={2} href="/SignUp">
+              <Nav.Link eventKey={4} href="/SignUp">
                 Sign Up
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/Cart">
-              <Nav.Link eventKey={3} href="/Cart">
+              <Nav.Link eventKey={5} href="/Cart">
                 Cart <i class="fas fa-shopping-cart"></i>
               </Nav.Link>
             </LinkContainer>

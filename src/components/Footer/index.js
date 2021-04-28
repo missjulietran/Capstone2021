@@ -1,55 +1,52 @@
-import React from 'react';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin
-} from 'react-icons/fa';
-import {
-  FooterContainer,
-  FooterWrap,
-  SocialMedia,
-  SocialMediaWrap,
-  SocialLogo,
-  SocialIcons,
-  SocialIconLink
-} from './FooterElements';
+// import React from 'react';
+import "./Footer.css"
+import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
-const Footer = () => {
-  return (
-    <FooterContainer>
-      <FooterWrap>
-        <SocialMedia>
-          <SocialMediaWrap>
-            <SocialLogo to='/'>FOOTER</SocialLogo>
-            <SocialIcons>
-              <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
-                <FaFacebook />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Instagram'>
-                <FaInstagram />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Youtube'>
-                <FaYoutube />
-              </SocialIconLink>
-              <SocialIconLink
-                href='//www.twitter.com/briandesignz'
-                target='_blank'
-                aria-label='Twitter'
-                rel='noopener noreferrer'
-              >
-                <FaTwitter />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Linkedin'>
-                <FaLinkedin />
-              </SocialIconLink>
-            </SocialIcons>
-          </SocialMediaWrap>
-        </SocialMedia>
-      </FooterWrap>
-    </FooterContainer>
-  );
+const stickyFooterStyle = {
+  backgroundColor: "#ffffff",
+  fontSize: "13px",
+  color: "white",
+  borderTop: "1px solid #E7E7E7",
+  textAlign: "center",
+  justifyContent: "center",
+  padding: "8px",
+  position: "fixed",
+  left: "0",
+  bottom: "0",
+  height: "40px",
+  width: "100%",
+  wordSpacing: "1.5rem"
 };
 
-export default Footer;
+export default class Footer extends Component {
+  render() {
+    return (
+      <Container>
+        <Row>
+          <Col style={stickyFooterStyle} sm={12}>
+            {/* &copy; Copyright 2021 - 2022 | EcoStore */}
+            <Link to="/about">About</Link> <Link to="/Contact">Contact</Link> <Link to="/FAQ">FAQ</Link>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+
+// const Footer = () => {
+//   return (
+//     <div className="footerclass">
+//     <footer className="footer">
+//     <Link to="/About">About</Link>
+//     <Link to="/Contact">Contact</Link>
+//     <Link to="/FAQ">FAQ</Link>
+
+//   </footer>
+//   </div>
+//   );
+// };
+
+// export default Footer;

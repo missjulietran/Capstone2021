@@ -1,0 +1,16 @@
+.footer {
+    position: absolute;
+    bottom: 0px;
+    color: black
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover{
+    color:salmon;
+    text-decoration: none;
+}

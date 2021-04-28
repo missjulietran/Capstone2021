@@ -1,4 +1,3 @@
-
 import {Nav} from 'react-bootstrap';
 import React, { useState } from "react";
 import "./NavBar2.css";

@@ -1,11 +1,17 @@
-import { POST_IMAGE_ACTION, HANDLE_SUBMISSION_ACTION } from "../types/template";
+import {
+  POST_IMAGE_ACTION,
+  HANDLE_SUBMISSION_ACTION,
+  HANDLE_EVENT_SUBMISSION_ACTION,
+  GET_INVENTORY_ACTION,
+} from "../types/template";
 
 const initialState = {
   imageURL: [],
   inventory: [],
+  event: [],
 };
 
-const templateReducer = (state = initialState, action) => {
+const formReducer = (state = initialState, action) => {
   switch (action.type) {
     case HANDLE_SUBMISSION_ACTION:
       return {
@@ -14,6 +20,15 @@ const templateReducer = (state = initialState, action) => {
     case POST_IMAGE_ACTION:
       return {
         imageURL: state.imageURL.concat(...action.payload),
+      };
+    case HANDLE_EVENT_SUBMISSION_ACTION:
+      return {
+        event: state.event.concat(...action.date),
+      };
+    case GET_INVENTORY_ACTION:
+      console.log("GETTING INVENTORY");
+      return {
+        inventory: state.inventory.concat(...action.payload),
       };
     // case LOAD_LINK_SUCCESS_ACTION:
     //   return {
@@ -28,4 +43,4 @@ const templateReducer = (state = initialState, action) => {
   }
 };
 
-export default templateReducer;
+export default formReducer;

@@ -3,9 +3,17 @@ import {
   POST_IMAGE_ACTION,
   HANDLE_SUBMISSION_ACTION,
   HANDLE_EVENT_SUBMISSION_ACTION,
+  GET_INVENTORY_ACTION,
 } from "../types/template";
 
 // INVENTORY
+export const getInventoryAction = (items) => {
+  return {
+    type: GET_INVENTORY_ACTION,
+    payload: items,
+  };
+};
+
 export function handleSubmissionAction({
   name,
   category,
@@ -30,14 +38,22 @@ export function handleSubmissionAction({
     },
   };
 }
-export function postImageAction(image) {
-  return {
-    type: POST_IMAGE_ACTION,
-    payload: image,
-  };
-}
 
-export const postImageThunk = (data, inventoryData) => {
+export const getInventoryThunk = () => {
+  return (dispatch) => {
+    return axios
+      .get("http://localhost:8080/getInventoryData/1") //USERID
+      .then((data) => {
+        console.log("getting", data);
+        dispatch(getInventoryAction(data.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+
+export const handleInventorySubmissionThunk = (data, inventoryData) => {
   return (dispatch) => {
     return axios
       .post(`http://localhost:8080/uploadImage`, data) //URL
@@ -69,12 +85,24 @@ export function handleEventSubmissionAction({ start, end }) {
     date: { start, end },
   };
 }
-export const handleEventSubmissionThunk = (date) => {
+export const handleEventSubmissionThunk = (data, eventData) => {
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/upload`, date)
+      .post(`http://localhost:8080/uploadImage`, data) //URL
+      .then((data) => {
+        console.log(data);
+        console.log(eventData);
+        return axios
+          .post(`http://localhost:8080/uploadEvent`, eventData) //URL
+          .then(() => {
+            console.log("event done");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
       .then(() => {
-        console.log("inventory done");
+        console.log("uploaded done");
       })
       .catch((err) => {
         console.log(err);

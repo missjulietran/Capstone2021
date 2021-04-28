@@ -1,0 +1,9 @@
+.inventoryContainer {
+  overflow: auto;
+}
+.inventoryForm {
+  margin: 50px;
+}
+.inventoryBtn {
+  margin-left: 50px;
+}

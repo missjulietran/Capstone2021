@@ -5,8 +5,10 @@ import "./App.css";
 import Home from "./components/pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Footer from "./components/Footer";
-import InventoryForm from "./components/InventoryForm";
-import EventForm from "./components/EventForm";
+import SellerDashboard from "./components/SellerDashboard/SellerDashboard";
+import InventoryForm from "./components/SellerDashboard/InventoryForm";
+import EventForm from "./components/SellerDashboard/EventForm";
+import Product from "./components/SellerDashboard/Product";
 import { About } from "./components/pages/About";
 import { Brands } from "./components/pages/Brands";
 import { Categories } from "./components/pages/Categories";
@@ -30,9 +32,11 @@ function App() {
         <Route path="/Categories" component={Categories} />
         <Route path="/About" component={About} />
         {/* Back end Links */}
-        <Route path="/inventoryupload" component={InventoryForm} />
-        <Route path="/eventupload" component={EventForm} />
       </Switch>
+      <Route path="/SellerDashboard" component={SellerDashboard} />
+      <Route path="/InventoryUpload" component={InventoryForm} />
+      <Route path="/EventUpload" component={EventForm} />
+      <Route path="/Sellerproduct" component={Product} />
       {/* <Footer /> */}
     </Router>
   );

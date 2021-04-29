@@ -1,5 +1,6 @@
 // import React from 'react';
-import "./Footer.css"
+// import "./Footer.css"
+import "./Footer.module.css";
 import { Link } from 'react-router-dom';
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";

@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Button, Form, Label, Input, FormGroup } from "reactstrap";
 import Sidebar from "./sidebar/Sidebar";
-import "./InventoryForm.css";
+import "./UpdateInventory.css";
+import axios from "axios";
+import { updateInventoryThunk } from "../../redux/actions/formAction";
 
-import { handleInventorySubmissionThunk } from "../../redux/actions/formAction";
-
-function InventoryUploadPage() {
+function UpdateInventory() {
   const [selectedCategory, setSelectedCategory] = useState([""]);
   const [name, setName] = useState("");
   const [sku, setSku] = useState("");
@@ -19,7 +20,26 @@ function InventoryUploadPage() {
   const [selectedImage, setSelectedImage] = useState();
   const [bestDate, setBestDate] = useState(new Date());
   const [descriptions, setDescriptions] = useState("");
+  const { itemId } = useParams();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get(
+        `http://localhost:8080/singleProduct/${itemId}`
+      );
+      setName(data[0].name);
+      setSku(data[0].sku);
+      setTotalQuantity(data[0].total_quantity);
+      setMinUnits(data[0].units);
+      setPrice(data[0].price);
+      //   setBestDate(data[0].best_before_date);
+      //   setSelectedImage(data[0].image);
+      setDescriptions(data[0].descriptions);
+      setSelectedCategory(data[0].category);
+    };
+    fetchData();
+  }, [itemId]);
 
   // Select Category
   const options = [
@@ -40,7 +60,6 @@ function InventoryUploadPage() {
   ];
   const category = [];
 
-  // Submit Whole Form
   const handleSubmission = (e) => {
     e.preventDefault();
     console.log("submit form");
@@ -48,7 +67,8 @@ function InventoryUploadPage() {
     const data = new FormData();
     data.append("file", selectedImage);
     dispatch(
-      handleInventorySubmissionThunk(data, {
+      updateInventoryThunk(data, {
+        id: itemId,
         category: selectedCategory,
         name: name,
         sku: sku,
@@ -59,15 +79,7 @@ function InventoryUploadPage() {
         descriptions: descriptions,
       })
     );
-    alert("Thank you! Your form was submitted successfully");
-    setSelectedCategory([""]);
-    setName("");
-    setSku("");
-    setTotalQuantity("");
-    setMinUnits("");
-    setPrice("");
-    setBestDate(new Date());
-    setDescriptions("");
+    alert("Thank you! Your product was updated successfully");
   };
 
   return (
@@ -75,9 +87,9 @@ function InventoryUploadPage() {
       <div>
         <Sidebar />
       </div>
-      <div className="inventoryContainer">
+      <div className="updateContainer">
         <Form onSubmit={handleSubmission}>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="name">Product Name</Label>
             <br />
             <Input
@@ -88,7 +100,7 @@ function InventoryUploadPage() {
               onChange={(e) => setName(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="selectedCategory">Category</Label>
             <br />
             <Select
@@ -102,7 +114,7 @@ function InventoryUploadPage() {
               }
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="sku">Product SKU</Label>
             <br />
             <Input
@@ -113,7 +125,7 @@ function InventoryUploadPage() {
               onChange={(e) => setSku(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="totalQuantity">Product Quantity</Label>
             <br />
             <Input
@@ -125,7 +137,7 @@ function InventoryUploadPage() {
               onChange={(e) => setTotalQuantity(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="minUnits">Minimum Order Quantity</Label>
             <br />
             <Input
@@ -137,7 +149,7 @@ function InventoryUploadPage() {
               onChange={(e) => setMinUnits(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="price">Price per unit</Label>
             <br />
             <Input
@@ -148,7 +160,7 @@ function InventoryUploadPage() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="bestDate">Best Before Date</Label>
             <br />
             <DatePicker
@@ -156,7 +168,7 @@ function InventoryUploadPage() {
               onChange={(date) => setBestDate(date)}
             />
           </FormGroup>
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="descriptions">Product Descriptions</Label>
             <br />
             <Input
@@ -170,7 +182,7 @@ function InventoryUploadPage() {
             />
           </FormGroup>
 
-          <FormGroup className="inventoryForm">
+          <FormGroup className="updateForm">
             <Label for="uploadImage">Product Image (.PNG ONLY)</Label>
             <Input
               type="file"
@@ -181,16 +193,17 @@ function InventoryUploadPage() {
           </FormGroup>
 
           <Button
-            className="inventoryBtn"
+            className="updateBtn"
             color="info"
             type="submit"
             value="submit"
           >
-            SUBMIT
+            UPDATE
           </Button>
         </Form>
       </div>
     </div>
   );
 }
-export default InventoryUploadPage;
+
+export default UpdateInventory;

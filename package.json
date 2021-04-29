@@ -10,7 +10,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "breadcrumb": "^1.0.0",
-    "mdbreact": "^5.0.2",
     "mobx": "^6.3.0",
     "mobx-react": "^7.1.0",
     "react": "^17.0.2",

@@ -4,7 +4,6 @@ import Navbar2 from "./components/Navbar2/NavBar2";
 import "./App.css";
 import Home from "./components/pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 // import Footer from "./components/Footer";
 import Footer from "./components/Footer";
 import SellerDashboard from "./components/SellerDashboard/SellerDashboard";
@@ -12,6 +11,7 @@ import InventoryForm from "./components/SellerDashboard/InventoryForm";
 import EventForm from "./components/SellerDashboard/EventForm";
 import Product from "./components/SellerDashboard/Product";
 import UpdateInventoryForm from "./components/SellerDashboard/UpdateInventory";
+
 import { About } from "./components/pages/About";
 import { Brands } from "./components/pages/Brands";
 import { Categories } from "./components/pages/Categories";

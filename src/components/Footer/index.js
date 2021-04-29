@@ -1,6 +1,6 @@
 // import React from 'react';
 // import "./Footer.css"
-import "./Footer.module.css";
+import "./Footer.css";
 import { Link } from 'react-router-dom';
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
@@ -28,7 +28,7 @@ export default class Footer extends Component {
         <Row>
           <Col style={stickyFooterStyle} sm={12}>
             {/* &copy; Copyright 2021 - 2022 | EcoStore */}
-            <Link to="/about">About</Link> <Link to="/Contact">Contact</Link> <Link to="/FAQ">FAQ</Link>
+            <div className="footer2"><Link to="/about">About</Link> <Link to="/Contact">Contact</Link> <Link to="/FAQ">FAQ</Link></div>
           </Col>
         </Row>
       </Container>

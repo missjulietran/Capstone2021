@@ -11,6 +11,7 @@
   clear:both;
 }
 
+/* About page CSS */
 .aboutDiv {
   display:grid;
   justify-content: center;
@@ -24,6 +25,34 @@
   width:40vh;
 }
 
+
+
+/* Sign up CSS */
+label {
+  font-size: .9rem;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: 0.7rem;
+}
+
+input.form-control, input.form-control:focus {
+  background: #f8f8f8;
+}
+
+/* Contact CSS */
+.contactDiv {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    padding: 10px;
+    margin-top:2rem;
+}
+
+
+/* 
 
 
 .home,
@@ -42,7 +71,7 @@
 
 
 .home {
-  /* background-image: url(); */
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,7 +80,7 @@
 }
 
 .services {
-  /* background-image: url('./images/img-2.jpg'); */
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -102,6 +131,5 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
-
-
+} 
+ */

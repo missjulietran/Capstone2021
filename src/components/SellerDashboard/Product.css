@@ -19,3 +19,10 @@
   color: #fff;
   padding: 0;
 }
+.updateBtn {
+  width: 80px;
+}
+.deleteBtn {
+  width: 80px;
+  margin-top: 5px;
+}

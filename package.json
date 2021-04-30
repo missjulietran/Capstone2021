@@ -12,7 +12,6 @@
     "breadcrumb": "^1.0.0",
     "express": "^4.17.1",
     "formik": "^2.2.6",
-    "mdbreact": "^5.0.2",
     "mobx": "^6.3.0",
     "mobx-react": "^7.1.0",
     "pg": "^8.6.0",

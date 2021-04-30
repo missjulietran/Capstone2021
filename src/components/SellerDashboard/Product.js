@@ -1,8 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "./sidebar/Sidebar";
-import { Card, CardImg, CardTitle, CardBody, CardText } from "reactstrap";
+import {
+  Card,
+  CardImg,
+  CardTitle,
+  CardBody,
+  CardText,
+  Col,
+  Row,
+  Container,
+  Button,
+} from "reactstrap";
 import { getInventoryThunk } from "../../redux/actions/formAction";
+import "./Product.css";
 
 function Product() {
   const inventoryList = useSelector((state) => state.inventory);
@@ -11,22 +22,57 @@ function Product() {
   useEffect(() => {
     dispatch(getInventoryThunk());
   }, [dispatch]);
+
+  const shortText = (longtext) => {
+    const TEXT_LIMIT = 12;
+    if (longtext.length > TEXT_LIMIT) {
+      return longtext.substring(0, TEXT_LIMIT) + "...";
+    } else {
+      return longtext;
+    }
+  };
+
   return (
     <div className="productContainer d-flex">
       <div>
         <Sidebar />
       </div>
-      <div>
-        {inventoryList.map((item, index) => (
-          <Card id={index} className="card text-dark bg-light">
-            <CardImg top width="100%" src={item.image} alt="Card image" />
-            <CardBody>
-              <CardTitle>{item.name}</CardTitle>
-              <CardText>Stock:{item.total_quantity}</CardText>
-            </CardBody>
-          </Card>
-        ))}
-      </div>
+      <Container className="productBox d-flex">
+        <Row>
+          {inventoryList.map((item, index) => (
+            <Col>
+              <Card id={index} className="productCard text-dark bg-light">
+                <div className="text-center cardImgBox">
+                  <CardImg
+                    className="productImage"
+                    top
+                    width="100%"
+                    src={item.image}
+                    alt="Card image"
+                  />
+                </div>
+                <CardBody className="productDetail d-flex ">
+                  <Col className="align-self-center">
+                    <CardTitle>{shortText(item.name)}</CardTitle>
+                    <CardText>Stock:{item.total_quantity}</CardText>
+                  </Col>
+                  <Col className="align-self-center p-0">
+                    <Button
+                      id={item.id}
+                      color="light"
+                      type="submit"
+                      className="updateBtn"
+                      href={"/InventoryUpdate/" + item.id}
+                    >
+                      Update
+                    </Button>
+                  </Col>
+                </CardBody>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

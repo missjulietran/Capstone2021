@@ -12,7 +12,10 @@ import {
   Container,
   Button,
 } from "reactstrap";
-import { getInventoryThunk } from "../../redux/actions/formAction";
+import {
+  delProductThunk,
+  getInventoryThunk,
+} from "../../redux/actions/formAction";
 import "./Product.css";
 
 function Product() {
@@ -24,12 +27,16 @@ function Product() {
   }, [dispatch]);
 
   const shortText = (longtext) => {
-    const TEXT_LIMIT = 12;
+    const TEXT_LIMIT = 20;
     if (longtext.length > TEXT_LIMIT) {
       return longtext.substring(0, TEXT_LIMIT) + "...";
     } else {
       return longtext;
     }
+  };
+
+  const delProductSubmission = (id) => {
+    dispatch(delProductThunk(id));
   };
 
   return (
@@ -52,11 +59,11 @@ function Product() {
                   />
                 </div>
                 <CardBody className="productDetail d-flex ">
-                  <Col className="align-self-center">
+                  <Col className="col-7 align-self-center">
                     <CardTitle>{shortText(item.name)}</CardTitle>
                     <CardText>Stock:{item.total_quantity}</CardText>
                   </Col>
-                  <Col className="align-self-center p-0">
+                  <Col className="align-self-center col-5">
                     <Button
                       id={item.id}
                       color="light"
@@ -65,6 +72,18 @@ function Product() {
                       href={"/InventoryUpdate/" + item.id}
                     >
                       Update
+                    </Button>
+                    <Button
+                      id={item.id}
+                      color="light"
+                      type="submit"
+                      className="deleteBtn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        delProductSubmission(item.id);
+                      }}
+                    >
+                      Delete
                     </Button>
                   </Col>
                 </CardBody>

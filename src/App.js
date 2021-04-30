@@ -11,6 +11,7 @@ import InventoryForm from "./components/SellerDashboard/InventoryForm";
 import EventForm from "./components/SellerDashboard/EventForm";
 import Product from "./components/SellerDashboard/Product";
 import UpdateInventoryForm from "./components/SellerDashboard/UpdateInventory";
+import Information from "./components/SellerDashboard/UpdateInformation";
 
 import { About } from "./components/pages/About";
 import { Brands } from "./components/pages/Brands";
@@ -46,11 +47,13 @@ function App() {
         <Route path="/FAQ" component={FAQ} />
       </Switch>
       {/* SellerDashboard Links */}
+      {/* USERID */}
       <Route path="/SellerDashboard" component={SellerDashboard} />
       <Route path="/InventoryUpload" component={InventoryForm} />
       <Route path="/InventoryUpdate/:itemId" component={UpdateInventoryForm} />
       <Route path="/EventUpload" component={EventForm} />
       <Route path="/Sellerproduct" component={Product} />
+      <Route path="/InformationUpdate/:userId" component={Information} />
       <Footer />
     </Router>
   );

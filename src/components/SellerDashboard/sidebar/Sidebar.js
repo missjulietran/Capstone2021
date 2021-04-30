@@ -19,7 +19,7 @@ const Sidebar = () => {
       </Nav.Item>
       <Nav.Item className="sideItems">
         <Nav.Link
-          href="/SellerDashboard"
+          href="/InformationUpdate"
           className="dashBoardLink"
           onClick={onClick}
         >

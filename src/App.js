@@ -48,7 +48,7 @@ function App() {
       </Switch>
       {/* SellerDashboard Links */}
       {/* USERID */}
-      <Route path="/SellerDashboard" component={SellerDashboard} />
+      <Route path="/SellerDashboard/:userId" component={SellerDashboard} />
       <Route path="/InventoryUpload" component={InventoryForm} />
       <Route path="/InventoryUpdate/:itemId" component={UpdateInventoryForm} />
       <Route path="/EventUpload" component={EventForm} />

@@ -18,7 +18,8 @@ const stickyFooterStyle = {
   bottom: "0",
   height: "40px",
   width: "100%",
-  wordSpacing: "1.5rem"
+  wordSpacing: "1.5rem",
+  zIndex: "1"
 };
 
 export default class Footer extends Component {

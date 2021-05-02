@@ -1,12 +1,22 @@
-import { SignUpForm } from "../Accounts/SignUp/SignUpForm";
+import {SignUpForm} from "../Accounts/SignUp/SignUpForm";
 import "../../App.css";
+import React, {useState} from "react";
+import SignUpFormSeller from '../Accounts/SignUp/SignUpFormSeller';
+
 
 export const SignUp = () => {
-  return (
+
+    const [click, setClick] = useState(false);
+  
+    const handleClick = () => setClick(!click);
+      return (
+      <div> 
+        <div className="d-flex justify-content-center"><h1>I want to register as a<button onClick={handleClick}>Buyer</button> or a <button onClick={handleClick}>Seller</button></h1></div>
+      
     <div className="container mt-3">
       <div className="row">
         <div className="col-md-5">
-          <SignUpForm />
+        {click ? <SignUpForm /> : <SignUpFormSeller />}
         </div>
         <div className="col-md-7 my-auto">
           <img
@@ -17,5 +27,8 @@ export const SignUp = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
+
+

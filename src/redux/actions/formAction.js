@@ -3,6 +3,7 @@ import {
   HANDLE_EVENT_SUBMISSION_ACTION,
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
+  DEL_PRODUCT_ACTION,
 } from "../types/template";
 
 // INVENTORY
@@ -21,56 +22,12 @@ export const getSingleItemAction = (item) => {
   };
 };
 
-// export function updateInventoryAction({
-//   name,
-//   category,
-//   sku,
-//   quantity,
-//   units,
-//   price,
-//   best_before_date,
-//   descriptions,
-// }) {
-//   return {
-//     type: UPDATE_INVENTORY_ACTION,
-//     payload: {
-//       category,
-//       name,
-//       sku,
-//       quantity,
-//       units,
-//       price,
-//       best_before_date,
-//       descriptions,
-//     },
-//   };
-// }
-
-// export function handleSubmissionAction({
-//   name,
-//   category,
-//   sku,
-//   quantity,
-//   units,
-//   price,
-//   best_before_date,
-//   descriptions,
-// }) {
-//   return {
-//     type: HANDLE_SUBMISSION_ACTION,
-//     inventoryData: {
-//       category,
-//       name,
-//       sku,
-//       quantity,
-//       units,
-//       price,
-//       best_before_date,
-//       descriptions,
-//     },
-//   };
-// }
-
+export function delProductAction(id) {
+  return {
+    type: DEL_PRODUCT_ACTION,
+    payload: id,
+  };
+}
 export const getInventoryThunk = () => {
   return (dispatch) => {
     return axios
@@ -113,12 +70,11 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
 
 export const updateInventoryThunk = (data, inventoryData) => {
   return (dispatch) => {
-    console.log(data === undefined);
-    for (var pair of data.entries()) {
-      console.log(pair[0] + ", " + pair[1]);
-    }
+    // console.log(data === undefined);
+    // for (var pair of data.entries()) {
+    //   console.log(pair[0] + ", " + pair[1]);
+    // }
     if (!data === undefined) {
-      console.log("yes");
       return axios
         .post(`http://localhost:8080/uploadImage`, data) //URL
         .then((data) => {
@@ -146,7 +102,6 @@ export const updateInventoryThunk = (data, inventoryData) => {
           console.log(err);
         });
     } else {
-      console.log("no");
       return axios
         .put(`http://localhost:8080/update/${inventoryData.id}`, inventoryData) //USERID
         .then((data) => {
@@ -160,40 +115,24 @@ export const updateInventoryThunk = (data, inventoryData) => {
         });
     }
   };
-
-  // return (dispatch) => {
-  //   return;
-  //   axios
-  //     .post(`http://localhost:8080/uploadImage`, data) //URL
-  //     .then((data) => {
-  //       console.log(data);
-  //       console.log(inventoryData.id);
-  //       return axios
-  //         .put(
-  //           `http://localhost:8080/update/${inventoryData.id}`,
-  //           inventoryData
-  //         ) //USERID
-  //         .then(() => {
-  //           console.log("update done");
-  //         })
-  //         .catch((err) => {
-  //           console.log(err);
-  //         });
-  //     })
-  //     .then(() => {
-  //       console.log("uploaded done");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+};
+export const delProductThunk = (id) => {
+  return (dispatch) => {
+    axios
+      .delete(`http://localhost:8080/delProduct/${id}`)
+      .then(() => {
+        console.log("del done");
+        dispatch(delProductAction(id));
+      })
+      .catch((err) => console.log(err));
+  };
 };
 
 // EVENT
-export function handleEventSubmissionAction({ start, end }) {
+export function handleEventSubmissionAction({ title, start, end }) {
   return {
     type: HANDLE_EVENT_SUBMISSION_ACTION,
-    date: { start, end },
+    date: { title, start, end },
   };
 }
 export const handleEventSubmissionThunk = (data, eventData) => {
@@ -218,6 +157,28 @@ export const handleEventSubmissionThunk = (data, eventData) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+};
+
+// INFORMATION
+export const updateInformationThunk = (userData) => {
+  return (dispatch) => {
+    return axios
+      .post(`http://localhost:8080/password`, userData.password)
+      .then(() => {
+        return axios
+          .put(`http://localhost:8080/updateUser/${userData.id}`, userData) //USERID
+          .then((data) => {
+            if (data.data === "updated") {
+              window.location = "/SellerDashBoard";
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .then(() => console.log("update user done"))
+      .catch((err) => console.log(err));
   };
 };
 // axios

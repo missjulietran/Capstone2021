@@ -86,6 +86,7 @@ function InventoryUploadPage() {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -100,6 +101,7 @@ function InventoryUploadPage() {
                   return setSelectedCategory(category);
                 })
               }
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -111,6 +113,7 @@ function InventoryUploadPage() {
               id="sku"
               value={sku}
               onChange={(e) => setSku(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -123,6 +126,7 @@ function InventoryUploadPage() {
               min="50"
               value={totalQuantity}
               onChange={(e) => setTotalQuantity(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -135,6 +139,7 @@ function InventoryUploadPage() {
               min="10"
               value={minUnits}
               onChange={(e) => setMinUnits(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -146,6 +151,7 @@ function InventoryUploadPage() {
               id="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -154,6 +160,7 @@ function InventoryUploadPage() {
             <DatePicker
               selected={bestDate}
               onChange={(date) => setBestDate(date)}
+              required
             />
           </FormGroup>
           <FormGroup className="inventoryForm">
@@ -167,6 +174,7 @@ function InventoryUploadPage() {
               rows="10"
               cols="80"
               onChange={(e) => setDescriptions(e.target.value)}
+              required
             />
           </FormGroup>
 
@@ -177,6 +185,7 @@ function InventoryUploadPage() {
               name="uploadImage"
               id="uploadImage"
               onChange={(e) => setSelectedImage(e.target.files[0])}
+              required
             />
           </FormGroup>
 

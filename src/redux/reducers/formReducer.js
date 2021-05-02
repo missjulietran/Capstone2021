@@ -5,6 +5,7 @@ import {
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
   UPDATE_INVENTORY_ACTION,
+  DEL_PRODUCT_ACTION,
 } from "../types/template";
 
 const initialState = {
@@ -15,14 +16,6 @@ const initialState = {
 
 const formReducer = (state = initialState, action) => {
   switch (action.type) {
-    case HANDLE_SUBMISSION_ACTION:
-      return {
-        inventory: state.inventory.concat(...action.inventoryData),
-      };
-    case POST_IMAGE_ACTION:
-      return {
-        imageURL: state.imageURL.concat(...action.payload),
-      };
     case HANDLE_EVENT_SUBMISSION_ACTION:
       return {
         event: state.event.concat(...action.date),
@@ -38,6 +31,10 @@ const formReducer = (state = initialState, action) => {
     case UPDATE_INVENTORY_ACTION:
       return {
         inventory: state.inventory.concat(...action.payload),
+      };
+    case DEL_PRODUCT_ACTION:
+      return {
+        inventory: state.inventory.filter((item) => item.id !== action.payload),
       };
     // case LOAD_LINK_SUCCESS_ACTION:
     //   return {

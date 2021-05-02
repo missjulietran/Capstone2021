@@ -1,0 +1,15 @@
+.dashboardContainer {
+  margin: 50px;
+}
+.cardBox {
+  justify-content: space-between;
+}
+.dashboardTitle {
+  font-size: 50px;
+}
+.dashboardText {
+  font-size: 30px;
+}
+.dashboardCard {
+  margin-bottom: 10px;
+}

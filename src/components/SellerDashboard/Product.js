@@ -69,7 +69,7 @@ function Product() {
                       color="light"
                       type="submit"
                       className="updateBtn"
-                      href={"/InventoryUpdate/" + item.id}
+                      href={"/InventoryUpdate/" + item.sku}
                     >
                       Update
                     </Button>
@@ -80,7 +80,7 @@ function Product() {
                       className="deleteBtn"
                       onClick={(e) => {
                         e.preventDefault();
-                        delProductSubmission(item.id);
+                        delProductSubmission(item.sku);
                       }}
                     >
                       Delete

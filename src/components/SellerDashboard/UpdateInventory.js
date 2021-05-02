@@ -66,20 +66,23 @@ function UpdateInventory() {
 
     const data = new FormData();
     data.append("file", selectedImage);
-    dispatch(
-      updateInventoryThunk(data, {
-        id: itemId,
-        category: selectedCategory,
-        name: name,
-        sku: sku,
-        quantity: totalQuantity,
-        units: minUnits,
-        price: price,
-        best_before_date: bestDate,
-        descriptions: descriptions,
-      })
-    );
-    alert("Thank you! Your product was updated successfully");
+    if (minUnits > totalQuantity) {
+      alert("The minimum order quantity should be less than total quantity");
+    } else {
+      dispatch(
+        updateInventoryThunk(data, {
+          id: itemId,
+          category: selectedCategory,
+          name: name,
+          sku: sku,
+          quantity: totalQuantity,
+          units: minUnits,
+          price: price,
+          best_before_date: bestDate,
+          descriptions: descriptions,
+        })
+      );
+    }
   };
 
   return (

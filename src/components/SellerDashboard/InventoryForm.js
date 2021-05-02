@@ -47,27 +47,22 @@ function InventoryUploadPage() {
 
     const data = new FormData();
     data.append("file", selectedImage);
-    dispatch(
-      handleInventorySubmissionThunk(data, {
-        category: selectedCategory,
-        name: name,
-        sku: sku,
-        quantity: totalQuantity,
-        units: minUnits,
-        price: price,
-        best_before_date: bestDate,
-        descriptions: descriptions,
-      })
-    );
-    alert("Thank you! Your form was submitted successfully");
-    setSelectedCategory([""]);
-    setName("");
-    setSku("");
-    setTotalQuantity("");
-    setMinUnits("");
-    setPrice("");
-    setBestDate(new Date());
-    setDescriptions("");
+    if (minUnits > totalQuantity) {
+      alert("The minimum order quantity should be less than total quantity");
+    } else {
+      dispatch(
+        handleInventorySubmissionThunk(data, {
+          category: selectedCategory,
+          name: name,
+          sku: sku,
+          quantity: totalQuantity,
+          units: minUnits,
+          price: price,
+          best_before_date: bestDate,
+          descriptions: descriptions,
+        })
+      );
+    }
   };
 
   return (

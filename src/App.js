@@ -15,7 +15,10 @@ import Information from "./components/SellerDashboard/UpdateInformation";
 
 import { About } from "./components/pages/About";
 import { Brands } from "./components/pages/Brands";
-import { Categories } from "./components/pages/Categories";
+// Category Components
+import Categories from "./components/pages/Category/Categories.js";
+import CategoryProductList from "./components/pages/Category/CategoryProductList.js";
+import ProductDetailPage from "./components/pages/Products/ProductDetailPage.js"
 import { SignUp } from "./components/pages/SignUp";
 import { LogIn } from "./components/pages/LogIn";
 import { Cart } from "./components/pages/Cart";
@@ -38,8 +41,10 @@ function App() {
         <Route path="/Cart" component={Cart} />
         {/* Navbar2 links */}
         <Route path="/Brands" component={Brands} />
-        <Route path="/Categories" component={Categories} />
-
+        {/* Category Routes */}
+        <Route exact path="/Categories" component={Categories} />
+        <Route exact path="/Categories/:category" component={CategoryProductList} />
+        <Route exact path="/Categories/:category/:id" component={ProductDetailPage}/>
         {/* <Error /> */}
         {/* Footer links */}
         <Route path="/About" component={About} />

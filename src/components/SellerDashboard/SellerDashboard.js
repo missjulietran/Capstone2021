@@ -10,9 +10,18 @@ function SellerDashboard() {
   const [stock, setStock] = useState();
   const [sold, setSold] = useState();
   const [revenue, setRevenue] = useState();
-  const [topProduct, setTopProduct] = useState();
+  const [topProduct, setTopProduct] = useState("");
   const [order, setOrder] = useState();
   const { userId } = useParams();
+
+  const shortText = (longtext) => {
+    const TEXT_LIMIT = 5;
+    if (longtext.length > TEXT_LIMIT) {
+      return longtext.substring(0, TEXT_LIMIT) + "...";
+    } else {
+      return longtext;
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -110,7 +119,9 @@ function SellerDashboard() {
 
             <Card className="dashboardCard">
               <Card.Body>
-                <Card.Title className="dashboardTitle">{topProduct}</Card.Title>
+                <Card.Title className="dashboardTitle">
+                  {shortText(topProduct)}
+                </Card.Title>
                 <div className="text-right">
                   <Card.Title className="dashboradText">Top Product</Card.Title>
                 </div>
@@ -120,7 +131,7 @@ function SellerDashboard() {
               <Card.Body>
                 <Card.Title className="dashboardTitle">{stock}</Card.Title>
                 <div className="text-right">
-                  <Card.Title className="dashboradText">Stock</Card.Title>
+                  <Card.Title className="dashboradText">InStock</Card.Title>
                 </div>
               </Card.Body>
             </Card>
@@ -129,12 +140,7 @@ function SellerDashboard() {
             <Bar data={soldState} />
           </Col>
         </div>
-        <div className=" d-flex cardBox ">
-          <Row>
-            <Col></Col>
-          </Row>
-        </div>
-        <div>
+        <div className="d-flex cardBox">
           <Line data={revState} />
         </div>
       </Container>

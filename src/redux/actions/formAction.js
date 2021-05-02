@@ -46,16 +46,16 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
     return axios
       .post(`http://localhost:8080/uploadImage`, data) //URL
       .then((data) => {
-        console.log(data);
-        console.log(inventoryData);
         return axios
           .post(`http://localhost:8080/upload/1`, inventoryData) //USERID
           .then((data) => {
+            alert("Thank you! Your form was submitted successfully");
             if (data.data === "updated") {
               window.location = "/Sellerproduct";
             }
           })
           .catch((err) => {
+            alert("The sku number already exist");
             console.log(err);
           });
       })
@@ -78,20 +78,19 @@ export const updateInventoryThunk = (data, inventoryData) => {
       return axios
         .post(`http://localhost:8080/uploadImage`, data) //URL
         .then((data) => {
-          console.log(data);
-          console.log(inventoryData.id);
           return axios
             .put(
               `http://localhost:8080/update/${inventoryData.id}`,
               inventoryData
             ) //USERID
             .then((data) => {
-              console.log(data);
+              alert("Thank you! Your product was updated successfully");
               if (data.data === "updated") {
                 window.location = "/Sellerproduct";
               }
             })
             .catch((err) => {
+              alert("The sku number already exist");
               console.log(err);
             });
         })
@@ -105,12 +104,13 @@ export const updateInventoryThunk = (data, inventoryData) => {
       return axios
         .put(`http://localhost:8080/update/${inventoryData.id}`, inventoryData) //USERID
         .then((data) => {
-          console.log(data);
+          alert("Thank you! Your product was updated successfully");
           if (data.data === "updated") {
             window.location = "/Sellerproduct";
           }
         })
         .catch((err) => {
+          alert("The sku number already exist");
           console.log(err);
         });
     }
@@ -123,7 +123,9 @@ export const delProductThunk = (id) => {
       .then(() => {
         console.log("del done");
         dispatch(delProductAction(id));
+        window.location = "/Sellerproduct";
       })
+
       .catch((err) => console.log(err));
   };
 };
@@ -165,13 +167,15 @@ export const updateInformationThunk = (userData) => {
   return (dispatch) => {
     return axios
       .post(`http://localhost:8080/password`, userData.password)
-      .then(() => {
+      .then((data) => {
+        console.log("password", data);
         return axios
           .put(`http://localhost:8080/updateUser/${userData.id}`, userData) //USERID
           .then((data) => {
-            if (data.data === "updated") {
-              window.location = "/SellerDashBoard";
-            }
+            console.log(data);
+            // if (data.data === "updated") {
+            //   window.location = "/SellerDashBoard";
+            // }
           })
           .catch((err) => {
             console.log(err);

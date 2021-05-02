@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 
-export const SignUpForm = () => {
+const SignUpFormSeller = () => {
   return (
     <>
-      <h1>Buyer</h1>
-      <Form size="sm">
+      <h1>Seller</h1>
+      <Form>
         <Form.Label>Business Name</Form.Label>
         <Form.Control
           size="sm"
@@ -18,7 +18,7 @@ export const SignUpForm = () => {
         <Form.Label>Country</Form.Label>
         <Form.Control size="sm" placeholder="Hong Kong" disabled />
         <Form.Label>District</Form.Label>
-        <Form.Control as="select" size="sm" custom>
+        <Form.Control size="sm" as="select" custom>
           <option>Central and Western</option>
           <option>Eastern</option>
           <option>Western</option>
@@ -51,7 +51,7 @@ export const SignUpForm = () => {
         />
         <Form.Label>Contact Phone Number</Form.Label>
         <Form.Control size="sm" required type="text" />
-        <Form.Group size="sm" controlId="formBasicEmail">
+        <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control size="sm" required type="email" placeholder="" />
         </Form.Group>
@@ -89,3 +89,5 @@ export const SignUpForm = () => {
     </>
   );
 };
+
+export default SignUpFormSeller;

@@ -1,4 +1,4 @@
-import {SignUpForm} from "../Accounts/SignUp/SignUpForm";
+import SignUpForm from "../Accounts/SignUp/SignUpForm";
 import "../../App.css";
 import React, {useState} from "react";
 import SignUpFormSeller from '../Accounts/SignUp/SignUpFormSeller';

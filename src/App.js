@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
+  // Link,
   Redirect,
 } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -43,6 +43,7 @@ function App() {
     const auth = useSelector((state) => state.login);
     const { isAuthenticated } = auth;
     const Component = component;
+
     if (Component != null) {
       return (
         <Route
@@ -95,10 +96,7 @@ function App() {
       </Switch>
       {/* SellerDashboard Links */}
       {/* USERID */}
-      <PrivateRoute
-        path="/SellerDashboard/:userId"
-        component={SellerDashboard}
-      />
+      <PrivateRoute path="/SellerDashboard" component={SellerDashboard} />
       <PrivateRoute path="/InventoryUpload" component={InventoryForm} />
       <PrivateRoute
         path="/InventoryUpdate/:itemId"

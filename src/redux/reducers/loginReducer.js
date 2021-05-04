@@ -2,6 +2,7 @@ import {
   LOGIN_FAILURE_ACTION,
   LOGIN_REQUEST_ACTION,
   LOGIN_SUCCESS_ACTION,
+  LOGOUT_REQUEST_ACTION,
 } from "../types/template";
 
 const initialState = {
@@ -20,6 +21,8 @@ const loginReducer = (state = initialState, action) => {
       });
     case LOGIN_FAILURE_ACTION:
       return { ...state, isLoading: false };
+    case LOGOUT_REQUEST_ACTION:
+      return { ...state, isAuthenticated: false };
     default:
       return state;
   }

@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUserThunk } from "../../redux/actions/loginAction";
+import { useHistory } from "react-router-dom";
 
 const SellerLogin = (props) => {
   const [email, setEmail] = useState("");
@@ -10,11 +11,11 @@ const SellerLogin = (props) => {
   const auth = useSelector((state) => state.login);
   const { isLoading, isAuthenticated } = auth;
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     if (isAuthenticated) {
-      // props.history.push("/Seller");
-      console.log("yes");
+      history.push("/");
     }
   }, [isAuthenticated]);
 
@@ -45,7 +46,6 @@ const SellerLogin = (props) => {
             type="password"
             placeholder="Password"
             onChange={(e) => {
-              console.log("password", e.target.value);
               setPassword(e.currentTarget.value);
             }}
             value={password}

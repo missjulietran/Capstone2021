@@ -1,6 +1,4 @@
 import {
-  POST_IMAGE_ACTION,
-  HANDLE_SUBMISSION_ACTION,
   HANDLE_EVENT_SUBMISSION_ACTION,
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
@@ -36,14 +34,7 @@ const formReducer = (state = initialState, action) => {
       return {
         inventory: state.inventory.filter((item) => item.id !== action.payload),
       };
-    // case LOAD_LINK_SUCCESS_ACTION:
-    //   return {
-    //     linkList: state.linkList.concat(...action.payload),
-    //   };
-    // case CLEAR_LINK_ACTION:
-    //   return {
-    //     linkList: state.linkList.filter((item) => item.id !== action.payload),
-    //   };
+
     default:
       return state;
   }

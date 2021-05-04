@@ -1,59 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
 // import { NavLink } from "react-router-dom";
-import styles from "./NavBar.module.css";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
-
+// import styles from "./NavBar.module.css";
+// import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+// import { LinkContainer } from "react-router-bootstrap";
+import NavBarNotAuthenticated from "./NavBarNotAuthenticated";
+import NavBarBuyerAuthenticated from "./NavBarBuyerAuthenticated";
 function NavBar() {
   // const [click, setClick] = useState(false);
-
+  const auth = useSelector((state) => state.login);
+  const { isAuthenticated } = auth;
   // // const handleClick = () => setClick(!click);
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
-        <LinkContainer to="/">
-          <Navbar.Brand href="#home" className={styles.logo}>
-            Eco Store
-          </Navbar.Brand>
-        </LinkContainer>
-
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto"></Nav>
-          <Nav className={styles.right}>
-          <LinkContainer to="/GiveBack">
-              <Nav.Link eventKey={2} href="/GiveBack">
-                Give Back
-              </Nav.Link>
-            </LinkContainer>
-            <NavDropdown title="My Account" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/Account">
-                Account Settings <i class="fas fa-cog pull-right"></i>
-              </NavDropdown.Item>
-              <LinkContainer to="/">
-                <NavDropdown.Item href="/">
-                  Logout <i class="fas fa-sign-out-alt pull-right"></i>
-                </NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
-            <LinkContainer to="/BuyerSeller">
-              <Nav.Link eventKey={3} href="/BuyerSeller">
-                Log In
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/SignUp">
-              <Nav.Link eventKey={4} href="/SignUp">
-                Sign Up
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/Cart">
-              <Nav.Link eventKey={5} href="/Cart">
-                Cart <i class="fas fa-shopping-cart"></i>
-              </Nav.Link>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      {isAuthenticated ? (
+        <NavBarBuyerAuthenticated />
+      ) : (
+        <NavBarNotAuthenticated />
+      )}
       {/* <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar";
 import { Line, Bar } from "react-chartjs-2";
-import { Card, Row, Col, Container } from "react-bootstrap";
+import { Card, Col, Container } from "react-bootstrap";
 import "./SellerDashboard.css";
 import axios from "axios";
+
 function SellerDashboard() {
   const [length, setLength] = useState();
   const [stock, setStock] = useState();
@@ -12,7 +13,7 @@ function SellerDashboard() {
   const [revenue, setRevenue] = useState();
   const [topProduct, setTopProduct] = useState("");
   const [order, setOrder] = useState();
-  const { userId } = useParams();
+  // const { userId } = useParams();
 
   const shortText = (longtext) => {
     const TEXT_LIMIT = 5;
@@ -23,11 +24,13 @@ function SellerDashboard() {
     }
   };
 
+  const user = localStorage.getItem("token");
+
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(
-        `http://localhost:8080/dashboard/${userId}`
-      );
+      const { data } = await axios.get(`http://localhost:8080/dashboard`, {
+        headers: { Authorization: `Bearer ${user}` },
+      });
       setLength(data.length);
       setStock(data.stock);
       setSold(data.sold);
@@ -36,7 +39,7 @@ function SellerDashboard() {
       setOrder(data.order);
     };
     fetchData();
-  }, [userId]);
+  }, []);
 
   const soldState = {
     labels: [

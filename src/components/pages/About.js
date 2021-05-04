@@ -25,7 +25,7 @@ export const About = () => {
       <Container className="aboutDiv">
         <h2>Our Company</h2>
 
-        <Container fluid>
+        <Container>
           <Row>
             <Col sm={4}>
               <Card style={{ width: "18rem" }}>

@@ -18,10 +18,14 @@ import { About } from "./components/pages/About";
 //Brands Section Components
 import Brands from "./components/pages/Brands/Brands.js";
 import BrandsProductList from "./components/pages/Brands/BrandsProductList.js";
-// Category Components
+// Category Section Components
 import Categories from "./components/pages/Category/Categories.js";
 import CategoryProductList from "./components/pages/Category/CategoryProductList.js";
 import ProductDetailPage from "./components/pages/Products/ProductDetailPage.js"
+//Events Section Components
+import Events from './components/pages/Events/Events.js'
+import EventsProductListing from './components/pages/Events/EventsProductListing.js';
+
 import { SignUp } from "./components/pages/SignUp";
 import { LogIn } from "./components/pages/LogIn";
 import { Cart } from "./components/pages/Cart";
@@ -50,6 +54,9 @@ function App() {
         <Route exact path="/Categories" component={Categories} />
         <Route exact path="/Categories/:category" component={CategoryProductList} />
         <Route exact path="/Categories/:category/:id" component={ProductDetailPage}/>
+        {/* Events Routes */}
+        <Route exact path="/" component={Events}/>
+        <Route exact path="/Events/:id" component={EventsProductListing}/>
         {/* <Error /> */}
         {/* Footer links */}
         <Route path="/About" component={About} />

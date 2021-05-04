@@ -8,7 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 const stickyFooterStyle = {
   backgroundColor: "#ffffff",
   fontSize: "13px",
-  color: "white",
+  color: "black",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
   justifyContent: "center",

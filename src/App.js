@@ -14,7 +14,10 @@ import UpdateInventoryForm from "./components/SellerDashboard/UpdateInventory";
 import Information from "./components/SellerDashboard/UpdateInformation";
 
 import { About } from "./components/pages/About";
-import { Brands } from "./components/pages/Brands";
+
+//Brands Section Components
+import Brands from "./components/pages/Brands/Brands.js";
+import BrandsProductList from "./components/pages/Brands/BrandsProductList.js";
 // Category Components
 import Categories from "./components/pages/Category/Categories.js";
 import CategoryProductList from "./components/pages/Category/CategoryProductList.js";
@@ -40,7 +43,9 @@ function App() {
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Cart" component={Cart} />
         {/* Navbar2 links */}
-        <Route path="/Brands" component={Brands} />
+        {/* Brands Routes */}
+        <Route exact path="/Brands" component={Brands} />
+        <Route exactn path="/Brands/:brand" component={BrandsProductList} />
         {/* Category Routes */}
         <Route exact path="/Categories" component={Categories} />
         <Route exact path="/Categories/:category" component={CategoryProductList} />

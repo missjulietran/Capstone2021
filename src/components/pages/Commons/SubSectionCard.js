@@ -19,7 +19,11 @@ const SubSectionCard=(props)=>{
     }
     return(
     <Row>
-        {props.subSections.map((subSection, i)=>{
+        {props.subSections
+        .sort((a,b)=>{
+           return((a.name>b.name)?1:-1)
+        })
+        .map((subSection, i)=>{
                 return(
                     <Col lg={2} md={4} sm={6}>
                         <Card style={cardStyle}  key={subSection.id}>

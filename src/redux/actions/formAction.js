@@ -225,29 +225,24 @@ export const updateInformationThunk = (userData) => {
 };
 
 // SignUpForm
-export const handleSignUpThunk = (data, SignUpData) => {
-  return (dispatch) => {
-    return axios
-      .post(`http://localhost:8080/certFile`, data) //certfile upload
-      .then((data) => {
-        return axios
-          .post(`http://localhost:8080/certFile/1`, SignUpData) //certFile w/ USERID
-          .then((data) => {
-            alert("Thank you! Your form was submitted successfully");
-            if (data.data === "updated") {
-              window.location = "/Login";
-            }
-          })
-          .catch((err) => {
-            alert("This is not a PDF");
-            console.log(err);
-          });
-      })
-      .then(() => {
-        console.log("uploaded done");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-};
+// export function signUpAction(form) {
+//   return {
+//     type: SIGN_IN_FORM_SUBMIT_ACTION,
+//     payload: form
+//   }
+// }
+
+// export const handleSignUpThunk = (signUpData) => {
+//   return (dispatch) => {
+//     axios
+//       .post(`http://localhost:8080/signup`, signUpData)
+//       .then(() => {
+//         console.log("del done");
+//         //console.log(signUpData)
+//         dispatch(signUpAction(signUpData));
+//         window.location = "/";
+//       })
+
+//       .catch((err) => console.log(err));
+//   };
+// };

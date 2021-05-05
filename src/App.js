@@ -1,18 +1,12 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  // Link,
-  Redirect,
-} from "react-router-dom";
 import { useSelector } from "react-redux";
 
 //Fixed Components
 import NavBarSeller from "./components/Navbar1/NavBarSeller";
 import Navbar2 from "./components/Navbar2/NavBar2";
 import Home from "./components/pages/Home";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Footer from "./components/Footer";
 
 //Seller Dashboard Components

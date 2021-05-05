@@ -5,6 +5,7 @@ import EventsCard from './EventsCard';
 
 const Events=()=>{
     const{data:event,loading,error}=useFetch("http://localhost:8080/events")
+    
     return(
         <Container fluid>
             {loading && <p>Loading...</p>}

@@ -21,8 +21,8 @@
 }
 
 .about-img {
-  height: 40vh;
-  width:40vh;
+  height: 30vh!important;
+  width:30vh!important;
 }
 
 
@@ -51,6 +51,9 @@ input.form-control, input.form-control:focus {
     margin-top:2rem;
 }
 
+.signupdiv {
+  height: 100vh;
+}
 
 /* 
 

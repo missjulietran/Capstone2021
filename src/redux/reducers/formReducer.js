@@ -1,6 +1,4 @@
 import {
-  POST_IMAGE_ACTION,
-  HANDLE_SUBMISSION_ACTION,
   HANDLE_EVENT_SUBMISSION_ACTION,
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
@@ -39,6 +37,7 @@ const formReducer = (state = initialState, action) => {
       return {
         inventory: state.inventory.filter((item) => item.id !== action.payload),
       };
+
       case SIGN_IN_FORM_SUBMIT_ACTION:
         return{
           event: state.event.concat(...action.payload)
@@ -51,6 +50,7 @@ const formReducer = (state = initialState, action) => {
     //   return {
     //     linkList: state.linkList.filter((item) => item.id !== action.payload),
     //   };
+
     default:
       return state;
   }

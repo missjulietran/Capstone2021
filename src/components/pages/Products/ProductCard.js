@@ -13,7 +13,7 @@ const ProductCard=(props)=>{
                     <Card.Text>
                         <h6>{props.name}</h6>
                         <h6>{props.price}$</h6>
-                        <h6>Best Before:</h6>
+                        <h6>Best Before:{props.bbd}</h6>
                     </Card.Text>
                     <Button variant="success" size="sm"><FontAwesomeIcon icon={faShoppingCart} />Add to Cart</Button>
                 </Card.Body>

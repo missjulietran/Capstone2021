@@ -15,7 +15,7 @@ const SellerLogin = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push("/home/seller");
+      history.push("/");
     }
   }, [isAuthenticated]);
 

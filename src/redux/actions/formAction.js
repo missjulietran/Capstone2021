@@ -32,7 +32,7 @@ export const getInventoryThunk = () => {
   const user = localStorage.getItem("token");
   return (dispatch) => {
     return axios
-      .get("http://localhost:8080/getInventoryData", {
+      .get("http://localhost:8080/data/getInventoryData", {
         headers: { Authorization: `Bearer ${user}` },
       }) //USERID
       .then((data) => {
@@ -50,12 +50,12 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
 
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/uploadImage`, data, {
+      .post(`http://localhost:8080/data/uploadImage`, data, {
         headers: { Authorization: `Bearer ${user}` },
       }) //URL
       .then(() => {
         return axios
-          .post(`http://localhost:8080/upload`, inventoryData, {
+          .post(`http://localhost:8080/data/upload`, inventoryData, {
             headers: { Authorization: `Bearer ${user}` },
           }) //USERID
           .then((data) => {
@@ -87,14 +87,14 @@ export const updateInventoryThunk = (data, inventoryData) => {
     // }
     if (!data === undefined) {
       return axios
-        .post(`http://localhost:8080/uploadImage`, data, {
+        .post(`http://localhost:8080/data/uploadImage`, data, {
           headers: { Authorization: `Bearer ${user}` },
         }) //URL
         .then((data) => {
           console.log("update", inventoryData);
           return axios
             .put(
-              `http://localhost:8080/update/${inventoryData.id}`,
+              `http://localhost:8080/update/data/${inventoryData.id}`,
               inventoryData,
               {
                 headers: { Authorization: `Bearer ${user}` },
@@ -120,7 +120,7 @@ export const updateInventoryThunk = (data, inventoryData) => {
     } else {
       return axios
         .put(
-          `http://localhost:8080/update/${inventoryData.id}`,
+          `http://localhost:8080/data/update/${inventoryData.id}`,
           inventoryData,
           {
             headers: { Authorization: `Bearer ${user}` },
@@ -143,7 +143,7 @@ export const delProductThunk = (itemid) => {
   const user = localStorage.getItem("token");
   return (dispatch) => {
     axios
-      .delete(`http://localhost:8080/delProduct/${itemid}`, {
+      .delete(`http://localhost:8080/data/delProduct/${itemid}`, {
         headers: { Authorization: `Bearer ${user}` },
       })
       .then(() => {
@@ -168,14 +168,14 @@ export const handleEventSubmissionThunk = (data, eventData) => {
 
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/uploadImage`, data, {
+      .post(`http://localhost:8080/data/uploadImage`, data, {
         headers: { Authorization: `Bearer ${user}` },
       }) //URL
       .then((data) => {
         console.log(data);
         console.log(eventData);
         return axios
-          .post(`http://localhost:8080/uploadEvent`, eventData, {
+          .post(`http://localhost:8080/data/uploadEvent`, eventData, {
             headers: { Authorization: `Bearer ${user}` },
           }) //USERID
           .then(() => {
@@ -200,13 +200,13 @@ export const updateInformationThunk = (userData) => {
 
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/password`, userData.password, {
+      .post(`http://localhost:8080/data/password`, userData.password, {
         headers: { Authorization: `Bearer ${user}` },
       })
       .then((data) => {
         console.log("password", data);
         return axios
-          .put(`http://localhost:8080/updateUser`, userData, {
+          .put(`http://localhost:8080/data/updateUser`, userData, {
             headers: { Authorization: `Bearer ${user}` },
           }) //USERID
           .then((data) => {
@@ -223,63 +223,6 @@ export const updateInformationThunk = (userData) => {
       .catch((err) => console.log(err));
   };
 };
-// axios
-//   .post(`http://localhost:8080/uploadImage`, data)
-//   .then((res) => {
-//     //   dispatch(getLinkThunk());
-//     console.log("post image", res.statusText);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-//   };
-// };
-
-// export function clearLinkAction(id) {
-//   return {
-//     type: CLEAR_LINK_ACTION,
-//     payload: id,
-//   };
-// }
-
-// export const loadLinkSuccessAction = (links) => {
-//   return {
-//     type: LOAD_LINK_SUCCESS_ACTION,
-//     payload: links,
-//   };
-// };
-
-// export const getLinkThunk = () => {
-//   return (dispatch) => {
-//     return axios
-//       .get("http://localhost:8080/")
-//       .then((links) => {
-//         console.log("getting", links);
-//         dispatch(loadLinkSuccessAction(links.data));
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
-// };
-
-// export const delLinkThunk = (id) => {
-//   return (dispatch) => {
-//     axios
-//       .delete(`http://localhost:8080/${id}`)
-//       .then(() => {
-//         console.log("del done");
-//         dispatch(clearLinkAction(id));
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
-//   return {
-//     type: CLEAR_LINK_ACTION,
-//     payload: id,
-//   };
-// };
 
 // SignUpForm
 export const handleSignUpThunk = (data, SignUpData) => {

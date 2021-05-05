@@ -10,6 +10,7 @@ import {
 import { useSelector } from "react-redux";
 
 //Fixed Components
+import NavBarBuyer from "./components/Navbar1/NavBarBuyer";
 import NavBarSeller from "./components/Navbar1/NavBarSeller";
 import Navbar2 from "./components/Navbar2/NavBar2";
 import Home from "./components/pages/Home";
@@ -22,6 +23,9 @@ import EventForm from "./components/SellerDashboard/EventForm";
 import Product from "./components/SellerDashboard/Product";
 import UpdateInventoryForm from "./components/SellerDashboard/UpdateInventory";
 import Information from "./components/SellerDashboard/UpdateInformation";
+
+// BuyerDashboard Components
+import BuyerDashboard from "./components/BuyerDashboard/BuyerDashboard";
 
 import { About } from "./components/pages/About";
 
@@ -73,7 +77,8 @@ function App() {
   };
   return (
     <Router>
-      <NavBarSeller />
+      <NavBarBuyer />
+      {/* <NavBarSeller /> */}
       <Navbar2 />
       <Route path="/" exact component={Home} />
       <Switch>
@@ -120,6 +125,9 @@ function App() {
       <PrivateRoute path="/EventUpload" component={EventForm} />
       <PrivateRoute path="/Sellerproduct" component={Product} />
       <PrivateRoute path="/InformationUpdate" component={Information} />
+
+      {/* BuyerDashboard Links */}
+      <Route path="/buyerdashboard" component={BuyerDashboard} />
       <Footer />
     </Router>
   );

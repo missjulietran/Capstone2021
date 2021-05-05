@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import {Link} from 'react-router-dom';
-import Countdown from '../Commons/CountdownTimer.js'
+import Countdown from '../Commons/CountdownTimer.js';
+import EventSellerName from './EventSellerName';
 
 export const EventsCard = (props) => {
     return (
@@ -18,7 +19,7 @@ export const EventsCard = (props) => {
                       <Card.Body>
                         <Card.Title>{event.title}</Card.Title>
                         <Card.Text>
-                          An exclusive event by{event.seller}
+                          <EventSellerName eventId={event.id}/>
                         </Card.Text>
                         <Countdown event={event} startDate={new Date(event.start_date).getTime()} endDate={new Date(event.end_date).getTime()}/>
                       </Card.Body>

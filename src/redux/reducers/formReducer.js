@@ -4,7 +4,6 @@ import {
   GET_SINGLE_ITEM_ACTION,
   UPDATE_INVENTORY_ACTION,
   DEL_PRODUCT_ACTION,
-  SIGN_IN_FORM_SUBMIT_ACTION,
 } from "../types/template";
 
 const initialState = {
@@ -38,10 +37,6 @@ const formReducer = (state = initialState, action) => {
         inventory: state.inventory.filter((item) => item.id !== action.payload),
       };
 
-      case SIGN_IN_FORM_SUBMIT_ACTION:
-        return{
-          event: state.event.concat(...action.payload)
-        }
     // case LOAD_LINK_SUCCESS_ACTION:
     //   return {
     //     linkList: state.linkList.concat(...action.payload),

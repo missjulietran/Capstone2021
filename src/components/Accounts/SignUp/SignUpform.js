@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
 import axios from "axios";
+
 
 function SignUpForm() {
   const [buyer] = useState(true);
@@ -161,13 +161,14 @@ function SignUpForm() {
           aria-describedby="passwordHelpBlock"
           name="password"
           id="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <Form.Text id="passwordHelpBlock" muted>
-          Your password must be 8-20 characters long, contain letters and
-          numbers, and must not contain spaces, or special characters.
+        Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.
         </Form.Text>
+
         <Form.Label>
           Please upload the following Documentation in PDF
         </Form.Label>

@@ -4,7 +4,6 @@ import {
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
   DEL_PRODUCT_ACTION,
-  SIGN_IN_FORM_SUBMIT_ACTION,
 } from "../types/template";
 
 
@@ -284,24 +283,24 @@ export const updateInformationThunk = (userData) => {
 // };
 
 // SignUpForm
-export function signUpAction(form) {
-  return {
-    type: SIGN_IN_FORM_SUBMIT_ACTION,
-    payload: form
-  }
-}
+// export function signUpAction(form) {
+//   return {
+//     type: SIGN_IN_FORM_SUBMIT_ACTION,
+//     payload: form
+//   }
+// }
 
-export const handleSignUpThunk = (signUpData) => {
-  return (dispatch) => {
-    axios
-      .post(`http://localhost:8080/signup`, signUpData)
-      .then(() => {
-        console.log("del done");
-        //console.log(signUpData)
-        dispatch(signUpAction(signUpData));
-        window.location = "/";
-      })
+// export const handleSignUpThunk = (signUpData) => {
+//   return (dispatch) => {
+//     axios
+//       .post(`http://localhost:8080/signup`, signUpData)
+//       .then(() => {
+//         console.log("del done");
+//         //console.log(signUpData)
+//         dispatch(signUpAction(signUpData));
+//         window.location = "/";
+//       })
 
-      .catch((err) => console.log(err));
-  };
-};
+//       .catch((err) => console.log(err));
+//   };
+// };

@@ -3,15 +3,19 @@ import "./App.css";
 import { useSelector } from "react-redux";
 
 //Fixed Components
+import NavBarBuyer from "./components/Navbar1/NavBarBuyer";
 import NavBarSeller from "./components/Navbar1/NavBarSeller";
 import Navbar2 from "./components/Navbar2/NavBar2";
 import Home from "./components/pages/Home";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Footer from "./components/Footer";
 
 //Seller Dashboard Components
-
-
 
 // SellerDashboard Components
 
@@ -21,6 +25,9 @@ import EventForm from "./components/SellerDashboard/EventForm";
 import Product from "./components/SellerDashboard/Product";
 import UpdateInventoryForm from "./components/SellerDashboard/UpdateInventory";
 import Information from "./components/SellerDashboard/UpdateInformation";
+
+// BuyerDashboard Components
+import BuyerDashboard from "./components/BuyerDashboard/BuyerDashboard";
 
 //Brands Section Components
 import Brands from "./components/pages/Brands/Brands.js";
@@ -71,7 +78,8 @@ function App() {
   };
   return (
     <Router>
-      <NavBarSeller />
+      <NavBarBuyer />
+      {/* <NavBarSeller /> */}
       <Navbar2 />
       <Route path="/" exact component={Home} />
       <Switch>
@@ -118,6 +126,9 @@ function App() {
       <PrivateRoute path="/EventUpload" component={EventForm} />
       <PrivateRoute path="/Sellerproduct" component={Product} />
       <PrivateRoute path="/InformationUpdate" component={Information} />
+
+      {/* BuyerDashboard Links */}
+      <Route path="/buyerdashboard" component={BuyerDashboard} />
       <Footer />
     </Router>
   );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar";
 import Select from "react-select";
 import { Form } from "react-bootstrap";
@@ -24,7 +23,7 @@ function UpdateInformation() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/user`, {
+      const { data } = await axios.get(`http://localhost:8080/data/user`, {
         headers: { Authorization: `Bearer ${user}` },
       });
       setName(data[0].name);

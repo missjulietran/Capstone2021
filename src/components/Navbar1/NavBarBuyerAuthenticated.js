@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logoutUserThunk } from "../../redux/actions/loginAction";
 
-function NavBarSellerAuthenticated() {
+function NavBarBuyerAuthenticated() {
   const history = useHistory();
   const dispatch = useDispatch();
   const logout = (e) => {
@@ -36,7 +36,7 @@ function NavBarSellerAuthenticated() {
               </Nav.Link>
             </LinkContainer>
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/SellerDashboard">
+              <NavDropdown.Item href="/buyerdashboard">
                 Account Settings <i class="fas fa-cog pull-right"></i>
               </NavDropdown.Item>
               <LinkContainer to="/home">
@@ -58,4 +58,4 @@ function NavBarSellerAuthenticated() {
   );
 }
 
-export default NavBarSellerAuthenticated;
+export default NavBarBuyerAuthenticated;

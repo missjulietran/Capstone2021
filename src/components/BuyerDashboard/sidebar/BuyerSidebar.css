@@ -1,0 +1,23 @@
+.buyersidebar {
+  background-color: #000;
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: hidden;
+  width: 20vw;
+  padding: 50px;
+  position: static;
+}
+.buyersideItems a {
+  color: #fff;
+  list-style-type: none;
+  margin-bottom: 40px;
+}
+.buyersideItems a:hover {
+  color: #fff;
+  text-decoration: underline !important;
+  text-decoration-color: violet !important;
+}
+
+.buyerDashboardContainer {
+  margin: 50px;
+}

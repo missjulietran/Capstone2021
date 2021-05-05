@@ -18,7 +18,7 @@ export const loginUserThunk = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST_ACTION });
 
-    const response = await axios.post("http://localhost:8080/api/sellerlogin", {
+    const response = await axios.post("http://localhost:8080/login/seller", {
       email: email,
       password: password,
     });

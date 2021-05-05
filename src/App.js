@@ -10,7 +10,7 @@ import {
 import { useSelector } from "react-redux";
 
 //Fixed Components
-import NavBar from "./components/Navbar1/NavBar";
+import NavBarSeller from "./components/Navbar1/NavBarSeller";
 import Navbar2 from "./components/Navbar2/NavBar2";
 import Home from "./components/pages/Home";
 import Footer from "./components/Footer";
@@ -65,7 +65,7 @@ function App() {
   };
   return (
     <Router>
-      <NavBar />
+      <NavBarSeller />
       <Navbar2 />
       <Route path="/" exact component={Home} />
       <Switch>
@@ -104,7 +104,7 @@ function App() {
       />
       <PrivateRoute path="/EventUpload" component={EventForm} />
       <PrivateRoute path="/Sellerproduct" component={Product} />
-      <PrivateRoute path="/InformationUpdate/:userId" component={Information} />
+      <PrivateRoute path="/InformationUpdate" component={Information} />
       <Footer />
     </Router>
   );

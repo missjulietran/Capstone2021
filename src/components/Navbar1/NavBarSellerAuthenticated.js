@@ -13,13 +13,13 @@ function NavBarBuyerAuthenticated() {
     e.preventDefault();
     localStorage.clear();
     dispatch(logoutUserThunk);
-    history.push("/");
+    history.push("/home/seller");
   };
 
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
-        <LinkContainer to="/">
+        <LinkContainer to="/home">
           <Navbar.Brand href="#home" className={styles.logo}>
             Eco Store
           </Navbar.Brand>
@@ -35,10 +35,10 @@ function NavBarBuyerAuthenticated() {
               </Nav.Link>
             </LinkContainer>
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/Account">
+              <NavDropdown.Item href="/SellerDashboard">
                 Account Settings <i class="fas fa-cog pull-right"></i>
               </NavDropdown.Item>
-              <LinkContainer to="/">
+              <LinkContainer to="/home">
                 <NavDropdown.Item onClick={logout}>
                   Logout <i class="fas fa-sign-out-alt pull-right"></i>
                 </NavDropdown.Item>

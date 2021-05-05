@@ -23,6 +23,7 @@ function UpdateInventory() {
   const { itemId } = useParams();
   const dispatch = useDispatch();
 
+  // sending passportJwt token to backend
   const user = localStorage.getItem("token");
   useEffect(() => {
     const fetchData = async () => {

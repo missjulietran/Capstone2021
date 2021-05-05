@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 // import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 // import { LinkContainer } from "react-router-bootstrap";
 import NavBarNotAuthenticated from "./NavBarNotAuthenticated";
-import NavBarBuyerAuthenticated from "./NavBarBuyerAuthenticated";
+import NavBarSellerAuthenticated from "./NavBarSellerAuthenticated";
 function NavBar() {
   // const [click, setClick] = useState(false);
   const auth = useSelector((state) => state.login);
@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <>
       {isAuthenticated ? (
-        <NavBarBuyerAuthenticated />
+        <NavBarSellerAuthenticated />
       ) : (
         <NavBarNotAuthenticated />
       )}

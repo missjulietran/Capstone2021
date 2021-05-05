@@ -139,13 +139,16 @@ export const updateInventoryThunk = (data, inventoryData) => {
     }
   };
 };
-export const delProductThunk = (id) => {
+export const delProductThunk = (itemid) => {
+  const user = localStorage.getItem("token");
   return (dispatch) => {
     axios
-      .delete(`http://localhost:8080/delProduct/${id}`)
+      .delete(`http://localhost:8080/delProduct/${itemid}`, {
+        headers: { Authorization: `Bearer ${user}` },
+      })
       .then(() => {
         console.log("del done");
-        dispatch(delProductAction(id));
+        dispatch(delProductAction(itemid));
         window.location = "/Sellerproduct";
       })
 
@@ -161,14 +164,20 @@ export function handleEventSubmissionAction({ title, start, end }) {
   };
 }
 export const handleEventSubmissionThunk = (data, eventData) => {
+  const user = localStorage.getItem("token");
+
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/uploadImage`, data) //URL
+      .post(`http://localhost:8080/uploadImage`, data, {
+        headers: { Authorization: `Bearer ${user}` },
+      }) //URL
       .then((data) => {
         console.log(data);
         console.log(eventData);
         return axios
-          .post(`http://localhost:8080/uploadEvent/1`, eventData) //USERID
+          .post(`http://localhost:8080/uploadEvent`, eventData, {
+            headers: { Authorization: `Bearer ${user}` },
+          }) //USERID
           .then(() => {
             console.log("event done");
           })
@@ -187,18 +196,24 @@ export const handleEventSubmissionThunk = (data, eventData) => {
 
 // INFORMATION
 export const updateInformationThunk = (userData) => {
+  const user = localStorage.getItem("token");
+
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/password`, userData.password)
+      .post(`http://localhost:8080/password`, userData.password, {
+        headers: { Authorization: `Bearer ${user}` },
+      })
       .then((data) => {
         console.log("password", data);
         return axios
-          .put(`http://localhost:8080/updateUser/${userData.id}`, userData) //USERID
+          .put(`http://localhost:8080/updateUser`, userData, {
+            headers: { Authorization: `Bearer ${user}` },
+          }) //USERID
           .then((data) => {
             console.log(data);
-            // if (data.data === "updated") {
-            //   window.location = "/SellerDashBoard";
-            // }
+            if (data.data === "updated") {
+              window.location = "/SellerDashBoard";
+            }
           })
           .catch((err) => {
             console.log(err);

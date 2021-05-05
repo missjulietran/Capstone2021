@@ -4,7 +4,9 @@ import {
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
   DEL_PRODUCT_ACTION,
+  SIGN_IN_FORM_SUBMIT_ACTION,
 } from "../types/template";
+
 
 // INVENTORY
 export const getInventoryAction = (items) => {
@@ -244,29 +246,24 @@ export const updateInformationThunk = (userData) => {
 // };
 
 // SignUpForm
-export const handleSignUpThunk = (data, SignUpData) => {
+export function signUpAction(form) {
+  return {
+    type: SIGN_IN_FORM_SUBMIT_ACTION,
+    payload: form
+  }
+}
+
+export const handleSignUpThunk = (signUpData) => {
   return (dispatch) => {
-    return axios
-      .post(`http://localhost:8080/certFile`, data) //certfile upload
-      .then((data) => {
-        return axios
-          .post(`http://localhost:8080/certFile/1`, SignUpData) //certFile w/ USERID
-          .then((data) => {
-            alert("Thank you! Your form was submitted successfully");
-            if (data.data === "updated") {
-              window.location = "/Login";
-            }
-          })
-          .catch((err) => {
-            alert("This is not a PDF");
-            console.log(err);
-          });
-      })
+    axios
+      .post(`http://localhost:8080/signup`, signUpData)
       .then(() => {
-        console.log("uploaded done");
+        console.log("del done");
+        //console.log(signUpData)
+        dispatch(signUpAction(signUpData));
+        window.location = "/";
       })
-      .catch((err) => {
-        console.log(err);
-      });
+
+      .catch((err) => console.log(err));
   };
 };

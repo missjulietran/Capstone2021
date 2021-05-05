@@ -1,12 +1,9 @@
 import React, { useState} from "react";
-// import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
-// import axios from "axios";
-// import { useAccordionToggle } from "react-bootstrap";
-// import { useParams } from "react-router-dom";
 import { handleSignUpThunk } from "../../../redux/actions/formAction";
 import Select from "react-select";
+import axios from "axios";
 
 // BUYER SIGN UP FORM***
 function SignUpFormSeller() {
@@ -20,9 +17,9 @@ function SignUpFormSeller() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [certOfInfo, setCertOfInfo] = useState(null);
-  const [businessCert, setBusinessCert] = useState("");
-
-  const dispatch = useDispatch();
+  const [businessCert, setBusinessCert] = useState(null);
+  const [realcertOfInfo, setrealCertOfInfo] = useState(null);
+  const [realbusinessCert, setrealBusinessCert] = useState(null);
 
 
   //Select district
@@ -47,53 +44,48 @@ function SignUpFormSeller() {
     { value: "Yuen Long", label: "Yuen Long" },
   ];
 
-  const handleFileChoice=(e)=>{
+  const handleCertOfInfoFile=(e)=>{
     e.preventDefault()
     console.log('okays')
     console.log(e.target.files[0].name)
     setCertOfInfo(e.target.files[0].name)
+    setrealCertOfInfo(e.target.files[0]);
+  }
+
+  const handleBusinessCertFile=(e)=>{
+    e.preventDefault()
+    console.log('businesscert');
     setBusinessCert(e.target.files[0].name)
+    setrealBusinessCert(e.target.files[0]);
   }
 
 
   //submit the form
   const handleSubmission = (e) => {
     e.preventDefault();
-    console.log("sign up form submitted");
-console.log(certOfInfo)
-    //dump file into s3 or FS
+    let newFormData = new FormData(e.target);
+    newFormData.append("file", certOfInfo);
+    newFormData.append("file1", businessCert);
+    newFormData.append("buyer", buyer);
+    newFormData.append("seller", seller);
+    console.log(newFormData.getAll("file"));
+    console.log(newFormData.getAll("name"));
 
-    
-    console.log({
-      buyer:buyer,
-      seller:seller,
-      businessName: businessName,
-      district: district,
-      address: address,
-      name: name,
-      email: email,
-      phone_no: phone,
-      password: password,
-      certFile: certOfInfo,
-      businessCert: businessCert,
-    })
 
-    dispatch(
-      handleSignUpThunk({
-        buyer:buyer,
-        seller:seller,
-        businessName: businessName,
-        district: district,
-        address: address,
-        name: name,
-        email: email,
-        phone_no: phone,
-        password: password,
-        certFile: certOfInfo,
-        businessCert: businessCert,
-      })
-    )
-    }
+axios.post("http://localhost:8080/signup", newFormData, {
+  headers: {
+    "content-type": "multipart/form-data",
+  }
+})
+.then(function(res) {
+  console.log(res);
+})
+.catch(function(err) {
+  console.log(err);
+})
+console.log("seller sign up submitted")
+  };
+
 
     return (
       <>
@@ -183,22 +175,26 @@ console.log(certOfInfo)
           <Form.File
             size="sm"
             type="file"
-            label={certOfInfo==null? "Certificate of Incorporation":certOfInfo}
+            label={certOfInfo==null?"Certificate of Incorporation":certOfInfo}
             custom
             // id="certFile"
             key='ci'
             name="certFile"
-            onChange={handleFileChoice}
+            // value={certOfInfo}
+            onChange={handleCertOfInfoFile}
+            accept=".pdf"
+            // label htmlFor={file}
           />
           <Form.File
             size="sm"
-            label="Business Registration Certificate"
+            label={businessCert==null?"Business Registration Certificate":businessCert}
             type="file"
             key='bc'
             // id="businessCert"
             name="businessCert"
-            value={businessCert}
-            onChange={(e) => console.log(e.target.files[0])}
+            accept=".pdf"
+            // value={businessCert}
+            onChange={handleBusinessCertFile}
             custom
           />
         

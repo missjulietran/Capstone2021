@@ -190,6 +190,7 @@ function UpdateInventory() {
               type="file"
               name="uploadImage"
               id="uploadImage"
+              accept=".png"
               onChange={(e) => setSelectedImage(e.target.files[0])}
             />
           </FormGroup>

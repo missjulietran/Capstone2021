@@ -3,6 +3,7 @@ import "../../App.css";
 import React, { useState } from "react";
 import SignUpFormSeller from "../Accounts/SignUp/SignUpFormSeller";
 
+
 export const SignUp = () => {
   const [isBuyer, setIsBuyer] = useState("");
     const handleClickA = () => setIsBuyer(true);

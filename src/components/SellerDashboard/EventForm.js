@@ -31,7 +31,7 @@ function EventUploadPage() {
         end: endDate,
       })
     );
-    alert("Thank you! Your event was submitted successfully");
+
     setTitle("");
     setStartDate(new Date());
     setEndDate(null);

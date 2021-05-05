@@ -17,12 +17,16 @@ function UpdateInformation() {
   const [district, setDistrict] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
 
-  const { userId } = useParams();
   const dispatch = useDispatch();
+
+  // sending passportJwt token to backend
+  const user = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/user/${userId}`);
+      const { data } = await axios.get(`http://localhost:8080/user`, {
+        headers: { Authorization: `Bearer ${user}` },
+      });
       setName(data[0].name);
       setEmail(data[0].email);
       setAddress(data[0].address);
@@ -30,7 +34,7 @@ function UpdateInformation() {
       setPhoneNo(data[0].phone_no);
     };
     fetchData();
-  }, [userId]);
+  }, []);
 
   // Select District
   const options = [
@@ -59,7 +63,6 @@ function UpdateInformation() {
 
     dispatch(
       updateInformationThunk({
-        id: userId,
         name: name,
         email: email,
         password: password,

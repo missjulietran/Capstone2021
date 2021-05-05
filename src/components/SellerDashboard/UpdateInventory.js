@@ -23,10 +23,15 @@ function UpdateInventory() {
   const { itemId } = useParams();
   const dispatch = useDispatch();
 
+  // sending passportJwt token to backend
+  const user = localStorage.getItem("token");
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
-        `http://localhost:8080/singleProduct/${itemId}`
+        `http://localhost:8080/singleProduct/${itemId}`,
+        {
+          headers: { Authorization: `Bearer ${user}` },
+        }
       );
       setName(data[0].name);
       setSku(data[0].sku);

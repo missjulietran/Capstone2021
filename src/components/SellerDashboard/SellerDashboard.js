@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar";
 import { Line, Bar } from "react-chartjs-2";
-import { Card, Row, Col, Container } from "react-bootstrap";
+import { Card, Col, Container } from "react-bootstrap";
 import "./SellerDashboard.css";
 import axios from "axios";
+
 function SellerDashboard() {
   const [length, setLength] = useState();
   const [stock, setStock] = useState();
@@ -12,22 +12,24 @@ function SellerDashboard() {
   const [revenue, setRevenue] = useState();
   const [topProduct, setTopProduct] = useState("");
   const [order, setOrder] = useState();
-  const { userId } = useParams();
 
-  const shortText = (longtext) => {
-    const TEXT_LIMIT = 5;
-    if (longtext.length > TEXT_LIMIT) {
-      return longtext.substring(0, TEXT_LIMIT) + "...";
-    } else {
-      return longtext;
-    }
-  };
+  // const shortText = (longtext) => {
+  //   const TEXT_LIMIT = 5;
+  //   if (longtext.length > TEXT_LIMIT) {
+  //     return longtext.substring(0, TEXT_LIMIT) + "...";
+  //   } else {
+  //     return longtext;
+  //   }
+  // };
+
+  // sending passportJwt token to backend
+  const user = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(
-        `http://localhost:8080/dashboard/${userId}`
-      );
+      const { data } = await axios.get(`http://localhost:8080/dashboard`, {
+        headers: { Authorization: `Bearer ${user}` },
+      });
       setLength(data.length);
       setStock(data.stock);
       setSold(data.sold);
@@ -36,7 +38,7 @@ function SellerDashboard() {
       setOrder(data.order);
     };
     fetchData();
-  }, [userId]);
+  }, []);
 
   const soldState = {
     labels: [
@@ -57,7 +59,7 @@ function SellerDashboard() {
       {
         label: "Units Sold",
         backgroundColor: "#c5ebe0",
-        data: [65, 59, 80, 81, `${sold}`],
+        data: [0, 0, 0, 0, `${sold}`],
       },
     ],
   };
@@ -84,7 +86,7 @@ function SellerDashboard() {
         backgroundColor: "#c5d3eb",
         borderColor: "rgba(0,0,0,1)",
         borderWidth: 2,
-        data: [1000, 500, 2000, 5000, `${revenue}`],
+        data: [0, 0, 0, 0, `${revenue}`],
       },
     ],
   };
@@ -119,9 +121,7 @@ function SellerDashboard() {
 
             <Card className="dashboardCard">
               <Card.Body>
-                <Card.Title className="dashboardTitle">
-                  {shortText(topProduct)}
-                </Card.Title>
+                <Card.Title className="dashboardTitle">{topProduct}</Card.Title>
                 <div className="text-right">
                   <Card.Title className="dashboradText">Top Product</Card.Title>
                 </div>

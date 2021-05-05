@@ -29,10 +29,14 @@ export function delProductAction(id) {
   };
 }
 export const getInventoryThunk = () => {
+  const user = localStorage.getItem("token");
   return (dispatch) => {
     return axios
-      .get("http://localhost:8080/getInventoryData/1") //USERID
+      .get("http://localhost:8080/getInventoryData", {
+        headers: { Authorization: `Bearer ${user}` },
+      }) //USERID
       .then((data) => {
+        console.log(data);
         dispatch(getInventoryAction(data.data));
       })
       .catch((err) => {
@@ -42,14 +46,20 @@ export const getInventoryThunk = () => {
 };
 
 export const handleInventorySubmissionThunk = (data, inventoryData) => {
+  const user = localStorage.getItem("token");
+
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/uploadImage`, data) //URL
-      .then((data) => {
+      .post(`http://localhost:8080/uploadImage`, data, {
+        headers: { Authorization: `Bearer ${user}` },
+      }) //URL
+      .then(() => {
         return axios
-          .post(`http://localhost:8080/upload/1`, inventoryData) //USERID
+          .post(`http://localhost:8080/upload`, inventoryData, {
+            headers: { Authorization: `Bearer ${user}` },
+          }) //USERID
           .then((data) => {
-            alert("Thank you! Your form was submitted successfully");
+            console.log("uploaded done", data);
             if (data.data === "updated") {
               window.location = "/Sellerproduct";
             }
@@ -60,7 +70,7 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
           });
       })
       .then(() => {
-        console.log("uploaded done");
+        alert("Thank you! Your form was submitted successfully");
       })
       .catch((err) => {
         console.log(err);
@@ -69,6 +79,7 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
 };
 
 export const updateInventoryThunk = (data, inventoryData) => {
+  const user = localStorage.getItem("token");
   return (dispatch) => {
     // console.log(data === undefined);
     // for (var pair of data.entries()) {
@@ -76,12 +87,18 @@ export const updateInventoryThunk = (data, inventoryData) => {
     // }
     if (!data === undefined) {
       return axios
-        .post(`http://localhost:8080/uploadImage`, data) //URL
+        .post(`http://localhost:8080/uploadImage`, data, {
+          headers: { Authorization: `Bearer ${user}` },
+        }) //URL
         .then((data) => {
+          console.log("update", inventoryData);
           return axios
             .put(
               `http://localhost:8080/update/${inventoryData.id}`,
-              inventoryData
+              inventoryData,
+              {
+                headers: { Authorization: `Bearer ${user}` },
+              }
             ) //USERID
             .then((data) => {
               alert("Thank you! Your product was updated successfully");
@@ -102,7 +119,13 @@ export const updateInventoryThunk = (data, inventoryData) => {
         });
     } else {
       return axios
-        .put(`http://localhost:8080/update/${inventoryData.id}`, inventoryData) //USERID
+        .put(
+          `http://localhost:8080/update/${inventoryData.id}`,
+          inventoryData,
+          {
+            headers: { Authorization: `Bearer ${user}` },
+          }
+        ) //USERID
         .then((data) => {
           alert("Thank you! Your product was updated successfully");
           if (data.data === "updated") {
@@ -116,13 +139,16 @@ export const updateInventoryThunk = (data, inventoryData) => {
     }
   };
 };
-export const delProductThunk = (id) => {
+export const delProductThunk = (itemid) => {
+  const user = localStorage.getItem("token");
   return (dispatch) => {
     axios
-      .delete(`http://localhost:8080/delProduct/${id}`)
+      .delete(`http://localhost:8080/delProduct/${itemid}`, {
+        headers: { Authorization: `Bearer ${user}` },
+      })
       .then(() => {
         console.log("del done");
-        dispatch(delProductAction(id));
+        dispatch(delProductAction(itemid));
         window.location = "/Sellerproduct";
       })
 
@@ -138,14 +164,20 @@ export function handleEventSubmissionAction({ title, start, end }) {
   };
 }
 export const handleEventSubmissionThunk = (data, eventData) => {
+  const user = localStorage.getItem("token");
+
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/uploadImage`, data) //URL
+      .post(`http://localhost:8080/uploadImage`, data, {
+        headers: { Authorization: `Bearer ${user}` },
+      }) //URL
       .then((data) => {
         console.log(data);
         console.log(eventData);
         return axios
-          .post(`http://localhost:8080/uploadEvent/1`, eventData) //USERID
+          .post(`http://localhost:8080/uploadEvent`, eventData, {
+            headers: { Authorization: `Bearer ${user}` },
+          }) //USERID
           .then(() => {
             console.log("event done");
           })
@@ -164,18 +196,24 @@ export const handleEventSubmissionThunk = (data, eventData) => {
 
 // INFORMATION
 export const updateInformationThunk = (userData) => {
+  const user = localStorage.getItem("token");
+
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/password`, userData.password)
+      .post(`http://localhost:8080/password`, userData.password, {
+        headers: { Authorization: `Bearer ${user}` },
+      })
       .then((data) => {
         console.log("password", data);
         return axios
-          .put(`http://localhost:8080/updateUser/${userData.id}`, userData) //USERID
+          .put(`http://localhost:8080/updateUser`, userData, {
+            headers: { Authorization: `Bearer ${user}` },
+          }) //USERID
           .then((data) => {
             console.log(data);
-            // if (data.data === "updated") {
-            //   window.location = "/SellerDashBoard";
-            // }
+            if (data.data === "updated") {
+              window.location = "/SellerDashBoard";
+            }
           })
           .catch((err) => {
             console.log(err);

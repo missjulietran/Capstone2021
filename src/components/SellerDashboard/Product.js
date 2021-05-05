@@ -19,7 +19,7 @@ import {
 import "./Product.css";
 
 function Product() {
-  const inventoryList = useSelector((state) => state.inventory);
+  const inventoryList = useSelector((state) => state.form.inventory);
   const dispatch = useDispatch();
 
   useEffect(() => {

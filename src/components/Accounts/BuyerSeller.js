@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import styles from "./BuyerSeller.module.css";
 import "./BuyerSeller.css";
 import SellerLogin from "./SellerLogin";
 import BuyerLogin from "./BuyerLogin";
@@ -7,8 +6,8 @@ import BuyerLogin from "./BuyerLogin";
 
 export const BuyerSeller = () => {
   const [click, setClick] = useState(false);
-  
   const handleClick = () => setClick(!click);
+  
   return (
     <div className="container">
       <div className="flex-container">

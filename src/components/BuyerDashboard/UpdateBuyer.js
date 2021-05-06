@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Sidebar from "./sidebar/Sidebar";
+import BuyerSidebar from "./sidebar/BuyerSidebar";
 import Select from "react-select";
 import { Form } from "react-bootstrap";
 import { Button, Label, Input, FormGroup } from "reactstrap";
-import "./UpdateInformation.css";
 import axios from "axios";
-import { updateInformationThunk } from "../../redux/actions/formAction";
+import { updateBuyerThunk } from "../../redux/actions/buyerAction";
 
-function UpdateInformation() {
+function UpdateBuyer() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,19 +17,17 @@ function UpdateInformation() {
 
   const dispatch = useDispatch();
 
-  // sending passportJwt token to backend
   const user = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/data/user`, {
+      const { data } = await axios.get(`http://localhost:8080/buyerDashboard`, {
         headers: { Authorization: `Bearer ${user}` },
       });
-      setName(data[0].name);
-      setEmail(data[0].email);
-      setAddress(data[0].address);
-      setDistrict(data[0].district);
-      setPhoneNo(data[0].phone_no);
+      setName(data.buyer[0].name);
+      setEmail(data.buyer[0].email);
+      setAddress(data.buyer[0].address);
+      setPhoneNo(data.buyer[0].phone_no);
     };
     fetchData();
   }, []);
@@ -59,9 +56,8 @@ function UpdateInformation() {
 
   const handleSubmission = (e) => {
     e.preventDefault();
-
     dispatch(
-      updateInformationThunk({
+      updateBuyerThunk({
         name: name,
         email: email,
         password: password,
@@ -71,13 +67,12 @@ function UpdateInformation() {
       })
     );
   };
-
   return (
     <div className="d-flex">
       <div>
-        <Sidebar />
+        <BuyerSidebar />
       </div>
-      <div className="informationContainer">
+      <div className="updateContainer">
         <Form onSubmit={handleSubmission}>
           <FormGroup className="informationForm">
             <Label for="name">Company Name</Label>
@@ -151,5 +146,4 @@ function UpdateInformation() {
     </div>
   );
 }
-
-export default UpdateInformation;
+export default UpdateBuyer;

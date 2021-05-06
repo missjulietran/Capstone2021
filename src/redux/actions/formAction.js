@@ -47,7 +47,7 @@ export const getInventoryThunk = () => {
 
 export const handleInventorySubmissionThunk = (data, inventoryData) => {
   const user = localStorage.getItem("token");
-
+  console.log(data.getAll("file"));
   return (dispatch) => {
     return axios
       .post(`http://localhost:8080/data/uploadImage`, data, {
@@ -60,6 +60,7 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
           }) //USERID
           .then((data) => {
             console.log("uploaded done", data);
+            alert("Thank you! Your form was submitted successfully");
             if (data.data === "updated") {
               window.location = "/Sellerproduct";
             }
@@ -69,9 +70,7 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
             console.log(err);
           });
       })
-      .then(() => {
-        alert("Thank you! Your form was submitted successfully");
-      })
+      .then(() => console.log("update inventory done"))
       .catch((err) => {
         console.log(err);
       });

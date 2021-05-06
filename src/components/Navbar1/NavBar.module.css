@@ -9,7 +9,8 @@
 
 .navbar {
   padding: 1rem;
-  color: green;
+  color: green!important;
+  z-index:1;
 }
 /* 
 
@@ -17,9 +18,7 @@
   color: black;
 }
 
-.right {
-  color: black;
-} */ 
+
 
 .logo {
   color: green!important;
@@ -31,4 +30,17 @@
 
 .navbar-light .navbar-nav .nav-link {
   color: rgb(0,0,0)!important;
+  z-index:1;
 }
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: green!important;
+}
+
+.MainNav {
+  position:sticky!important;
+}
+
+.right {
+  color: black!important;
+} 

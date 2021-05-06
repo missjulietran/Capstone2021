@@ -37,7 +37,7 @@ function SignUpForm() {
 
   //Redirect to Login Page
   let history = useHistory();
-  // let clearState = clearState();
+  
 
   //select district
   const options = [
@@ -128,7 +128,7 @@ function SignUpForm() {
           name="district"
           options={options}
           onChange={(e) => {
-            setDistrict(e.value);
+          setDistrict(e.value);
           }}
         />
         <Form.Label>Company Address</Form.Label>
@@ -139,9 +139,7 @@ function SignUpForm() {
           name="address"
           type="text"
           value={address}
-          onChange={(e) => {
-            console.log(e.target.value);
-          }}
+          onChange={(e) => setAddress(e.target.value)}
         />
         <Form.Label>Contact Full Name</Form.Label>
         <Form.Control

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { useDispatch } from "react-redux";
-import { handleSignUpThunk } from "../../../redux/actions/formAction";
 import Select from "react-select";
 import axios from "axios";
+import {useHistory}  from "react-router-dom";
 
 // BUYER SIGN UP FORM***
 function SignUpFormSeller() {
-  const [buyer, setBuyer] = useState(false);
-  const [seller, setSeller] = useState(true);
+  const [buyer] = useState(false);
+  const [seller] = useState(true);
   const [businessName, setBusinessName] = useState("");
   const [district, setDistrict] = useState("");
   const [address, setAddress] = useState("");
@@ -20,6 +19,25 @@ function SignUpFormSeller() {
   const [businessCert, setBusinessCert] = useState(null);
   const [realcertOfInfo, setrealCertOfInfo] = useState(null);
   const [realbusinessCert, setrealBusinessCert] = useState(null);
+
+    //Reset button to clear all states
+    const clearState = () => {
+      setBusinessName("");
+      setDistrict()
+      setAddress("");
+      setName("");
+      setPhone("");
+      setEmail("");
+      setPassword("");
+      setCertOfInfo(null);
+      setBusinessCert(null);
+      setrealCertOfInfo(null);
+      setrealBusinessCert(null);
+    };
+
+
+  //Redirect to Login Page
+  let history = useHistory();
 
   //Select district
   const options = [
@@ -115,6 +133,8 @@ function SignUpFormSeller() {
           size="sm"
           placeholder="Flat, Floor, Block, Building Name"
           id="address"
+          type="text"
+          name="address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
         />
@@ -156,7 +176,6 @@ function SignUpFormSeller() {
         <Form.Control
           size="sm"
           type="password"
-          id="inputPassword5"
           aria-describedby="passwordHelpBlock"
           name="password"
           id="password"
@@ -198,10 +217,10 @@ function SignUpFormSeller() {
           custom
         />
 
-        <button className="btn btn-dark mt-3" type="submit" value="submit">
+        <button className="btn btn-dark mt-3" type="submit" value="submit" onClick={()=>{history.push("/Thankyou")}}>
           Register
         </button>
-        <button className="btn btn-danger mt-3 ml-3" type="reset" value="reset">
+        <button className="btn btn-danger mt-3 ml-3" type="reset" value="reset" onClick={clearState}>
           Reset
         </button>
       </Form>

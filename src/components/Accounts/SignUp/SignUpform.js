@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { useDispatch } from "react-redux";
 import Select from "react-select";
 import axios from "axios";
-
+import { useHistory } from "react-router-dom";
 
 function SignUpForm() {
   const [buyer] = useState(true);
@@ -19,7 +18,26 @@ function SignUpForm() {
   const [businessCert, setBusinessCert] = useState(null);
   const [realcertOfInfo, setrealCertOfInfo] = useState(null);
   const [realbusinessCert, setrealBusinessCert] = useState(null);
-  // const file=fileName;
+
+
+  //Reset button to clear all states
+  const clearState = () => {
+    setBusinessName("");
+    setDistrict()
+    setAddress("");
+    setName("");
+    setPhone("");
+    setEmail("");
+    setPassword("");
+    setCertOfInfo(null);
+    setBusinessCert(null);
+    setrealCertOfInfo(null);
+    setrealBusinessCert(null);
+  };
+
+  //Redirect to Login Page
+  let history = useHistory();
+  // let clearState = clearState();
 
   //select district
   const options = [
@@ -67,8 +85,10 @@ function SignUpForm() {
     newFormData.append("file1", businessCert);
     newFormData.append("buyer", buyer);
     newFormData.append("seller", seller);
-    console.log(newFormData.getAll("file"));
-    console.log(newFormData.getAll("name"));
+    this.props.history.push("/Thankyou");
+    // console.log(newFormData.getAll("file"));
+    // console.log(newFormData.getAll("name"));
+    // console.log(newFormData.getAll("address"));
 
     axios
       .post("http://localhost:8080/signup", newFormData, {
@@ -116,8 +136,12 @@ function SignUpForm() {
           size="sm"
           placeholder="Flat, Floor, Block, Building Name"
           id="address"
+          name="address"
+          type="text"
           value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          onChange={(e) => {
+            console.log(e.target.value);
+          }}
         />
         <Form.Label>Contact Full Name</Form.Label>
         <Form.Control
@@ -166,7 +190,8 @@ function SignUpForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Form.Text id="passwordHelpBlock" muted>
-        Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.
+          Must contain at least one number and one uppercase and lowercase
+          letter, and at least 8 or more characters.
         </Form.Text>
 
         <Form.Label>
@@ -205,10 +230,13 @@ function SignUpForm() {
           name="form"
           type="submit"
           value="submit"
+          onClick={() => {
+            history.push("/Thankyou");
+          }}
         >
           Register
         </button>
-        <button className="btn btn-danger mt-3 ml-3" type="reset" value="reset">
+        <button className="btn btn-danger mt-3 ml-3" type="reset" value="reset" onClick={clearState}>
           Reset
         </button>
       </Form>

@@ -49,6 +49,7 @@ import { Cart } from "./components/pages/Cart";
 import { BuyerSeller } from "./components/Accounts/BuyerSeller";
 import { Contact } from "./components/pages/Contact";
 import { FAQ } from "./components/pages/FAQ";
+import { Thankyou } from "./components/pages/Thankyou"
 
 // import Error from "./components/pages/Error"
 
@@ -115,6 +116,7 @@ function App() {
         <Route path="/About" component={About} />
         <Route path="/Contact" component={Contact} />
         <Route path="/FAQ" component={FAQ} />
+        <Route path="/Thankyou" component={Thankyou}/>
       </Switch>
       {/* SellerDashboard Links */}
       {/* USERID */}

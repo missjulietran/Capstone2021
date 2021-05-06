@@ -122,6 +122,7 @@ function SignUpFormSeller() {
         <Form.Control size="sm" placeholder="Hong Kong" disabled />
         <Form.Label>District</Form.Label>
         <Select
+        size="sm"
           name="district"
           options={options}
           onChange={(e) => {

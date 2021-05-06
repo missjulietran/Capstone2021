@@ -18,7 +18,6 @@ import Footer from "./components/Footer";
 //Seller Dashboard Components
 
 // SellerDashboard Components
-
 import SellerDashboard from "./components/SellerDashboard/SellerDashboard";
 import InventoryForm from "./components/SellerDashboard/InventoryForm";
 import EventForm from "./components/SellerDashboard/EventForm";
@@ -28,6 +27,8 @@ import Information from "./components/SellerDashboard/UpdateInformation";
 
 // BuyerDashboard Components
 import BuyerDashboard from "./components/BuyerDashboard/BuyerDashboard";
+import UpdateBuyer from "./components/BuyerDashboard/UpdateBuyer";
+import BuyerOrderPage from "./components/BuyerDashboard/BuyerOrderPage";
 
 //Brands Section Components
 import Brands from "./components/pages/Brands/Brands.js";
@@ -131,6 +132,8 @@ function App() {
 
       {/* BuyerDashboard Links */}
       <Route path="/buyerdashboard" component={BuyerDashboard} />
+      <Route path="/updatebuyer" component={UpdateBuyer} />
+      <Route path="/yourorder" component={BuyerOrderPage} />
       <Footer />
     </Router>
   );

@@ -11,12 +11,12 @@ const BuyerSidebar = () => {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item className="buyersideItems">
-        <Nav.Link href="/" className="buyerdashBoardLink">
+        <Nav.Link href="/updatebuyer" className="buyerdashBoardLink">
           Update Information
         </Nav.Link>
       </Nav.Item>{" "}
       <Nav.Item className="buyersideItems">
-        <Nav.Link href="/" className="buyerdashBoardLink">
+        <Nav.Link href="/yourorder" className="buyerdashBoardLink">
           Your Orders
         </Nav.Link>
       </Nav.Item>

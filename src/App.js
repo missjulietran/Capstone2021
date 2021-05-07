@@ -83,6 +83,7 @@ function App() {
       <NavBarBuyer />
       {/* <NavBarSeller /> */}
       <Navbar2 />
+
       <Route path="/" exact component={Home} />
       <Switch>
         {/* Navbar1 Links */}
@@ -134,6 +135,7 @@ function App() {
       <Route path="/buyerdashboard" component={BuyerDashboard} />
       <Route path="/updatebuyer" component={UpdateBuyer} />
       <Route path="/yourorder" component={BuyerOrderPage} />
+      
       <Footer />
     </Router>
   );

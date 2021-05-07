@@ -25,7 +25,7 @@ const BuyerLogin = () => {
   };
   return (
     <div>
-      <h1>Welcome back, Buyer</h1>
+      <h1>Welcome back, Buyer **CHANGE**</h1>
 
       <Form>
         <Form.Group controlId="formBasicEmail">

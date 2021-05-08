@@ -94,6 +94,7 @@ function SignUpFormSeller() {
       })
       .then(function (res) {
         console.log(res);
+        history.push("/Thankyou");
       })
       .catch(function (err) {
         console.log(err);
@@ -222,9 +223,9 @@ function SignUpFormSeller() {
           className="btn btn-dark mt-3"
           type="submit"
           value="submit"
-          onClick={() => {
-            history.push("/Thankyou");
-          }}
+          // onClick={() => {
+          //   history.push("/Thankyou");
+          // }}
         >
           Register
         </button>

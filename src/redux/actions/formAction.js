@@ -223,25 +223,18 @@ export const updateInformationThunk = (userData) => {
   };
 };
 
-// SignUpForm
-// export function signUpAction(form) {
-//   return {
-//     type: SIGN_IN_FORM_SUBMIT_ACTION,
-//     payload: form
-//   }
-// }
-
-// export const handleSignUpThunk = (signUpData) => {
+// export const getCert = () => {
+//   const user = localStorage.getItem("token");
 //   return (dispatch) => {
-//     axios
-//       .post(`http://localhost:8080/signup`, signUpData)
-//       .then(() => {
-//         console.log("del done");
-//         //console.log(signUpData)
-//         dispatch(signUpAction(signUpData));
-//         window.location = "/";
+//     return axios
+//       .get("http://localhost:8080/data/file", {
+//         headers: { Authorization: `Bearer ${user}` },
+//       }) //USERID
+//       .then((data) => {
+//         console.log("get");
 //       })
-
-//       .catch((err) => console.log(err));
+//       .catch((err) => {
+//         console.log(err);
+//       });
 //   };
 // };

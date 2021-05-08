@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Select from "react-select";
 import axios from "axios";
-import {useHistory}  from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // BUYER SIGN UP FORM***
 function SignUpFormSeller() {
@@ -20,21 +20,20 @@ function SignUpFormSeller() {
   const [realcertOfInfo, setrealCertOfInfo] = useState(null);
   const [realbusinessCert, setrealBusinessCert] = useState(null);
 
-    //Reset button to clear all states
-    const clearState = () => {
-      setBusinessName("");
-      setDistrict()
-      setAddress("");
-      setName("");
-      setPhone("");
-      setEmail("");
-      setPassword("");
-      setCertOfInfo(null);
-      setBusinessCert(null);
-      setrealCertOfInfo(null);
-      setrealBusinessCert(null);
-    };
-
+  //Reset button to clear all states
+  const clearState = () => {
+    setBusinessName("");
+    setDistrict();
+    setAddress("");
+    setName("");
+    setPhone("");
+    setEmail("");
+    setPassword("");
+    setCertOfInfo(null);
+    setBusinessCert(null);
+    setrealCertOfInfo(null);
+    setrealBusinessCert(null);
+  };
 
   //Redirect to Login Page
   let history = useHistory();
@@ -122,6 +121,7 @@ function SignUpFormSeller() {
         <Form.Control size="sm" placeholder="Hong Kong" disabled />
         <Form.Label>District</Form.Label>
         <Select
+          size="sm"
           name="district"
           options={options}
           onChange={(e) => {
@@ -184,7 +184,8 @@ function SignUpFormSeller() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Form.Text id="passwordHelpBlock" muted>
-        Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.
+          Must contain at least one number and one uppercase and lowercase
+          letter, and at least 8 or more characters.
         </Form.Text>
         <Form.Label>
           Please upload the following Documentation in PDF
@@ -217,10 +218,22 @@ function SignUpFormSeller() {
           custom
         />
 
-        <button className="btn btn-dark mt-3" type="submit" value="submit" onClick={()=>{history.push("/Thankyou")}}>
+        <button
+          className="btn btn-dark mt-3"
+          type="submit"
+          value="submit"
+          onClick={() => {
+            history.push("/Thankyou");
+          }}
+        >
           Register
         </button>
-        <button className="btn btn-danger mt-3 ml-3" type="reset" value="reset" onClick={clearState}>
+        <button
+          className="btn btn-danger mt-3 ml-3"
+          type="reset"
+          value="reset"
+          onClick={clearState}
+        >
           Reset
         </button>
       </Form>

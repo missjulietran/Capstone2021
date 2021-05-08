@@ -1,51 +1,80 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import SubmitModal from "./ContactSubmitModal";
+// import { Modal, Button } from "react-bootstrap";
 
 const ContactUsForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [content, setContent] = useState("");
+  const [modalShow, setModalShow] = useState(false);
+
+  const clearContactForm = () => {
+    setName("");
+    setEmail("");
+    setSubject("");
+    setContent("");
+  };
+
   return (
-    <Formik
-      initialValues={{ name: "", email: "", subject: "", content: "" }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 1000);
-      }}
-    >
-      {({ isSubmitting }) => (
-        <Form>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <Field name="name" className="form-control" type="text" />
-          </div>
+    <Form>
+      <Form.Label>Name</Form.Label>
+      <Form.Control
+        name="name"
+        type="text"
+        value={name}
+        size="sm"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <Form.Label>Email Address</Form.Label>
+      <Form.Control
+        name="email"
+        type="text"
+        value={email}
+        size="sm"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <Form.Label>Subject</Form.Label>
+      <Form.Control
+        name="subject"
+        type="text"
+        value={subject}
+        size="sm"
+        onChange={(e) => setSubject(e.target.value)}
+      />
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Content</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          name="name"
+          type="textarea"
+          value={content}
+          // size="sm"
+          onChange={(e) => setContent(e.target.value)}
+        />
+      </Form.Group>
 
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <Field name="email" className="form-control" type="email" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="subject">Subject</label>
-            <Field name="subject" className="form-control" type="text" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="content">Content</label>
-            <Field name="content" className="form-control" as="textarea" />
-          </div>
-          <div className="form-group">
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Please wait..." : "Submit"}
-            </button>
-          </div>
-        </Form>
-      )}
-    </Formik>
+      <br />
+      <button
+        variant="primary"
+        type="button"
+        className="btn btn-primary mt-2 ml-2"
+        onClick={() => setModalShow(true)}
+      >
+        Submit
+      </button>
+      <button
+        className="btn btn-danger mt-2 ml-2"
+        type="reset"
+        value="reset"
+        onClick={clearContactForm}
+      >
+        Reset
+      </button>
+      <SubmitModal show={modalShow} onHide={() => setModalShow(false)} />
+    </Form>
   );
 };
 

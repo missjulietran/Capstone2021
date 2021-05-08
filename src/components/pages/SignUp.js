@@ -10,11 +10,12 @@ export const SignUp = () => {
   const handleClickB = () => setIsBuyer(false);
   return (
     <div className="signupdiv">
+    {/* <div className="flex-container"> */}
       <div className="d-flex justify-content-center">
-        <h1>
+        <h3>
           I want to register as a<button onClick={handleClickA}>Buyer</button>{" "}
           or a <button onClick={handleClickB}>Seller</button>
-        </h1>
+        </h3>
       </div>
 
       <div className="container mt-3">

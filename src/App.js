@@ -86,6 +86,7 @@ function App() {
       <NavBar />
 
       <Navbar2 />
+
       <Route path="/" exact component={Home} />
       <Switch>
         {/* Navbar1 Links */}
@@ -134,10 +135,12 @@ function App() {
       <PrivateRoute path="/informationupdate" component={Information} />
 
       {/* BuyerDashboard Links */}
+
       <PrivateRoute path="/buyerdashboard" component={BuyerDashboard} />
       <PrivateRoute path="/updatebuyer" component={UpdateBuyer} />
       <PrivateRoute path="/yourorder" component={BuyerOrderPage} />
       <PrivateRoute path="/orderdetails/:orderId" component={OrderDetails} />
+
       <Footer />
     </Router>
   );

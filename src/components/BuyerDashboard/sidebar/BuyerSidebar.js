@@ -1,25 +1,21 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+
 import "./BuyerSidebar.css";
 
 const BuyerSidebar = () => {
   return (
     <div className="buyersidebar">
-      <Nav.Item className="buyersideItems">
-        <Nav.Link href="/buyerdashboard" className="buyerdashBoardLink">
-          Your Information
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item className="buyersideItems">
-        <Nav.Link href="/updatebuyer" className="buyerdashBoardLink">
-          Update Information
-        </Nav.Link>
-      </Nav.Item>{" "}
-      <Nav.Item className="buyersideItems">
-        <Nav.Link href="/yourorder" className="buyerdashBoardLink">
-          Your Orders
-        </Nav.Link>
-      </Nav.Item>
+      <LinkContainer to="/buyerdashboard">
+        <Nav.Link className="buyerdashBoardLink">Your Information</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="updatebuyer">
+        <Nav.Link className="buyerdashBoardLink">Update Information</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="/yourorder">
+        <Nav.Link className="buyerdashBoardLink">Your Orders</Nav.Link>
+      </LinkContainer>
     </div>
   );
 };

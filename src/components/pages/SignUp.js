@@ -1,9 +1,8 @@
-import SignUpForm from "../Accounts/SignUp/SignUpForm";
+import SignUpForm from "../Accounts/SignUp/SignUpform";
 
 import "../../App.css";
 import React, { useState } from "react";
 import SignUpFormSeller from "../Accounts/SignUp/SignUpFormSeller";
-
 
 export const SignUp = () => {
   const [isBuyer, setIsBuyer] = useState("");

@@ -4,6 +4,7 @@ import {
   LOGIN_REQUEST_ACTION,
   LOGIN_SUCCESS_ACTION,
   LOGOUT_REQUEST_ACTION,
+  LOGIN_USER_TYPE,
 } from "../types/template";
 
 export const logoutUserThunk = (dispatch) => {
@@ -30,7 +31,10 @@ export const loginBuyerThunk = (email, password) => async (dispatch) => {
       dispatch({ type: LOGIN_FAILURE_ACTION, message: data.message || "" });
     } else {
       localStorage.setItem("token", data.token);
-      dispatch({ type: LOGIN_SUCCESS_ACTION });
+
+      // if (data.buyer === true) {
+      dispatch({ type: LOGIN_USER_TYPE });
+      // }
     }
   } catch (err) {
     console.log("Error:", err);

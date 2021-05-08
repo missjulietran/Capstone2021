@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -9,49 +10,64 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <Nav.Item className="sideItems">
-        <Nav.Link
+        <LinkContainer to="/sellerdashboard">
+          <Nav.Link className="dashBoardLink">Dashboard</Nav.Link>
+        </LinkContainer>
+        {/* <Nav.Link
           href="/SellerDashboard"
-          className="dashBoardLink"
+          
           onClick={onClick}
         >
           Dashboard
-        </Nav.Link>
+        </Nav.Link> */}
       </Nav.Item>
       <Nav.Item className="sideItems">
-        <Nav.Link
+        <LinkContainer to="/informationupdate">
+          <Nav.Link className="dashBoardLink">Information</Nav.Link>
+        </LinkContainer>
+        {/* <Nav.Link
           href="/InformationUpdate"
           className="dashBoardLink"
           onClick={onClick}
         >
           Information
-        </Nav.Link>
+        </Nav.Link> */}
       </Nav.Item>{" "}
       <Nav.Item className="sideItems">
-        <Nav.Link
+        <LinkContainer to="/sellerproduct">
+          <Nav.Link className="dashBoardLink">Inventory</Nav.Link>
+        </LinkContainer>
+        {/* <Nav.Link
           href="/Sellerproduct"
           className="dashBoardLink"
           onClick={onClick}
         >
           Inventory
-        </Nav.Link>
+        </Nav.Link> */}
       </Nav.Item>
       <Nav.Item className="sideItems">
-        <Nav.Link
+        <LinkContainer to="/inventoryupload">
+          <Nav.Link className="dashBoardLink">Add Product</Nav.Link>
+        </LinkContainer>
+        {/* <Nav.Link
           href="/InventoryUpload"
           className="dashBoardLink"
           onClick={onClick}
         >
           Add Product
-        </Nav.Link>
+        </Nav.Link> */}
       </Nav.Item>
       <Nav.Item className="sideItems">
-        <Nav.Link
+        <LinkContainer to="/eventupload">
+          <Nav.Link className="dashBoardLink">Add Event</Nav.Link>
+        </LinkContainer>
+        {/* <Nav.Link
           href="/EventUpload"
           className="dashBoardLink"
           onClick={onClick}
         >
           Add Event
-        </Nav.Link>
+        </Nav.Link> */}
       </Nav.Item>
     </div>
   );

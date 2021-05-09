@@ -85,7 +85,7 @@ function SignUpForm() {
     newFormData.append("file1", businessCert);
     newFormData.append("buyer", buyer);
     newFormData.append("seller", seller);
-    this.props.history.push("/Thankyou");
+    // this.props.history.push("/Thankyou");
     // console.log(newFormData.getAll("file"));
     // console.log(newFormData.getAll("name"));
     // console.log(newFormData.getAll("address"));
@@ -228,7 +228,7 @@ function SignUpForm() {
           name="form"
           type="submit"
           value="submit"
-          onClick={() => {
+          onSubmit={() => {
             history.push("/Thankyou");
           }}
         >

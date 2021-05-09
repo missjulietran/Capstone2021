@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import { Button, Label, Input, FormGroup } from "reactstrap";
 import axios from "axios";
 import { updateBuyerThunk } from "../../redux/actions/buyerAction";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 function UpdateBuyer() {
   const [name, setName] = useState("");
@@ -20,6 +21,18 @@ function UpdateBuyer() {
   const user = localStorage.getItem("token");
 
 // getting cert and buscert from backend
+// Axios({
+//   url: 'http://localhost:8080/downloadCert',
+//   method: 'GET',
+//   responseType: 'blob',
+// }).then((response) => {
+//   const url = window.URL.createObjectURL(new Blob([response.data]));
+//   const link = document.createElement('a');
+//   link.href = url;
+//   link.setAttribute('download', 'file.pdf'); //or any other extension
+//   document.body.appendChild(link);
+//   link.click();
+// });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -140,6 +153,7 @@ function UpdateBuyer() {
           <button
             className="btn btn-outline-dark mt-2"
             name="businessCert"
+            type="button"
             onClick=""
           >
             Business Certification File
@@ -149,6 +163,7 @@ function UpdateBuyer() {
             className="btn btn-outline-dark mt-2"
             name="certFile"
             onClick=""
+            type="button"
           >
             Certification of Incorporation
           </button>

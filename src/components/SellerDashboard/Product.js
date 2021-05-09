@@ -12,6 +12,7 @@ import {
   Container,
   Button,
 } from "reactstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import {
   delProductThunk,
   getInventoryThunk,
@@ -64,15 +65,16 @@ function Product() {
                     <CardText>Stock:{item.total_quantity}</CardText>
                   </Col>
                   <Col className="align-self-center col-5">
-                    <Button
-                      id={item.id}
-                      color="light"
-                      type="submit"
-                      className="updateBtn"
-                      href={"/InventoryUpdate/" + item.sku}
-                    >
-                      Update
-                    </Button>
+                    <LinkContainer to={"/inventoryupdate/" + item.sku}>
+                      <Button
+                        id={item.id}
+                        color="light"
+                        type="submit"
+                        className="updateBtn"
+                      >
+                        Update
+                      </Button>
+                    </LinkContainer>
                     <Button
                       id={item.id}
                       color="light"

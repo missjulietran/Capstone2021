@@ -19,11 +19,10 @@ function SignUpForm() {
   const [realcertOfInfo, setrealCertOfInfo] = useState(null);
   const [realbusinessCert, setrealBusinessCert] = useState(null);
 
-
   //Reset button to clear all states
   const clearState = () => {
     setBusinessName("");
-    setDistrict()
+    setDistrict();
     setAddress("");
     setName("");
     setPhone("");
@@ -37,7 +36,6 @@ function SignUpForm() {
 
   //Redirect to Login Page
   let history = useHistory();
-  
 
   //select district
   const options = [
@@ -85,6 +83,7 @@ function SignUpForm() {
     newFormData.append("file1", businessCert);
     newFormData.append("buyer", buyer);
     newFormData.append("seller", seller);
+
     // this.props.history.push("/Thankyou");
     // console.log(newFormData.getAll("file"));
     // console.log(newFormData.getAll("name"));
@@ -98,6 +97,7 @@ function SignUpForm() {
       })
       .then(function (res) {
         console.log(res);
+        history.push("/Thankyou");
       })
       .catch(function (err) {
         console.log(err);
@@ -128,7 +128,7 @@ function SignUpForm() {
           name="district"
           options={options}
           onChange={(e) => {
-          setDistrict(e.value);
+            setDistrict(e.value);
           }}
         />
         <Form.Label>Company Address</Form.Label>
@@ -228,13 +228,24 @@ function SignUpForm() {
           name="form"
           type="submit"
           value="submit"
+
           onSubmit={() => {
             history.push("/Thankyou");
           }}
+
+          // onClick={() => {
+          //   history.push("/Thankyou");
+          // }}
+
         >
           Register
         </button>
-        <button className="btn btn-danger mt-3 ml-3" type="reset" value="reset" onClick={clearState}>
+        <button
+          className="btn btn-danger mt-3 ml-3"
+          type="reset"
+          value="reset"
+          onClick={clearState}
+        >
           Reset
         </button>
       </Form>

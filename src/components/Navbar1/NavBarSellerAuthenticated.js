@@ -36,21 +36,17 @@ function NavBarSellerAuthenticated() {
               </Nav.Link>
             </LinkContainer>
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/SellerDashboard">
-                Account Settings <i class="fas fa-cog pull-right"></i>
-              </NavDropdown.Item>
+              <LinkContainer to="/sellerdashboard">
+                <NavDropdown.Item>
+                  Account Settings <i class="fas fa-cog pull-right"></i>
+                </NavDropdown.Item>
+              </LinkContainer>
               <LinkContainer to="/home">
                 <NavDropdown.Item onClick={logout}>
                   Logout <i class="fas fa-sign-out-alt pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
-
-            <LinkContainer to="/Cart">
-              <Nav.Link eventKey={5} href="/Cart">
-                Cart <i class="fas fa-shopping-cart"></i>
-              </Nav.Link>
-            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

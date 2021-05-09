@@ -10,6 +10,7 @@ import { logoutUserThunk } from "../../redux/actions/loginAction";
 function NavBarBuyerAuthenticated() {
   const history = useHistory();
   const dispatch = useDispatch();
+
   const logout = (e) => {
     e.preventDefault();
     localStorage.clear();
@@ -36,9 +37,12 @@ function NavBarBuyerAuthenticated() {
               </Nav.Link>
             </LinkContainer>
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/buyerdashboard">
-                Account Settings <i class="fas fa-cog pull-right"></i>
-              </NavDropdown.Item>
+              <LinkContainer to="/buyerdashboard">
+                <NavDropdown.Item>
+                  Account Settings <i class="fas fa-cog pull-right"></i>
+                </NavDropdown.Item>
+              </LinkContainer>
+
               <LinkContainer to="/home">
                 <NavDropdown.Item onClick={logout}>
                   Logout <i class="fas fa-sign-out-alt pull-right"></i>

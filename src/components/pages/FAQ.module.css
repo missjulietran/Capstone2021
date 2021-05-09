@@ -1,0 +1,28 @@
+.container {
+  margin: 50px;
+}
+.h1 {
+  text-align: center;
+  margin: 50px;
+}
+.h2 {
+  text-align: center;
+  margin: 50px;
+}
+
+.accordion {
+  width: 800px;
+  margin: 30px;
+  color: #fff;
+}
+
+.icon {
+  float: right;
+}
+
+.toggle {
+  background-color: #04301a;
+}
+.cardbody {
+  color: #000;
+}

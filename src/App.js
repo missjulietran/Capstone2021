@@ -3,8 +3,8 @@ import "./App.css";
 import { useSelector } from "react-redux";
 
 //Fixed Components
-import NavBarBuyer from "./components/Navbar1/NavBarBuyer";
-import NavBarSeller from "./components/Navbar1/NavBarSeller";
+import NavBar from "./components/Navbar1/NavBar";
+
 import Navbar2 from "./components/Navbar2/NavBar2";
 import Home from "./components/pages/Home";
 import {
@@ -29,7 +29,7 @@ import Information from "./components/SellerDashboard/UpdateInformation";
 import BuyerDashboard from "./components/BuyerDashboard/BuyerDashboard";
 import UpdateBuyer from "./components/BuyerDashboard/UpdateBuyer";
 import BuyerOrderPage from "./components/BuyerDashboard/BuyerOrderPage";
-
+import OrderDetails from "./components/BuyerDashboard/OrderDetails";
 //Brands Section Components
 import Brands from "./components/pages/Brands/Brands.js";
 import BrandsProductList from "./components/pages/Brands/BrandsProductList.js";
@@ -49,7 +49,7 @@ import { Cart } from "./components/pages/Cart";
 import { BuyerSeller } from "./components/Accounts/BuyerSeller";
 import { Contact } from "./components/pages/Contact";
 import { FAQ } from "./components/pages/FAQ";
-import { Thankyou } from "./components/pages/Thankyou"
+import { Thankyou } from "./components/pages/Thankyou";
 
 // import Error from "./components/pages/Error"
 
@@ -68,7 +68,10 @@ function App() {
               <Component {...props} />
             ) : (
               <Redirect
-                to={{ pathname: "/Login", state: { from: props.location } }}
+                to={{
+                  pathname: "/BuyerSeller",
+                  state: { from: props.location },
+                }}
               />
             )
           }
@@ -80,8 +83,8 @@ function App() {
   };
   return (
     <Router>
-      <NavBarBuyer />
-      {/* <NavBarSeller /> */}
+      <NavBar />
+
       <Navbar2 />
 
       <Route path="/" exact component={Home} />
@@ -117,25 +120,27 @@ function App() {
         <Route path="/About" component={About} />
         <Route path="/Contact" component={Contact} />
         <Route path="/FAQ" component={FAQ} />
-        <Route path="/Thankyou" component={Thankyou}/>
+        <Route path="/Thankyou" component={Thankyou} />
       </Switch>
       {/* SellerDashboard Links */}
       {/* USERID */}
-      <PrivateRoute path="/SellerDashboard" component={SellerDashboard} />
-      <PrivateRoute path="/InventoryUpload" component={InventoryForm} />
+      <PrivateRoute path="/sellerdashboard" component={SellerDashboard} />
+      <PrivateRoute path="/inventoryupload" component={InventoryForm} />
       <PrivateRoute
-        path="/InventoryUpdate/:itemId"
+        path="/inventoryupdate/:itemId"
         component={UpdateInventoryForm}
       />
-      <PrivateRoute path="/EventUpload" component={EventForm} />
-      <PrivateRoute path="/Sellerproduct" component={Product} />
-      <PrivateRoute path="/InformationUpdate" component={Information} />
+      <PrivateRoute path="/eventupload" component={EventForm} />
+      <PrivateRoute path="/sellerproduct" component={Product} />
+      <PrivateRoute path="/informationupdate" component={Information} />
 
       {/* BuyerDashboard Links */}
-      <Route path="/buyerdashboard" component={BuyerDashboard} />
-      <Route path="/updatebuyer" component={UpdateBuyer} />
-      <Route path="/yourorder" component={BuyerOrderPage} />
-      
+
+      <PrivateRoute path="/buyerdashboard" component={BuyerDashboard} />
+      <PrivateRoute path="/updatebuyer" component={UpdateBuyer} />
+      <PrivateRoute path="/yourorder" component={BuyerOrderPage} />
+      <PrivateRoute path="/orderdetails/:orderId" component={OrderDetails} />
+
       <Footer />
     </Router>
   );

@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import { Button, Label, Input, FormGroup } from "reactstrap";
 import axios from "axios";
 import { updateBuyerThunk } from "../../redux/actions/buyerAction";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 function UpdateBuyer() {
   const [name, setName] = useState("");
@@ -18,8 +19,6 @@ function UpdateBuyer() {
   const dispatch = useDispatch();
 
   const user = localStorage.getItem("token");
-
-  // getting cert and buscert from backend
 
   useEffect(() => {
     const fetchData = async () => {
@@ -136,7 +135,9 @@ function UpdateBuyer() {
             />
           </FormGroup>
           <br />
+
           <br />
+
           <br />
           <br />
           <Button

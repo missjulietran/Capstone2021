@@ -1,5 +1,5 @@
 import React from "react";
-import ShopCart from "../ShoppingCart.js/ShopCart"
+import ShopCart from "../ShoppingCart/ShopCart"
 
 export const Cart = () => {
   return (

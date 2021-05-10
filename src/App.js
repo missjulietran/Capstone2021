@@ -39,7 +39,7 @@ import CategoryProductList from "./components/pages/Category/CategoryProductList
 import ProductDetailPage from "./components/pages/Products/ProductDetailPage.js";
 
 //Events Section Components
-import Events from "./components/pages/Events/Events.js";
+// import Events from "./components/pages/Events/Events.js";
 import EventsProductListing from "./components/pages/Events/EventsProductListing.js";
 
 import { About } from "./components/pages/About";
@@ -50,6 +50,8 @@ import { BuyerSeller } from "./components/Accounts/BuyerSeller";
 import { Contact } from "./components/pages/Contact";
 import { FAQ } from "./components/pages/FAQ";
 import { Thankyou } from "./components/pages/Thankyou";
+
+//Stripe Payment Cart
 
 // import Error from "./components/pages/Error"
 
@@ -111,7 +113,7 @@ function App() {
           component={ProductDetailPage}
         />
         {/* Events Routes */}
-        <Route exact path="/" component={Events} />
+        {/* <Route exact path="/" component={Events} /> */}
         <Route exact path="/Events/:id" component={EventsProductListing} />
 
         {/* <Error /> */}

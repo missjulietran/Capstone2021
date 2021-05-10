@@ -228,9 +228,15 @@ function SignUpForm() {
           name="form"
           type="submit"
           value="submit"
+
+          onSubmit={() => {
+            history.push("/Thankyou");
+          }}
+
           // onClick={() => {
           //   history.push("/Thankyou");
           // }}
+
         >
           Register
         </button>

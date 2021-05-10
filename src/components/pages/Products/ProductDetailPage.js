@@ -25,6 +25,7 @@ const ProductDetailPage=()=>{
     const other={
         width:'50%'
     }
+    console.log("Product description:", product)
     return(
         <div style={pageStyle}>
             {loading && <p>Loading...</p>}
@@ -34,7 +35,7 @@ const ProductDetailPage=()=>{
             </div>
             <div style={productDescription}>
                 <h1>{product &&product[0].name}</h1>
-                <p>{product && product[0].descriptions}Hello</p>
+                <p>{product && product[0].descriptions}</p>
                 <div style={smallerDetails}>
                 <div style={other}>
                     <h6>Price:<br/>{product && product[0].price}$</h6>

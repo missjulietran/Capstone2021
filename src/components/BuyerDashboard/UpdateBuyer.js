@@ -20,20 +20,6 @@ function UpdateBuyer() {
 
   const user = localStorage.getItem("token");
 
-// getting cert and buscert from backend
-// Axios({
-//   url: 'http://localhost:8080/downloadCert',
-//   method: 'GET',
-//   responseType: 'blob',
-// }).then((response) => {
-//   const url = window.URL.createObjectURL(new Blob([response.data]));
-//   const link = document.createElement('a');
-//   link.href = url;
-//   link.setAttribute('download', 'file.pdf'); //or any other extension
-//   document.body.appendChild(link);
-//   link.click();
-// });
-
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(`http://localhost:8080/buyerDashboard`, {
@@ -148,25 +134,10 @@ function UpdateBuyer() {
               onChange={(e) => setPhoneNo(e.target.value)}
             />
           </FormGroup>
-          <Label>Uploaded Documents</Label>
           <br />
-          <button
-            className="btn btn-outline-dark mt-2"
-            name="businessCert"
-            type="button"
-            onClick=""
-          >
-            Business Certification File
-          </button>
+
           <br />
-          <button
-            className="btn btn-outline-dark mt-2"
-            name="certFile"
-            onClick=""
-            type="button"
-          >
-            Certification of Incorporation
-          </button>
+
           <br />
           <br />
           <Button

@@ -1,5 +1,5 @@
 .buyersidebar {
-  background-color: #000;
+  background-color: #bfecca83;
   height: 100%;
   min-height: 100vh;
   overflow-y: hidden;
@@ -7,15 +7,12 @@
   padding: 50px;
   position: static;
 }
-.buyersideItems a {
-  color: rgb(187, 187, 187);
+.buyerdashBoardLink {
+  color: rgb(4, 71, 32);
+  font-size: medium;
+  font-weight: bolder;
   list-style-type: none;
   margin-bottom: 40px;
-}
-.buyersideItems a:hover {
-  color: rgb(255, 255, 255);
-  /* font-weight: bold; */
-  text-decoration-color: rgb(255, 255, 255) !important;
 }
 
 .buyerDashboardContainer {

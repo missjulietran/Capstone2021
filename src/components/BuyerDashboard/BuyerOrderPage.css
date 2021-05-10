@@ -5,3 +5,22 @@
 .table {
   width: 800px;
 }
+.tableitem:hover {
+  background-color: #f7b58910 !important;
+}
+.linkButton {
+  margin: 5px;
+  border: none;
+  background-color: #bdb76b;
+}
+.linkButton:hover {
+  margin: 5px;
+  border: none;
+  background-color: #bdb76b;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.linkButton:active {
+  margin: 5px;
+  border: none;
+  background-color: #bdb76b;
+}

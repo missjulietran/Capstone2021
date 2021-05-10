@@ -5,11 +5,10 @@ import "../../App.css";
 export const Contact = () => {
   return (
     <div>
-      
       <div className="contactDiv">
         <div>
-            <h3 className="text-center col-md-12 text-center">Contact Us</h3>
-          </div>
+          <h3 className="text-center col-md-12 text-center">Contact Us</h3>
+        </div>
         <div className="container mt-3">
           <div className="row">
             <div className="col-md-5 text-center">
@@ -26,7 +25,7 @@ export const Contact = () => {
 
                 <li>
                   <i class="fas fa-envelope mt-4 fa-2x"></i>
-                  <h5>contact@ecostore.com</h5>
+                  <h5>contact@stillgood.com</h5>
                 </li>
               </ul>
             </div>
@@ -35,7 +34,7 @@ export const Contact = () => {
               query.
               <div>
                 <br />
-              <ContactUsForm />
+                <ContactUsForm />
               </div>
             </div>
           </div>

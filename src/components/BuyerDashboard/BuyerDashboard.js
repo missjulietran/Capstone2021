@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BuyerSidebar from "./sidebar/BuyerSidebar";
 
-import { Card, CardTitle, CardBody, CardText, Col } from "reactstrap";
+import { Card, CardTitle, CardBody, CardText, Col, Row } from "reactstrap";
 import "./BuyerDashboard.css";
 
 import axios from "axios";
@@ -47,7 +47,7 @@ function BuyerDashboard() {
           </h2>
         </div>
         <div className="latestProducts">
-          <h1>Latest Product</h1>
+          <h2>Latest Product</h2>
 
           <div className="latestBox d-flex">
             {latestProducts &&
@@ -73,9 +73,9 @@ function BuyerDashboard() {
           </div>
         </div>
         <div className="lastOrder">
-          <h1>Your Last Order</h1>
+          <h2>Your Last Order</h2>
+          <h3>Total: ${latestAmount && latestAmount}</h3>
           <div className="latestOrderBox d-flex">
-            <h2>Total: ${latestAmount && latestAmount}</h2>
             {latestOrder &&
               latestOrder.map((item, index) => (
                 <Card id={index} className="latestCard">

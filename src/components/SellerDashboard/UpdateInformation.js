@@ -72,17 +72,6 @@ function UpdateInformation() {
     );
   };
 
-  // const getCert = () => {
-  //   axios
-  //     .get("http://localhost:8080/data/file", {
-  //       headers: { Authorization: `Bearer ${user}` },
-  //     })
-  //     .then((data) => {
-  //       console.log(data.data)
-  //     })
-  //     .catch((err) => console.log(err)); //USERID
-  // };
-
   return (
     <div className="d-flex">
       <div>
@@ -158,7 +147,6 @@ function UpdateInformation() {
             UPDATE
           </Button>
         </Form>
-        {/* <Button onClick={getCert}>download</Button> */}
       </div>
     </div>
   );

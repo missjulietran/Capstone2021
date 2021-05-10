@@ -1,0 +1,10 @@
+.container {
+  margin: 30px;
+}
+.select {
+  padding: 5px;
+  width: 250px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #42b856;
+}

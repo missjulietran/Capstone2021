@@ -39,14 +39,14 @@ function BuyerOrderPage() {
           </thead>
           {order &&
             order.map((item) => (
-              <tbody>
-                <tr>
+              <tbody className="tableitem">
+                <tr className="tableitem">
                   <th scope="row">{item.id}</th>
                   <td>{new Date(item.created_at).toLocaleDateString()}</td>
                   <td>{item.shipped}</td>
                   <LinkContainer
                     to={"/orderdetails/" + item.id}
-                    className="justify-content-center"
+                    className="justify-content-center linkButton"
                   >
                     <Button>Details</Button>
                   </LinkContainer>

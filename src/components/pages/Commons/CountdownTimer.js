@@ -17,7 +17,6 @@ const Countdown = (props) => {
   const [time, setTime] = React.useState(now);
 
   const updateTime = () => {
-    // console.log(props.event.id)
     let newTime = new Date().getTime();
     setTime(newTime);
   };

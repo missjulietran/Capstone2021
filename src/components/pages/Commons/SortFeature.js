@@ -1,17 +1,19 @@
-import React from 'react';
-
-const SortFeature=(props)=>{
-    return(
-        <div>
-            <select onChange={props.changeHandler}>
-                <option default value='name'>name</option>
-                <option value='priceDesc'>price(high to low)</option>
-                <option value='priceAsc'>price (low to high)</option>
-                <option value='bbdAsc'>best before date(soonest)</option>
-                <option value='bbdDesc'>best before date(latest)</option>
-            </select>
-        </div>
-    )
-}
+import React from "react";
+import styles from "./SortFeature.module.css";
+const SortFeature = (props) => {
+  return (
+    <div className={styles.container}>
+      <select onChange={props.changeHandler} className={styles.select}>
+        <option default value="name" className={styles.options}>
+          Name
+        </option>
+        <option value="priceDesc">Price(High to Low)</option>
+        <option value="priceAsc">Price (Low to High)</option>
+        <option value="bbdAsc">Best Before Date(Soonest)</option>
+        <option value="bbdDesc">Best Before Date(Latest)</option>
+      </select>
+    </div>
+  );
+};
 
 export default SortFeature;

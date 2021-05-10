@@ -23,10 +23,8 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item as="li">
-          <LinkContainer to="/Categories">
+          <LinkContainer to="/Categories/Asian">
             <Nav.Link
-              exact
-              to="/categories"
               activeClassName="active"
               className="nav-links2"
               onClick={handleClick}
@@ -36,7 +34,7 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item as="li">
-          <LinkContainer to="/Brands">
+          <LinkContainer to="/Brands/NotLush">
             <Nav.Link
               eventKey="/brands"
               activeClassName="active"

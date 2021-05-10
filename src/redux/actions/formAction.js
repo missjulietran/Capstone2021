@@ -222,19 +222,3 @@ export const updateInformationThunk = (userData) => {
       .catch((err) => console.log(err));
   };
 };
-
-// export const getCert = () => {
-//   const user = localStorage.getItem("token");
-//   return (dispatch) => {
-//     return axios
-//       .get("http://localhost:8080/data/file", {
-//         headers: { Authorization: `Bearer ${user}` },
-//       }) //USERID
-//       .then((data) => {
-//         console.log("get");
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
-// };

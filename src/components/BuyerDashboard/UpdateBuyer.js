@@ -19,7 +19,7 @@ function UpdateBuyer() {
 
   const user = localStorage.getItem("token");
 
-// getting cert and buscert from backend
+  // getting cert and buscert from backend
 
   useEffect(() => {
     const fetchData = async () => {
@@ -135,23 +135,8 @@ function UpdateBuyer() {
               onChange={(e) => setPhoneNo(e.target.value)}
             />
           </FormGroup>
-          <Label>Uploaded Documents</Label>
           <br />
-          <button
-            className="btn btn-outline-dark mt-2"
-            name="businessCert"
-            onClick=""
-          >
-            Business Certification File
-          </button>
           <br />
-          <button
-            className="btn btn-outline-dark mt-2"
-            name="certFile"
-            onClick=""
-          >
-            Certification of Incorporation
-          </button>
           <br />
           <br />
           <Button

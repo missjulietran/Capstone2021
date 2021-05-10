@@ -68,7 +68,9 @@ function OrderDetails(props) {
             ))}
         </Table>
         <h3 className="float-right">Total: ${total}</h3>
-        <Button onClick={back}>Back</Button>
+        <Button className="backButton" onClick={back}>
+          Back
+        </Button>
       </div>
     </div>
   );

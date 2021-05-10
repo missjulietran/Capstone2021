@@ -5,3 +5,25 @@
 .detailBox {
   width: 800px;
 }
+.backButton {
+  width: 100 px;
+  margin: 5px;
+  border: none;
+  background-color: #bdb76b;
+}
+.backButton:hover {
+  margin: 5px;
+  border: none;
+  background-color: #bdb76b;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.backButton:active {
+  margin: 5px;
+  border: none;
+  background-color: #bdb76b;
+}
+.textCenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}

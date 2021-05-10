@@ -7,9 +7,8 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 export const FAQ = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>Frequent Asked Questions</h1>
+      <h1 className={styles.h1}>Frequent Asked Questions</h1> <hr />
       <div className="d-flex justify-content-center">
-        <h2></h2>
         <Accordion defaultActiveKey="0" className={styles.accordion}>
           <Card>
             <Accordion.Toggle
@@ -17,12 +16,12 @@ export const FAQ = () => {
               className={styles.toggle}
               eventKey="0"
             >
-              How do I join ECOSTORE?{" "}
+              How do I join STILLGOOD?{" "}
               <FontAwesomeIcon icon={faChevronDown} className={styles.icon} />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body className={styles.cardbody}>
-                ECOSTORE is a business-to-business online sales platform. Sign
+                STILLGOOD is a business-to-business online sales platform. Sign
                 up from our site and upload the Certificate of Incorporation and
                 the Business Registration Certificate, then you can access to
                 all the exclusive products and sales events.
@@ -46,8 +45,7 @@ export const FAQ = () => {
           </Card>
         </Accordion>
       </div>
-
-      <h2 className={styles.h2}>SELLERS</h2>
+      <h2 className={styles.h2}>SELLERS</h2> <hr />
       <div className="d-flex justify-content-center">
         <Accordion defaultActiveKey="0" className={styles.accordion}>
           <Card>
@@ -84,8 +82,7 @@ export const FAQ = () => {
           </Card>
         </Accordion>
       </div>
-
-      <h2 className={styles.h2}>BUYERS</h2>
+      <h2 className={styles.h2}>BUYERS</h2> <hr />
       <div className="d-flex justify-content-center">
         <Accordion defaultActiveKey="0" className={styles.accordion}>
           <Card>
@@ -99,7 +96,7 @@ export const FAQ = () => {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body className={styles.cardbody}>
-                ECOSTORE has a no refund, no return, no exchange, & no resale
+                STILLGOOD has a no refund, no return, no exchange, & no resale
                 policy. Please confirm all items before proceed to the checkout.
               </Card.Body>
             </Accordion.Collapse>

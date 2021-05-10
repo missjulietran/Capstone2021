@@ -30,14 +30,14 @@ import BuyerDashboard from "./components/BuyerDashboard/BuyerDashboard";
 import UpdateBuyer from "./components/BuyerDashboard/UpdateBuyer";
 import BuyerOrderPage from "./components/BuyerDashboard/BuyerOrderPage";
 import OrderDetails from "./components/BuyerDashboard/OrderDetails";
-//Brands Section Components
-import Brands from "./components/pages/Brands/Brands.js";
-import BrandsProductList from "./components/pages/Brands/BrandsProductList.js";
-// Category Section Components
-import Categories from "./components/pages/Category/Categories.js";
-import CategoryProductList from "./components/pages/Category/CategoryProductList.js";
 
+//Brands Section Components
+import BrandsProductList from "./components/pages/Brands/BrandsProductList.js";
+
+// Category Section Components
+import CategoryProductList from "./components/pages/Category/CategoryProductList.js";
 import ProductDetailPage from "./components/pages/Products/ProductDetailPage.js";
+
 //Events Section Components
 import Events from "./components/pages/Events/Events.js";
 import EventsProductListing from "./components/pages/Events/EventsProductListing.js";
@@ -96,11 +96,10 @@ function App() {
         <Route path="/Cart" component={Cart} />
         {/* Navbar2 links */}
         {/* Brands Routes */}
-        <Route exact path="/Brands" component={Brands} />
-        <Route exactn path="/Brands/:brand" component={BrandsProductList} />
-        {/* Category Routes */}
-        <Route exact path="/Categories" component={Categories} />
 
+        <Route exact path="/Brands/:brand" component={BrandsProductList} />
+        {/* Category Routes */}
+        {/* <Route exact path="/Categories" component={Categories} /> */}
         <Route
           exact
           path="/Categories/:category"

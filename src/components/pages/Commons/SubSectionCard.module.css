@@ -1,0 +1,28 @@
+.sideContainer {
+  width: 250px;
+  float: left;
+}
+.card {
+  border: none;
+  margin: 20px;
+}
+.link {
+  font-size: medium;
+  font-weight: bold;
+  color: #5f9ea0;
+}
+.link:focus {
+  color: #008000;
+}
+
+/* Brand */
+.searchContainer {
+  margin: 20px 0;
+}
+.search {
+  margin: 20px 0;
+  color: rgb(13, 82, 22);
+}
+.all {
+  margin-top: 50px;
+}

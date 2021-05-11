@@ -3,6 +3,7 @@
   "homepage":"https://www.stillgood.live",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "homepage": "./",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

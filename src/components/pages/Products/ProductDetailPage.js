@@ -1,13 +1,17 @@
 import React from 'react';
+import {connect,useSelector,useDispatch} from 'react-redux';
 import { useParams } from 'react-router';
 import useFetch from '../Commons/useFetch';
 import {Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { addToCart } from '../../../redux/actions/cartActions';
 
 const ProductDetailPage=()=>{
     const {id}=useParams();
     const {data:product, loading, error}=useFetch('http://localhost:8080/productpage/'+id);
+    const dispatch=useDispatch();
+
     const pageStyle={
         margin:'16px',
         display:'flex',
@@ -53,9 +57,8 @@ const ProductDetailPage=()=>{
                 <option value="300">300</option>
                 <option value="400">400</option>
             </select><br/>
-            <Button variant="success" size="sm"><FontAwesomeIcon icon={faShoppingCart} />Add to Cart</Button>
+            {product &&<Button onClick={()=>dispatch(addToCart(id,product[0].image,product[0].name,product[0].price))} variant="success" size="sm"><FontAwesomeIcon icon={faShoppingCart} />Add to Cart</Button>}
             </div>
-           
                  
         </div>
         

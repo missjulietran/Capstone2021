@@ -6,6 +6,14 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = (props) => {
+  const shortText = (longtext) => {
+    const TEXT_LIMIT = 20;
+    if (longtext.length > TEXT_LIMIT) {
+      return longtext.substring(0, TEXT_LIMIT) + "...";
+    } else {
+      return longtext;
+    }
+  };
   return (
     <div className="d-flex">
       <Col>
@@ -14,7 +22,7 @@ const ProductCard = (props) => {
             <Card.Img variant="top" src={props.img} className={styles.image} />
             <Card.Body key={props.id}>
               <Card.Text>
-                <h6>{props.name}</h6>
+                <h6>{shortText(props.name)}</h6>
                 <hr />
                 <h6>${props.price}/unit</h6>
                 <hr />

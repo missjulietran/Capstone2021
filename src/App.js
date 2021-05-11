@@ -50,6 +50,7 @@ import { BuyerSeller } from "./components/Accounts/BuyerSeller";
 import { Contact } from "./components/pages/Contact";
 import { FAQ } from "./components/pages/FAQ";
 import { Thankyou } from "./components/pages/Thankyou";
+import GiveBack from "./components/pages/GiveBack";
 
 //Stripe Payment Cart
 
@@ -96,12 +97,12 @@ function App() {
         <Route path="/LogIn" component={LogIn} />
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Cart" component={Cart} />
+
         {/* Navbar2 links */}
         {/* Brands Routes */}
-
         <Route exact path="/Brands/:brand" component={BrandsProductList} />
+
         {/* Category Routes */}
-        {/* <Route exact path="/Categories" component={Categories} /> */}
         <Route
           exact
           path="/Categories/:category"
@@ -112,8 +113,8 @@ function App() {
           path="/Categories/:category/:id"
           component={ProductDetailPage}
         />
+
         {/* Events Routes */}
-        {/* <Route exact path="/" component={Events} /> */}
         <Route exact path="/Events/:id" component={EventsProductListing} />
 
         {/* <Error /> */}
@@ -122,6 +123,7 @@ function App() {
         <Route path="/Contact" component={Contact} />
         <Route path="/FAQ" component={FAQ} />
         <Route path="/Thankyou" component={Thankyou} />
+        <Route path="/GiveBack" component={GiveBack} />
       </Switch>
       {/* SellerDashboard Links */}
       {/* USERID */}

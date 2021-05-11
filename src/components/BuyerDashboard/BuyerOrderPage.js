@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import BuyerSidebar from "./sidebar/BuyerSidebar";
 import "./BuyerOrderPage.css";
 import { Table, Button } from "reactstrap";
@@ -20,7 +19,7 @@ function BuyerOrderPage() {
       setOrder(data.orderId);
     };
     fetchData();
-  }, []);
+  }, [user]);
 
   return (
     <div className="buyerOrder d-flex">

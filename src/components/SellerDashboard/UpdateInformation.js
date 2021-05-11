@@ -33,7 +33,7 @@ function UpdateInformation() {
       setPhoneNo(data[0].phone_no);
     };
     fetchData();
-  }, []);
+  }, [user]);
 
   // Select District
   const options = [

@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUserThunk } from "../../redux/actions/loginAction";
 import { useHistory } from "react-router-dom";
+import styles from "./Login.module.css";
 
 const SellerLogin = (props) => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ const SellerLogin = (props) => {
     if (isAuthenticated) {
       history.push("/");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, history]);
 
   const login = (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ const SellerLogin = (props) => {
   };
   return (
     <div>
-      <h1>Welcome back, Seller</h1>
+      <h1 className={styles.text}>Welcome back, Seller</h1>
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -51,9 +52,7 @@ const SellerLogin = (props) => {
             value={password}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember me" />
-        </Form.Group>
+
         <Button variant="primary" type="submit" onClick={login}>
           Submit
         </Button>

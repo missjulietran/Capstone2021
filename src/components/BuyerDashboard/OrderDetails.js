@@ -13,8 +13,6 @@ function OrderDetails(props) {
   const { orderId } = useParams();
   const history = useHistory();
 
-  let sum = 0;
-
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
@@ -23,6 +21,7 @@ function OrderDetails(props) {
           headers: { Authorization: `Bearer ${user}` },
         }
       );
+      let sum = 0;
       for (let i = 0; i < data.length; i++) {
         sum += data[i].price * data[i].quantity;
         setTotal(sum);
@@ -30,7 +29,7 @@ function OrderDetails(props) {
       setDetail(data);
     };
     fetchData();
-  }, [orderId]);
+  }, [orderId, user]);
 
   const back = (e) => {
     e.preventDefault();
@@ -58,7 +57,12 @@ function OrderDetails(props) {
                 <tr>
                   <td>{item.sku}</td>
                   <td>
-                    <img width="100px" height="auto" src={item.image} />
+                    <img
+                      width="100px"
+                      height="auto"
+                      src={item.image}
+                      alt="product"
+                    />
                     {item.name}
                   </td>
                   <td>{item.price}</td>

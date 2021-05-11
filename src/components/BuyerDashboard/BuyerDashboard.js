@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BuyerSidebar from "./sidebar/BuyerSidebar";
 
-import { Card, CardTitle, CardBody, CardText, Col, Row } from "reactstrap";
+import { Card, CardTitle, CardBody, CardText, Col } from "reactstrap";
 import "./BuyerDashboard.css";
 
 import axios from "axios";
@@ -23,7 +23,7 @@ function BuyerDashboard() {
       setLatestAmount(data.latestAmount);
     };
     fetchData();
-  }, []);
+  }, [user]);
 
   const shortText = (longtext) => {
     const TEXT_LIMIT = 20;
@@ -56,10 +56,8 @@ function BuyerDashboard() {
                   <div className="text-center ">
                     <img
                       className="productImage"
-                      // top
-                      // width="100%"
                       src={item.image}
-                      alt="Card image"
+                      alt="Product"
                     />
                   </div>
                   <CardBody>
@@ -82,10 +80,8 @@ function BuyerDashboard() {
                   <div className="text-center ">
                     <img
                       className="productImage"
-                      // top
-                      // width="100%"
                       src={item.image}
-                      alt="Card image"
+                      alt="Product"
                     />
                   </div>
                   <CardBody>

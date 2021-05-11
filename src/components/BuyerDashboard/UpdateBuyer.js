@@ -6,7 +6,6 @@ import { Form } from "react-bootstrap";
 import { Button, Label, Input, FormGroup } from "reactstrap";
 import axios from "axios";
 import { updateBuyerThunk } from "../../redux/actions/buyerAction";
-import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 function UpdateBuyer() {
   const [name, setName] = useState("");
@@ -31,7 +30,7 @@ function UpdateBuyer() {
       setPhoneNo(data.buyer[0].phone_no);
     };
     fetchData();
-  }, []);
+  }, [user]);
 
   // Select District
   const options = [

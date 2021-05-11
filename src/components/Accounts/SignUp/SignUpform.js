@@ -8,7 +8,26 @@ function SignUpForm() {
   const [buyer] = useState(true);
   const [seller] = useState(false);
   const [businessName, setBusinessName] = useState("");
-  const [district, setDistrict] = useState("");
+  const [district, setDistrict] = useState([
+    { value: "Central and Western", label: "Central and Western" },
+    { value: "Eastern", label: "Eastern" },
+    { value: "Southern", label: "Southern" },
+    { value: "Wan Chai", label: "Wan Chai" },
+    { value: "Sham Shui Po", label: "Sham Shui Po" },
+    { value: "Kowloon City", label: "Kowloon City" },
+    { value: "Kwun Tong", label: "Kwun Tong" },
+    { value: "Wong Tai Sin", label: "Wong Tai Sin" },
+    { value: "Yau Tsim Mong", label: "Yau Tsim Mong" },
+    { value: "Island", label: "Island" },
+    { value: "Kwai Tsing", label: "Kwai Tsing" },
+    { value: "North", label: "North" },
+    { value: "Sai Kung", label: "Sai Kung" },
+    { value: "Sha Tin", label: "Sha Tin" },
+    { value: "Tai Po", label: "Tai Po" },
+    { value: "Tsuen Wan", label: "Tsuen Wan" },
+    { value: "Tuen Mun", label: "Tuen Mun" },
+    { value: "Yuen Long", label: "Yuen Long" },
+  ]);
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -38,39 +57,41 @@ function SignUpForm() {
   let history = useHistory();
 
   //select district
-  const options = [
-    { value: "Central and Western", label: "Central and Western" },
-    { value: "Eastern", label: "Eastern" },
-    { value: "Southern", label: "Southern" },
-    { value: "Wan Chai", label: "Wan Chai" },
-    { value: "Sham Shui Po", label: "Sham Shui Po" },
-    { value: "Kowloon City", label: "Kowloon City" },
-    { value: "Kwun Tong", label: "Kwun Tong" },
-    { value: "Wong Tai Sin", label: "Wong Tai Sin" },
-    { value: "Yau Tsim Mong", label: "Yau Tsim Mong" },
-    { value: "Island", label: "Island" },
-    { value: "Kwai Tsing", label: "Kwai Tsing" },
-    { value: "North", label: "North" },
-    { value: "Sai Kung", label: "Sai Kung" },
-    { value: "Sha Tin", label: "Sha Tin" },
-    { value: "Tai Po", label: "Tai Po" },
-    { value: "Tsuen Wan", label: "Tsuen Wan" },
-    { value: "Tuen Mun", label: "Tuen Mun" },
-    { value: "Yuen Long", label: "Yuen Long" },
-  ];
+  // const options = [
+  //   { value: "Central and Western", label: "Central and Western" },
+  //   { value: "Eastern", label: "Eastern" },
+  //   { value: "Southern", label: "Southern" },
+  //   { value: "Wan Chai", label: "Wan Chai" },
+  //   { value: "Sham Shui Po", label: "Sham Shui Po" },
+  //   { value: "Kowloon City", label: "Kowloon City" },
+  //   { value: "Kwun Tong", label: "Kwun Tong" },
+  //   { value: "Wong Tai Sin", label: "Wong Tai Sin" },
+  //   { value: "Yau Tsim Mong", label: "Yau Tsim Mong" },
+  //   { value: "Island", label: "Island" },
+  //   { value: "Kwai Tsing", label: "Kwai Tsing" },
+  //   { value: "North", label: "North" },
+  //   { value: "Sai Kung", label: "Sai Kung" },
+  //   { value: "Sha Tin", label: "Sha Tin" },
+  //   { value: "Tai Po", label: "Tai Po" },
+  //   { value: "Tsuen Wan", label: "Tsuen Wan" },
+  //   { value: "Tuen Mun", label: "Tuen Mun" },
+  //   { value: "Yuen Long", label: "Yuen Long" },
+  // ];
 
   const handleCertOfInfoFile = (e) => {
     e.preventDefault();
-    console.log("okays");
-    console.log(e.target.files);
+    // console.log("okays");
+    // console.log(e.target.files);
     setCertOfInfo(e.target.files[0].name);
     setrealCertOfInfo(e.target.files[0]);
   };
 
   const handleBusinessCertFile = (e) => {
     e.preventDefault();
-    console.log("businesscert");
-    console.log(e.target.files);
+    // console.log("businesscert");
+    // console.log(e.target.files);
+    console.log(realcertOfInfo)
+    console.log(realbusinessCert)
     setBusinessCert(e.target.files[0].name);
     setrealBusinessCert(e.target.files[0]);
   };
@@ -121,7 +142,7 @@ function SignUpForm() {
         <Form.Label>District</Form.Label>
         <Select
           name="district"
-          options={options}
+          options={district}
           onChange={(e) => {
             setDistrict(e.value);
           }}

@@ -9,10 +9,11 @@
 .link {
   font-size: medium;
   font-weight: bold;
-  color: #5f9ea0;
+  color: #2e4d4e;
 }
 .link:focus {
   color: #008000;
+  border-bottom: 2px solid #008000;
 }
 
 /* Brand */

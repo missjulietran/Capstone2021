@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUserThunk } from "../../redux/actions/loginAction";
 import { useHistory } from "react-router-dom";
+import Loader from "react-loader-spinner";
 import styles from "./Login.module.css";
 
 const SellerLogin = (props) => {
@@ -56,7 +57,9 @@ const SellerLogin = (props) => {
         <Button variant="primary" type="submit" onClick={login}>
           Submit
         </Button>
-        {isLoading && "Loading..."}
+        {isLoading && (
+          <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
+        )}
       </Form>
     </div>
   );

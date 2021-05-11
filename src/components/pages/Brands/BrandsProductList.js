@@ -4,6 +4,7 @@ import useFetch from "../Commons/useFetch";
 import ProductList from "../Products/ProductList";
 import Brands from "./Brands";
 import styles from "../Category/CategoryProductList.module.css";
+import Loader from "react-loader-spinner";
 
 const BrandsProductList = () => {
   const { brand } = useParams();
@@ -16,7 +17,9 @@ const BrandsProductList = () => {
         <Brands />
       </div>
       {/* <h1>Filtered listing - {brand}</h1> */}
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
+      )}
       {error && <p>{error}</p>}
       {products && (
         <ProductList

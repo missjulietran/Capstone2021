@@ -4,6 +4,7 @@ import SubSectionCard from "../Commons/SubSectionCard";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import styles from "../Commons/SubSectionCard.module.css";
+import Loader from "react-loader-spinner";
 
 const Brands = () => {
   const { data: brands, loading, error } = useFetch(
@@ -48,7 +49,9 @@ const Brands = () => {
       </div>
       <div className={styles.all}>
         <h4>All Brands</h4>
-        {loading && <p>Loading...</p>}
+        {loading && (
+          <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
+        )}
         {error && <p>{error}</p>}
         {brands && <SubSectionCard section="Brands" subSections={brands} />}
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import useFetch from "../Commons/useFetch";
 import ProductList from "../Products/ProductList";
+import Loader from "react-loader-spinner";
 
 const EventsProductListing = () => {
   const { id } = useParams();
@@ -11,7 +12,9 @@ const EventsProductListing = () => {
   return (
     <div>
       <h1>Filtered listing - {id}</h1>
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
+      )}
       {error && <p>{error}</p>}
       {products && console.log(products)}
       {products && (

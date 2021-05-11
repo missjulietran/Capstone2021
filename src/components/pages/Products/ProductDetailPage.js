@@ -9,6 +9,7 @@ import {
   faLongArrowAltLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ProductDetailPage.module.css";
+import Loader from "react-loader-spinner";
 import { addToCart } from "../../../redux/actions/cartActions";
 
 const ProductDetailPage = () => {
@@ -25,7 +26,9 @@ const ProductDetailPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        {loading && <p>Loading...</p>}
+        {loading && (
+          <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
+        )}
         {error && <p>{error}</p>}
         <Col>
           {product && (

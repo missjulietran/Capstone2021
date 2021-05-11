@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import useFetch from "../Commons/useFetch";
 import { Button, Col } from "react-bootstrap";
@@ -8,9 +9,10 @@ import {
   faLongArrowAltLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ProductDetailPage.module.css";
+import { addToCart } from "../../../redux/actions/cartActions";
 
 const ProductDetailPage = () => {
-  console.log(useParams());
+  const dispatch = useDispatch();
   const { id } = useParams();
   const { data: product, loading, error } = useFetch(
     "http://localhost:8080/productpage/" + id
@@ -56,10 +58,26 @@ const ProductDetailPage = () => {
               <option value="400">400</option>
             </select>
             <br />
-            <Button className={styles.button} variant="success" size="sm">
-              <FontAwesomeIcon icon={faShoppingCart} />
-              Add to Cart
-            </Button>
+            {product && (
+              <Button
+                className={styles.button}
+                onClick={() =>
+                  dispatch(
+                    addToCart(
+                      id,
+                      product[0].image,
+                      product[0].name,
+                      product[0].price
+                    )
+                  )
+                }
+                variant="success"
+                size="sm"
+              >
+                <FontAwesomeIcon icon={faShoppingCart} />
+                Add to Cart
+              </Button>
+            )}
           </div>
         </Col>
       </div>

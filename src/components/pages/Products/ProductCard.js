@@ -1,4 +1,5 @@
 import React from "react";
+import {useSelector, useDispatch} from 'react-redux'
 import { Link } from "react-router-dom";
 import { Card, Button, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,10 +30,6 @@ const ProductCard = (props) => {
                 <h6>Best Before:{props.bbd}</h6>
                 <hr />
               </Card.Text>
-              <Button variant="success" size="sm">
-                <FontAwesomeIcon icon={faShoppingCart} />
-                Add to Cart
-              </Button>
             </Card.Body>
           </Link>
         </Card>

@@ -45,7 +45,7 @@ import EventsProductListing from "./components/pages/Events/EventsProductListing
 import { About } from "./components/pages/About";
 import { SignUp } from "./components/pages/SignUp";
 import { LogIn } from "./components/pages/LogIn";
-import { Cart } from "./components/pages/Cart";
+import Cart from "./components/pages/Cart.js";
 import { BuyerSeller } from "./components/Accounts/BuyerSeller";
 import { Contact } from "./components/pages/Contact";
 import { FAQ } from "./components/pages/FAQ";
@@ -115,6 +115,8 @@ function App() {
         {/* Events Routes */}
         {/* <Route exact path="/" component={Events} /> */}
         <Route exact path="/Events/:id" component={EventsProductListing} />
+        {/* Cart */}
+        <Route exact path='/Cart' component={Cart}/>
 
         {/* <Error /> */}
         {/* Footer links */}

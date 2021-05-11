@@ -13,14 +13,14 @@ function SellerDashboard() {
   const [topProduct, setTopProduct] = useState("");
   const [order, setOrder] = useState();
 
-  // const shortText = (longtext) => {
-  //   const TEXT_LIMIT = 5;
-  //   if (longtext.length > TEXT_LIMIT) {
-  //     return longtext.substring(0, TEXT_LIMIT) + "...";
-  //   } else {
-  //     return longtext;
-  //   }
-  // };
+  const shortText = (longtext) => {
+    const TEXT_LIMIT = 5;
+    if (longtext.length > TEXT_LIMIT) {
+      return longtext.substring(0, TEXT_LIMIT) + "...";
+    } else {
+      return longtext;
+    }
+  };
 
   // sending passportJwt token to backend
   const user = localStorage.getItem("token");
@@ -38,7 +38,7 @@ function SellerDashboard() {
       setOrder(data.order);
     };
     fetchData();
-  }, []);
+  }, [user]);
 
   const soldState = {
     labels: [
@@ -121,7 +121,9 @@ function SellerDashboard() {
 
             <Card className="dashboardCard">
               <Card.Body>
-                <Card.Title className="dashboardTitle">{topProduct}</Card.Title>
+                <Card.Title className="dashboardTitle">
+                  {topProduct && shortText(topProduct)}
+                </Card.Title>
                 <div className="text-right">
                   <Card.Title className="dashboradText">Top Product</Card.Title>
                 </div>

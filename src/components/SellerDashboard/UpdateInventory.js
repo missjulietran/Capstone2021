@@ -44,13 +44,14 @@ function UpdateInventory() {
       setSelectedCategory(data[0].category);
     };
     fetchData();
-  }, [itemId]);
+  }, [itemId, user]);
 
   // Select Category
   const options = [
     { value: "Western", label: "Western" },
     { value: "Asian", label: "Asian" },
     { value: "Snacks", label: "Snacks" },
+    { value: "Cosmetic", label: "Cosmetic" },
     { value: "Packaged Meal", label: "Packaged Meal" },
     { value: "Seasoning", label: "Seasoning" },
     { value: "Cereals", label: "Cereals" },

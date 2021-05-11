@@ -12,7 +12,6 @@ const ProductList = (props) => {
 
   return (
     <div className="product-list">
-      {/* <h1>{props.title}</h1> */}
       <Container fluid>
         <SortFeature changeHandler={changeHandler} />
         <Row>
@@ -37,7 +36,6 @@ const ProductList = (props) => {
             })
             .map((product) => {
               return (
-                // <Col lg={2} md={4} sm={6}>
                 <Col>
                   <ProductCard
                     key={product.id}

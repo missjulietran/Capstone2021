@@ -26,6 +26,7 @@ function InventoryUploadPage() {
     { value: "Western", label: "Western" },
     { value: "Asian", label: "Asian" },
     { value: "Snacks", label: "Snacks" },
+    { value: "Cosmetic", label: "Cosmetic" },
     { value: "Packaged Meal", label: "Packaged Meal" },
     { value: "Seasoning", label: "Seasoning" },
     { value: "Cereals", label: "Cereals" },

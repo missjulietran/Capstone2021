@@ -17,9 +17,6 @@ const CategoryProductList = () => {
         <Categories />
       </div>
       <div>
-        {/* <Row>
-          <h1>Filtered listing - {category}</h1>
-        </Row> */}
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         {products && (

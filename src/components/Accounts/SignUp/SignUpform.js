@@ -84,11 +84,6 @@ function SignUpForm() {
     newFormData.append("buyer", buyer);
     newFormData.append("seller", seller);
 
-    // this.props.history.push("/Thankyou");
-    // console.log(newFormData.getAll("file"));
-    // console.log(newFormData.getAll("name"));
-    // console.log(newFormData.getAll("address"));
-
     axios
       .post("http://localhost:8080/signup", newFormData, {
         headers: {
@@ -228,7 +223,6 @@ function SignUpForm() {
           name="form"
           type="submit"
           value="submit"
-
           onSubmit={() => {
             history.push("/Thankyou");
           }}
@@ -236,7 +230,6 @@ function SignUpForm() {
           // onClick={() => {
           //   history.push("/Thankyou");
           // }}
-
         >
           Register
         </button>

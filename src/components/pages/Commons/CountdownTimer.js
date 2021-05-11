@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import styles from "./CountdownTimer.module.css";
 
 const Countdown = (props) => {
   //current Date
@@ -30,7 +31,7 @@ const Countdown = (props) => {
       setIsOpen(true);
       clearTimeout(tick);
     }
-  }, [time]);
+  }, [time, remaining, tick]);
 
   // Calculating the days, hours, minutes and seconds left
 
@@ -61,12 +62,24 @@ const Countdown = (props) => {
       ) : (
         `Starts: ${new Date(props.event.start_date).toUTCString()}`
       )}
+      <br />
+      <br />
       {!isOpen && (
-        <p>time until start {`${days}d${hours}h${minutes}m${seconds}s`}</p>
+        <p>
+          time until start
+          <br />
+          <span className={styles.span}>
+            {" "}
+            {`${days}d ${hours}h ${minutes}m ${seconds}s`}
+          </span>
+        </p>
       )}
       {isOpen && (
         <p>
-          time until end {`${daysEnd}d${hoursEnd}h${minutesEnd}m${secondsEnd}s`}
+          time until end <br />
+          <span className={styles.span}>
+            {`${daysEnd}d ${hoursEnd}h ${minutesEnd}m ${secondsEnd}s`}
+          </span>
         </p>
       )}
     </div>

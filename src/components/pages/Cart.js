@@ -1,11 +1,19 @@
-import React,{useEffect,useState} from 'react';
-import {connect, useSelector} from 'react-redux'
+// import React,{useEffect,useState} from 'react';
+import React from 'react'
+// import {connect, useSelector} from 'react-redux'
+import {connect} from 'react-redux'
 import { addQuantity, deleteFromCart, removeQuantity} from '../../redux/actions/cartActions';
 import useFetch from '../pages/Commons/useFetch'
 
 const Cart=(props)=>{
-    const {data:userInfo, loading, error}=useFetch('http://localhost:8080/user')
+    const {data:userInfo}=useFetch('http://localhost:8080/user')
     console.log(userInfo)
+
+    //**** COMMENTED IT OUT FOR YOU LUKASSSS FOR LOADING ****/
+    // const {data:userInfo, loading, error}=useFetch('http://localhost:8080/user')
+    // console.log(userInfo)
+
+
     // const cartState=useSelector(state=>state.cart);
     // const[cartItems, setCartItems]=useState()
     // const [cartTotal, setCartTotal]=useState()

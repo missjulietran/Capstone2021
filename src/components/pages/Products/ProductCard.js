@@ -1,9 +1,15 @@
 import React from "react";
-import {useSelector, useDispatch} from 'react-redux'
+// import {useSelector, useDispatch} from 'react-redux'
 import { Link } from "react-router-dom";
-import { Card, Button, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
+import { Card, Col } from "react-bootstrap";
+
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
+//**** COMMENTED IT OUT FOR YOU LUKASSSS FOR LOADING ****/
+// import { Card, Button, Col } from "react-bootstrap";
+
 import styles from "./ProductCard.module.css";
 
 const ProductCard = (props) => {

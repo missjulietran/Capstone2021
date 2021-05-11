@@ -9,7 +9,26 @@ function SignUpFormSeller() {
   const [buyer] = useState(false);
   const [seller] = useState(true);
   const [businessName, setBusinessName] = useState("");
-  const [district, setDistrict] = useState("");
+  const [district, setDistrict] = useState([
+    { value: "Central and Western", label: "Central and Western" },
+    { value: "Eastern", label: "Eastern" },
+    { value: "Southern", label: "Southern" },
+    { value: "Wan Chai", label: "Wan Chai" },
+    { value: "Sham Shui Po", label: "Sham Shui Po" },
+    { value: "Kowloon City", label: "Kowloon City" },
+    { value: "Kwun Tong", label: "Kwun Tong" },
+    { value: "Wong Tai Sin", label: "Wong Tai Sin" },
+    { value: "Yau Tsim Mong", label: "Yau Tsim Mong" },
+    { value: "Island", label: "Island" },
+    { value: "Kwai Tsing", label: "Kwai Tsing" },
+    { value: "North", label: "North" },
+    { value: "Sai Kung", label: "Sai Kung" },
+    { value: "Sha Tin", label: "Sha Tin" },
+    { value: "Tai Po", label: "Tai Po" },
+    { value: "Tsuen Wan", label: "Tsuen Wan" },
+    { value: "Tuen Mun", label: "Tuen Mun" },
+    { value: "Yuen Long", label: "Yuen Long" },
+  ]);
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -35,35 +54,18 @@ function SignUpFormSeller() {
     setrealBusinessCert(null);
   };
 
+  
+
   //Redirect to Login Page
   let history = useHistory();
 
-  //Select district
-  const options = [
-    { value: "Central and Western", label: "Central and Western" },
-    { value: "Eastern", label: "Eastern" },
-    { value: "Southern", label: "Southern" },
-    { value: "Wan Chai", label: "Wan Chai" },
-    { value: "Sham Shui Po", label: "Sham Shui Po" },
-    { value: "Kowloon City", label: "Kowloon City" },
-    { value: "Kwun Tong", label: "Kwun Tong" },
-    { value: "Wong Tai Sin", label: "Wong Tai Sin" },
-    { value: "Yau Tsim Mong", label: "Yau Tsim Mong" },
-    { value: "Island", label: "Island" },
-    { value: "Kwai Tsing", label: "Kwai Tsing" },
-    { value: "North", label: "North" },
-    { value: "Sai Kung", label: "Sai Kung" },
-    { value: "Sha Tin", label: "Sha Tin" },
-    { value: "Tai Po", label: "Tai Po" },
-    { value: "Tsuen Wan", label: "Tsuen Wan" },
-    { value: "Tuen Mun", label: "Tuen Mun" },
-    { value: "Yuen Long", label: "Yuen Long" },
-  ];
 
   const handleCertOfInfoFile = (e) => {
     e.preventDefault();
-    console.log("okays");
-    console.log(e.target.files[0].name);
+    // console.log("okays");
+    // console.log(e.target.files[0].name);
+    console.log(realcertOfInfo)
+    console.log(realbusinessCert)
     setCertOfInfo(e.target.files[0].name);
     setrealCertOfInfo(e.target.files[0]);
   };
@@ -124,7 +126,7 @@ function SignUpFormSeller() {
         <Select
           size="sm"
           name="district"
-          options={options}
+          options={district}
           onChange={(e) => {
             setDistrict(e.value);
           }}

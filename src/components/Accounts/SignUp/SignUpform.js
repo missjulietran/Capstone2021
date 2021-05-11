@@ -80,16 +80,18 @@ function SignUpForm() {
 
   const handleCertOfInfoFile = (e) => {
     e.preventDefault();
-    console.log("okays");
-    console.log(e.target.files);
+    // console.log("okays");
+    // console.log(e.target.files);
     setCertOfInfo(e.target.files[0].name);
     setrealCertOfInfo(e.target.files[0]);
   };
 
   const handleBusinessCertFile = (e) => {
     e.preventDefault();
-    console.log("businesscert");
-    console.log(e.target.files);
+    // console.log("businesscert");
+    // console.log(e.target.files);
+    console.log(realcertOfInfo)
+    console.log(realbusinessCert)
     setBusinessCert(e.target.files[0].name);
     setrealBusinessCert(e.target.files[0]);
   };

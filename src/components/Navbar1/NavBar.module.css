@@ -9,8 +9,8 @@
 
 .navbar {
   padding: 1rem;
-  color: green!important;
-  z-index:21;
+  color: green !important;
+  z-index: 21;
 }
 /* 
 
@@ -29,18 +29,18 @@
 } */
 
 .navbar-light .navbar-nav .nav-link {
-  color: red!important;
-  z-index:1;
+  color: red !important;
+  z-index: 1;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: green!important;
+  color: green !important;
 }
 
 .MainNav {
-  position:sticky!important;
+  position: sticky !important;
 }
 
 .right {
-  color: black!important;
-} 
+  color: black !important;
+}

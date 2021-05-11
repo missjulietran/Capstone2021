@@ -1,5 +1,4 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
@@ -29,12 +28,8 @@ function NavBarSellerAuthenticated() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto"></Nav>
+
           <Nav className={styles.right}>
-            <LinkContainer to="/GiveBack">
-              <Nav.Link eventKey={2} href="/GiveBack">
-                Give Back
-              </Nav.Link>
-            </LinkContainer>
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
               <LinkContainer to="/sellerdashboard">
                 <NavDropdown.Item>
@@ -47,6 +42,11 @@ function NavBarSellerAuthenticated() {
                 </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
+            <LinkContainer to="/GiveBack">
+              <Nav.Link eventKey={2} href="/GiveBack">
+                Give Back
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

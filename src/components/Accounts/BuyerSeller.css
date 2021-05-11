@@ -35,12 +35,12 @@
 }
 
 .userButton {
-  color: firebrick;
+  color: #ee5555;
   padding: 10px;
   border: none;
-  border-bottom: 2px solid #033803;
+
   background-color: #fff;
 }
-.userButton:hover {
-  border-bottom: 2px solid #098809;
+.userButton:focus {
+  border-bottom: 2px solid #033803;
 }

@@ -21,16 +21,12 @@ const ProductList = (props) => {
               switch (criteria) {
                 case "priceAsc":
                   return a.price > b.price ? 1 : -1;
-                  break;
                 case "priceDesc":
                   return a.price < b.price ? 1 : -1;
-                  break;
                 case "bbdAsc":
                   return a.best_before_date > b.best_before_date ? 1 : -1;
-                  break;
                 case "bbdDesc":
                   return a.best_before_date < b.best_before_date ? 1 : -1;
-                  break;
                 default:
                   return a.name > b.name ? 1 : -1;
               }

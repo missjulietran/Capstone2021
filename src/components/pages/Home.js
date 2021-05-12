@@ -1,5 +1,7 @@
 import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import jumbotronpic from "./../../images/jumbotron1.jpeg";
+// import styles from "../pages/Events/Events.module.css"
 
 import Button from "react-bootstrap/Button";
 
@@ -9,20 +11,21 @@ import Events from "./Events/Events";
 export const Home = () => {
   return (
     <div>
-      <Jumbotron>
-        <h1>Future Jumbotron</h1>
+      <Jumbotron style={{ backgroundImage: `url(${jumbotronpic})`, backgroundSize: 'cover'}}>
         <p>
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
+          ghello
         </p>
         <p>
           <Button variant="primary">Learn more</Button>
         </p>
-      </Jumbotron>
-
+      </Jumbotron> 
+      <h3>Upcoming Events</h3>
+<div className="eventdiv">
+ 
       <Container Fluid>
         <Events />
       </Container>
+      </div>
     </div>
   );
 };

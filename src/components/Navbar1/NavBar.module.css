@@ -7,10 +7,22 @@
   padding: 2rem;
 } */
 
-.navbar {
+.navbar-light .navbar-brand {
+  color: rgb(255, 0, 0)!important;
+}
+
+.navbar2 {
   padding: 1rem;
   color: green !important;
   z-index: 21;
+}
+
+.navbarmain {
+  background-color: #ffffff;
+}
+
+.nav-link {
+  color: black;
 }
 /* 
 
@@ -43,4 +55,10 @@
 
 .right {
   color: black !important;
+}
+
+.logo {
+  color: #238c8c!important;
+  font-weight: bolder;
+  padding-left: 2rem;
 }

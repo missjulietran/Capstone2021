@@ -4,6 +4,10 @@ import { useParams, useHistory } from "react-router-dom";
 import { Table, Button } from "reactstrap";
 import BuyerSidebar from "./sidebar/BuyerSidebar";
 import "./OrderDetails.css";
+import dotenv from "dotenv";
+
+dotenv.config()
+
 
 function OrderDetails(props) {
   const user = localStorage.getItem("token");

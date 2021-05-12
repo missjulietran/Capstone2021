@@ -5,6 +5,9 @@ import Categories from "./Categories";
 import ProductList from "../Products/ProductList";
 import styles from "./CategoryProductList.module.css";
 import Loader from "react-loader-spinner";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const CategoryProductList = () => {
   const { category } = useParams();

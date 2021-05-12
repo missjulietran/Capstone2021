@@ -7,6 +7,9 @@ import { Button, Label, Input, FormGroup } from "reactstrap";
 import "./UpdateInformation.css";
 import axios from "axios";
 import { updateInformationThunk } from "../../redux/actions/formAction";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 function UpdateInformation() {
   const [name, setName] = useState("");
@@ -17,7 +20,8 @@ function UpdateInformation() {
   const [phoneNo, setPhoneNo] = useState("");
 
   const dispatch = useDispatch();
-
+ 
+  
   // sending passportJwt token to backend
   const user = localStorage.getItem("token");
 

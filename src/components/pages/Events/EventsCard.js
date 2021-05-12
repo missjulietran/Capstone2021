@@ -25,6 +25,7 @@ export const EventsCard = (props) => {
                   <EventSellerName eventId={event.id} />
                 </Card.Text>
                 <Countdown
+                  className={styles.timer}
                   event={event}
                   startDate={new Date(event.start_date).getTime()}
                   endDate={new Date(event.end_date).getTime()}

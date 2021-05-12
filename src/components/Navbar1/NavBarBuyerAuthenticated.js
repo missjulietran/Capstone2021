@@ -20,10 +20,10 @@ function NavBarBuyerAuthenticated() {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbar2}>
         <LinkContainer to="/">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Eco Store
+            Still Good
           </Navbar.Brand>
         </LinkContainer>
 

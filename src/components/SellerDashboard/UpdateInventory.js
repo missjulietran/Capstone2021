@@ -9,6 +9,9 @@ import Sidebar from "./sidebar/Sidebar";
 import "./UpdateInventory.css";
 import axios from "axios";
 import { updateInventoryThunk } from "../../redux/actions/formAction";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 function UpdateInventory() {
   const [selectedCategory, setSelectedCategory] = useState([""]);

@@ -4,6 +4,9 @@ import { Line, Bar } from "react-chartjs-2";
 import { Card, Col, Container } from "react-bootstrap";
 import "./SellerDashboard.css";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 function SellerDashboard() {
   const [length, setLength] = useState();

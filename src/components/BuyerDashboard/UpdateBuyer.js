@@ -21,7 +21,7 @@ function UpdateBuyer() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/buyerDashboard`, {
+      const { data } = await axios.get(`${process.env.REACT_APP_API_SERVER}/buyerDashboard`, {
         headers: { Authorization: `Bearer ${user}` },
       });
       setName(data.buyer[0].name);

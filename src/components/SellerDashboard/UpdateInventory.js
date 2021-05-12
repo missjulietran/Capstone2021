@@ -28,7 +28,7 @@ function UpdateInventory() {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
-        `http://localhost:8080/data/singleProduct/${itemId}`,
+        `${process.env.REACT_APP_API_SERVER}/data/singleProduct/${itemId}`,
         {
           headers: { Authorization: `Bearer ${user}` },
         }

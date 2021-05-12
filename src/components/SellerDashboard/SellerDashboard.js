@@ -27,7 +27,7 @@ function SellerDashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/dashboard`, {
+      const { data } = await axios.get(`${process.env.REACT_APP_API_SERVER}/dashboard`, {
         headers: { Authorization: `Bearer ${user}` },
       });
       setLength(data.length);

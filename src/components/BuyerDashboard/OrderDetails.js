@@ -16,7 +16,7 @@ function OrderDetails(props) {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
-        `http://localhost:8080/buyerDashboard/${orderId}`,
+        `${process.env.REACT_APP_API_SERVER}/buyerDashboard/${orderId}`,
         {
           headers: { Authorization: `Bearer ${user}` },
         }

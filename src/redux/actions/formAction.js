@@ -50,12 +50,12 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
   console.log(data.getAll("file"));
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/data/uploadImage`, data, {
+      .post(`${process.env.REACT_APP_API_SERVER}/data/uploadImage`, data, {
         headers: { Authorization: `Bearer ${user}` },
       }) //URL
       .then(() => {
         return axios
-          .post(`http://localhost:8080/data/upload`, inventoryData, {
+          .post(`${process.env.REACT_APP_API_SERVER}/data/upload`, inventoryData, {
             headers: { Authorization: `Bearer ${user}` },
           }) //USERID
           .then((data) => {
@@ -86,14 +86,14 @@ export const updateInventoryThunk = (data, inventoryData) => {
     // }
     if (!data === undefined) {
       return axios
-        .post(`http://localhost:8080/data/uploadImage`, data, {
+        .post(`${process.env.REACT_APP_API_SERVER}/data/uploadImage`, data, {
           headers: { Authorization: `Bearer ${user}` },
         }) //URL
         .then((data) => {
           console.log("update", inventoryData);
           return axios
             .put(
-              `http://localhost:8080/update/data/${inventoryData.id}`,
+              `${process.env.REACT_APP_API_SERVER}/data/${inventoryData.id}`,
               inventoryData,
               {
                 headers: { Authorization: `Bearer ${user}` },
@@ -119,7 +119,7 @@ export const updateInventoryThunk = (data, inventoryData) => {
     } else {
       return axios
         .put(
-          `http://localhost:8080/data/update/${inventoryData.id}`,
+          `${process.env.REACT_APP_API_SERVER}/data/update/${inventoryData.id}`,
           inventoryData,
           {
             headers: { Authorization: `Bearer ${user}` },
@@ -142,7 +142,7 @@ export const delProductThunk = (itemid) => {
   const user = localStorage.getItem("token");
   return (dispatch) => {
     axios
-      .delete(`http://localhost:8080/data/delProduct/${itemid}`, {
+      .delete(`${process.env.REACT_APP_API_SERVER}/data/delProduct/${itemid}`, {
         headers: { Authorization: `Bearer ${user}` },
       })
       .then(() => {
@@ -167,14 +167,14 @@ export const handleEventSubmissionThunk = (data, eventData) => {
 
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/data/uploadImage`, data, {
+      .post(`${process.env.REACT_APP_API_SERVER}/data/uploadImage`, data, {
         headers: { Authorization: `Bearer ${user}` },
       }) //URL
       .then((data) => {
         console.log(data);
         console.log(eventData);
         return axios
-          .post(`http://localhost:8080/data/uploadEvent`, eventData, {
+          .post(`${process.env.REACT_APP_API_SERVER}/data/uploadEvent`, eventData, {
             headers: { Authorization: `Bearer ${user}` },
           }) //USERID
           .then(() => {
@@ -199,13 +199,13 @@ export const updateInformationThunk = (userData) => {
 
   return (dispatch) => {
     return axios
-      .post(`http://localhost:8080/data/password`, userData.password, {
+      .post(`${process.env.REACT_APP_API_SERVER}/data/password`, userData.password, {
         headers: { Authorization: `Bearer ${user}` },
       })
       .then((data) => {
         console.log("password", data);
         return axios
-          .put(`http://localhost:8080/data/updateUser`, userData, {
+          .put(`${process.env.REACT_APP_API_SERVER}/data/updateUser`, userData, {
             headers: { Authorization: `Bearer ${user}` },
           }) //USERID
           .then((data) => {

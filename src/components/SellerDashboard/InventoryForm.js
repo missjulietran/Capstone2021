@@ -30,7 +30,7 @@ function InventoryUploadPage() {
     { value: "Packaged Meal", label: "Packaged Meal" },
     { value: "Seasoning", label: "Seasoning" },
     { value: "Cereals", label: "Cereals" },
-    { value: "Ready-To-Drink Beverages", label: "Ready-To-Drink Beverages" },
+    { value: "Powdered Beverages", label: "Powdered Beverages" },
     { value: "Alcohol", label: "Alcohol" },
     { value: "Skincare", label: "Skincare" },
     { value: "Makeup", label: "Makeup" },

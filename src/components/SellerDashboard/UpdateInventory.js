@@ -11,7 +11,7 @@ import axios from "axios";
 import { updateInventoryThunk } from "../../redux/actions/formAction";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 function UpdateInventory() {
   const [selectedCategory, setSelectedCategory] = useState([""]);
@@ -58,7 +58,7 @@ function UpdateInventory() {
     { value: "Packaged Meal", label: "Packaged Meal" },
     { value: "Seasoning", label: "Seasoning" },
     { value: "Cereals", label: "Cereals" },
-    { value: "Ready-To-Drink Beverages", label: "Ready-To-Drink Beverages" },
+    { value: "Powdered Beverages", label: "Powdered Beverages" },
     { value: "Alcohol", label: "Alcohol" },
     { value: "Skincare", label: "Skincare" },
     { value: "Makeup", label: "Makeup" },

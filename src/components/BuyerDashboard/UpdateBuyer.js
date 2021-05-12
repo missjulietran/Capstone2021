@@ -6,6 +6,9 @@ import { Form } from "react-bootstrap";
 import { Button, Label, Input, FormGroup } from "reactstrap";
 import axios from "axios";
 import { updateBuyerThunk } from "../../redux/actions/buyerAction";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 function UpdateBuyer() {
   const [name, setName] = useState("");

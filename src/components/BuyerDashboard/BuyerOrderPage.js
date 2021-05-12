@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import BuyerSidebar from "./sidebar/BuyerSidebar";
 import "./BuyerOrderPage.css";
 import { Table, Button } from "reactstrap";
-
+import dotenv from "dotenv";
 import axios from "axios";
 import { LinkContainer } from "react-router-bootstrap";
 
 function BuyerOrderPage() {
   const user = localStorage.getItem("token");
-
   const [order, setOrder] = useState();
+
+  dotenv.config()
 
   useEffect(() => {
     const fetchData = async () => {

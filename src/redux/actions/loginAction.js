@@ -6,6 +6,9 @@ import {
   LOGOUT_REQUEST_ACTION,
   LOGIN_USER_TYPE,
 } from "../types/template";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 export const logoutUserThunk = (dispatch) => {
   try {

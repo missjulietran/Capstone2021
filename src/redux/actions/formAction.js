@@ -5,6 +5,9 @@ import {
   GET_SINGLE_ITEM_ACTION,
   DEL_PRODUCT_ACTION,
 } from "../types/template";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 // INVENTORY
 export const getInventoryAction = (items) => {

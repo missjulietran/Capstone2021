@@ -4,6 +4,9 @@ import SubSectionCard from "../Commons/SubSectionCard";
 import Container from "react-bootstrap/Container";
 import styles from "../Commons/SubSectionCard.module.css";
 import Loader from "react-loader-spinner";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const Categories = () => {
   const { data: categories, loading, error } = useFetch(

@@ -7,10 +7,10 @@ import { LinkContainer } from "react-router-bootstrap";
 function NavBarNotAuthenticated() {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Eco Store
+            Still Good <i class="fas fa-seedling"></i>
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

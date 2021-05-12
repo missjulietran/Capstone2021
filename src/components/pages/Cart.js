@@ -4,6 +4,9 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { addQuantity, deleteFromCart, removeQuantity} from '../../redux/actions/cartActions';
 import useFetch from '../pages/Commons/useFetch'
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const Cart=(props)=>{
     const {data:userInfo}=useFetch(`${process.env.REACT_APP_API_SERVER}/user`)

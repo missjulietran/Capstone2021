@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "./sidebar/Sidebar";
+import EventButton from "./sidebar/EventButton";
 import {
   Card,
   CardImg,
@@ -16,7 +17,6 @@ import { LinkContainer } from "react-router-bootstrap";
 import {
   delProductThunk,
   getInventoryThunk,
-  addToEventThunk,
 } from "../../redux/actions/formAction";
 import "./Product.css";
 
@@ -28,6 +28,10 @@ function Product() {
     dispatch(getInventoryThunk());
   }, [dispatch]);
 
+  const delProductSubmission = (id) => {
+    dispatch(delProductThunk(id));
+  };
+
   const shortText = (longtext) => {
     const TEXT_LIMIT = 20;
     if (longtext.length > TEXT_LIMIT) {
@@ -35,10 +39,6 @@ function Product() {
     } else {
       return longtext;
     }
-  };
-
-  const delProductSubmission = (id) => {
-    dispatch(delProductThunk(id));
   };
 
   return (
@@ -89,19 +89,8 @@ function Product() {
                       Delete
                     </Button>
                   </Col>
-                  <Button
-                    id={item.sku}
-                    color="light"
-                    type="submit"
-                    className="eventBtn"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log(item.sku);
-                      dispatch(addToEventThunk(item.sku));
-                    }}
-                  >
-                    ADD TO EVENT
-                  </Button>
+
+                  <EventButton id={item.sku} />
                 </CardBody>
               </Card>
             </Col>

@@ -4,7 +4,6 @@ import {
   GET_SINGLE_ITEM_ACTION,
   UPDATE_INVENTORY_ACTION,
   DEL_PRODUCT_ACTION,
-  ADD_TO_EVENT,
 } from "../types/template";
 
 const initialState = {
@@ -34,11 +33,6 @@ const formReducer = (state = initialState, action) => {
     case DEL_PRODUCT_ACTION:
       return {
         inventory: state.inventory.filter((item) => item.id !== action.payload),
-      };
-
-    case ADD_TO_EVENT:
-      return {
-        event: state.event.concat(...action.date),
       };
 
     default:

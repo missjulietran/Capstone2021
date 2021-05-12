@@ -1,12 +1,13 @@
 import axios from "axios";
+import dotenv from "dotenv";
 import {
   HANDLE_EVENT_SUBMISSION_ACTION,
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
   DEL_PRODUCT_ACTION,
-  ADD_TO_EVENT,
 } from "../types/template";
 
+dotenv.config();
 // INVENTORY
 export const getInventoryAction = (items) => {
   return {
@@ -37,7 +38,6 @@ export const getInventoryThunk = () => {
         headers: { Authorization: `Bearer ${user}` },
       }) //USERID
       .then((data) => {
-        console.log(data);
         dispatch(getInventoryAction(data.data));
       })
       .catch((err) => {
@@ -48,7 +48,7 @@ export const getInventoryThunk = () => {
 
 export const handleInventorySubmissionThunk = (data, inventoryData) => {
   const user = localStorage.getItem("token");
-  console.log(data.getAll("file"));
+
   return (dispatch) => {
     return axios
       .post(`${process.env.REACT_APP_API_SERVER}/data/uploadImage`, data, {
@@ -56,11 +56,14 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
       }) //URL
       .then(() => {
         return axios
-          .post(`${process.env.REACT_APP_API_SERVER}/data/upload`, inventoryData, {
-            headers: { Authorization: `Bearer ${user}` },
-          }) //USERID
+          .post(
+            `${process.env.REACT_APP_API_SERVER}/data/upload`,
+            inventoryData,
+            {
+              headers: { Authorization: `Bearer ${user}` },
+            }
+          ) //USERID
           .then((data) => {
-            console.log("uploaded done", data);
             alert("Thank you! Your form was submitted successfully");
             if (data.data === "updated") {
               window.location = "/Sellerproduct";
@@ -87,7 +90,6 @@ export const updateInventoryThunk = (data, inventoryData) => {
           headers: { Authorization: `Bearer ${user}` },
         }) //URL
         .then((data) => {
-          console.log("update", inventoryData);
           return axios
             .put(
               `${process.env.REACT_APP_API_SERVER}/data/${inventoryData.id}`,
@@ -143,7 +145,6 @@ export const delProductThunk = (itemid) => {
         headers: { Authorization: `Bearer ${user}` },
       })
       .then(() => {
-        console.log("del done");
         dispatch(delProductAction(itemid));
         window.location = "/Sellerproduct";
       })
@@ -169,9 +170,13 @@ export const handleEventSubmissionThunk = (data, eventData) => {
       }) //URL
       .then((data) => {
         return axios
-          .post(`${process.env.REACT_APP_API_SERVER}/data/uploadEvent`, eventData, {
-            headers: { Authorization: `Bearer ${user}` },
-          }) //USERID
+          .post(
+            `${process.env.REACT_APP_API_SERVER}/data/uploadEvent`,
+            eventData,
+            {
+              headers: { Authorization: `Bearer ${user}` },
+            }
+          ) //USERID
           .then(() => {
             console.log("event done");
           })
@@ -190,13 +195,25 @@ export const handleEventSubmissionThunk = (data, eventData) => {
 
 export const addToEventThunk = (itemid) => {
   const user = localStorage.getItem("token");
-
+  console.log("event thunk");
   return (dispatch) => {
     return axios
-      .post(`${process.env.REACT_APP_API_SERVER}/data/eventitem`, itemid, {
+      .get(`${process.env.REACT_APP_API_SERVER}/data/eventitem`, {
         headers: { Authorization: `Bearer ${user}` },
       })
-      .then((data) => console.log("add event done"))
+      .then((data) => {
+        return axios
+          .put(
+            `${process.env.REACT_APP_API_SERVER}/data/eventitem`,
+            { eventid: data.data[0].id, item: itemid },
+            {
+              headers: { Authorization: `Bearer ${user}` },
+            }
+          )
+          .then(() => console.log("add event done"))
+          .catch((err) => console.log(err));
+      })
+      .then(() => console.log("added item"))
       .catch((err) => console.log(err));
   };
 };
@@ -207,15 +224,23 @@ export const updateInformationThunk = (userData) => {
 
   return (dispatch) => {
     return axios
-      .post(`${process.env.REACT_APP_API_SERVER}/data/password`, userData.password, {
-        headers: { Authorization: `Bearer ${user}` },
-      })
+      .post(
+        `${process.env.REACT_APP_API_SERVER}/data/password`,
+        userData.password,
+        {
+          headers: { Authorization: `Bearer ${user}` },
+        }
+      )
       .then((data) => {
         console.log("password", data);
         return axios
-          .put(`${process.env.REACT_APP_API_SERVER}/data/updateUser`, userData, {
-            headers: { Authorization: `Bearer ${user}` },
-          }) //USERID
+          .put(
+            `${process.env.REACT_APP_API_SERVER}/data/updateUser`,
+            userData,
+            {
+              headers: { Authorization: `Bearer ${user}` },
+            }
+          ) //USERID
           .then((data) => {
             console.log(data);
             if (data.data === "updated") {

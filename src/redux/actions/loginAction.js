@@ -1,4 +1,5 @@
 import axios from "axios";
+import dotenv from "dotenv";
 import {
   LOGIN_FAILURE_ACTION,
   LOGIN_REQUEST_ACTION,
@@ -6,6 +7,8 @@ import {
   LOGOUT_REQUEST_ACTION,
   LOGIN_USER_TYPE,
 } from "../types/template";
+
+dotenv.config();
 
 export const logoutUserThunk = (dispatch) => {
   try {
@@ -19,10 +22,13 @@ export const loginBuyerThunk = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST_ACTION });
 
-    const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/login/buyer`, {
-      email: email,
-      password: password,
-    });
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_SERVER}/login/buyer`,
+      {
+        email: email,
+        password: password,
+      }
+    );
 
     const { data } = response;
     if (data == null) {
@@ -45,10 +51,13 @@ export const loginUserThunk = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST_ACTION });
 
-    const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/login/seller`, {
-      email: email,
-      password: password,
-    });
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_SERVER}/login/seller`,
+      {
+        email: email,
+        password: password,
+      }
+    );
 
     const { data } = response;
     if (data == null) {

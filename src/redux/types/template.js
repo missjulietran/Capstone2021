@@ -13,7 +13,6 @@ export const LOGIN_SUCCESS_ACTION = "LOGIN_SUCCESS_ACTION";
 export const LOGIN_FAILURE_ACTION = "LOGIN_FAILURE_ACTION";
 export const LOGOUT_REQUEST_ACTION = "LOGOUT_REQUEST_ACTION";
 export const LOGIN_USER_TYPE = "LOGIN_USER_TYPE";
-export const ADD_TO_EVENT = "ADD_TO_EVENT";
 
 //cart templates
 export const ADD_TO_CART = "ADD_TO_CART";

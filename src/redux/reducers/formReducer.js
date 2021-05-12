@@ -4,14 +4,13 @@ import {
   GET_SINGLE_ITEM_ACTION,
   UPDATE_INVENTORY_ACTION,
   DEL_PRODUCT_ACTION,
+  ADD_TO_EVENT,
 } from "../types/template";
 
 const initialState = {
   imageURL: [],
   inventory: [],
   event: [],
-  // certOfInfo: [],
-  // businessCert: [],
 };
 
 const formReducer = (state = initialState, action) => {
@@ -37,14 +36,10 @@ const formReducer = (state = initialState, action) => {
         inventory: state.inventory.filter((item) => item.id !== action.payload),
       };
 
-    // case LOAD_LINK_SUCCESS_ACTION:
-    //   return {
-    //     linkList: state.linkList.concat(...action.payload),
-    //   };
-    // case CLEAR_LINK_ACTION:
-    //   return {
-    //     linkList: state.linkList.filter((item) => item.id !== action.payload),
-    //   };
+    case ADD_TO_EVENT:
+      return {
+        event: state.event.concat(...action.date),
+      };
 
     default:
       return state;

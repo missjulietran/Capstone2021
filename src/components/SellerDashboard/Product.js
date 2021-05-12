@@ -16,6 +16,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import {
   delProductThunk,
   getInventoryThunk,
+  addToEventThunk,
 } from "../../redux/actions/formAction";
 import "./Product.css";
 
@@ -88,6 +89,19 @@ function Product() {
                       Delete
                     </Button>
                   </Col>
+                  <Button
+                    id={item.sku}
+                    color="light"
+                    type="submit"
+                    className="eventBtn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      console.log(item.sku);
+                      dispatch(addToEventThunk(item.sku));
+                    }}
+                  >
+                    ADD TO EVENT
+                  </Button>
                 </CardBody>
               </Card>
             </Col>

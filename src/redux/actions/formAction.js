@@ -4,6 +4,7 @@ import {
   GET_INVENTORY_ACTION,
   GET_SINGLE_ITEM_ACTION,
   DEL_PRODUCT_ACTION,
+  ADD_TO_EVENT,
 } from "../types/template";
 
 // INVENTORY
@@ -80,10 +81,6 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
 export const updateInventoryThunk = (data, inventoryData) => {
   const user = localStorage.getItem("token");
   return (dispatch) => {
-    // console.log(data === undefined);
-    // for (var pair of data.entries()) {
-    //   console.log(pair[0] + ", " + pair[1]);
-    // }
     if (!data === undefined) {
       return axios
         .post(`http://localhost:8080/data/uploadImage`, data, {
@@ -171,8 +168,6 @@ export const handleEventSubmissionThunk = (data, eventData) => {
         headers: { Authorization: `Bearer ${user}` },
       }) //URL
       .then((data) => {
-        console.log(data);
-        console.log(eventData);
         return axios
           .post(`http://localhost:8080/data/uploadEvent`, eventData, {
             headers: { Authorization: `Bearer ${user}` },
@@ -190,6 +185,19 @@ export const handleEventSubmissionThunk = (data, eventData) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+};
+
+export const addToEventThunk = (itemid) => {
+  const user = localStorage.getItem("token");
+
+  return (dispatch) => {
+    return axios
+      .post(`${process.env.REACT_APP_API_SERVER}/data/eventitem`, itemid, {
+        headers: { Authorization: `Bearer ${user}` },
+      })
+      .then((data) => console.log("add event done"))
+      .catch((err) => console.log(err));
   };
 };
 

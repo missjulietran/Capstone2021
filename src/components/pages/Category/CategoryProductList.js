@@ -10,7 +10,7 @@ const CategoryProductList = () => {
   const { category } = useParams();
 
   const { data: products, loading, error } = useFetch(
-    "http://localhost:8080/category/" + category
+    `${process.env.REACT_APP_API_SERVER}/category/` + category
   );
   return (
     <div className={styles.container}>

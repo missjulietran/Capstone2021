@@ -19,7 +19,7 @@ export const loginBuyerThunk = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST_ACTION });
 
-    const response = await axios.post("http://localhost:8080/login/buyer", {
+    const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/login/buyer`, {
       email: email,
       password: password,
     });
@@ -45,7 +45,7 @@ export const loginUserThunk = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST_ACTION });
 
-    const response = await axios.post("http://localhost:8080/login/seller", {
+    const response = await axios.post(`${process.env.REACT_APP_API_SERVER}/login/seller`, {
       email: email,
       password: password,
     });

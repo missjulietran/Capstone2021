@@ -16,7 +16,7 @@ const ProductDetailPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { data: product, loading, error } = useFetch(
-    "http://localhost:8080/productpage/" + id
+    `${process.env.REACT_APP_API_SERVER}/productpage/` + id
   );
 
   const back = (e) => {

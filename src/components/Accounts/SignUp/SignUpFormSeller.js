@@ -89,7 +89,7 @@ function SignUpFormSeller() {
     console.log(newFormData.getAll("name"));
 
     axios
-      .post("http://localhost:8080/signup", newFormData, {
+      .post(`${process.env.REACT_APP_API_SERVER}/signup`, newFormData, {
         headers: {
           "content-type": "multipart/form-data",
         },

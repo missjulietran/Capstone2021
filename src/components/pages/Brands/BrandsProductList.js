@@ -9,7 +9,7 @@ import Loader from "react-loader-spinner";
 const BrandsProductList = () => {
   const { brand } = useParams();
   const { data: products, loading, error } = useFetch(
-    "http://localhost:8080/brands/" + brand
+    `${process.env.REACT_APP_API_SERVER}/brands/` + brand
   );
   return (
     <div className={styles.container}>

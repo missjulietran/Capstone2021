@@ -8,7 +8,7 @@ import Loader from "react-loader-spinner";
 
 const Brands = () => {
   const { data: brands, loading, error } = useFetch(
-    "http://localhost:8080/brands"
+    `${process.env.REACT_APP_API_SERVER}/brands`
   );
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");

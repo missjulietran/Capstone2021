@@ -193,31 +193,6 @@ export const handleEventSubmissionThunk = (data, eventData) => {
   };
 };
 
-export const addToEventThunk = (itemid) => {
-  const user = localStorage.getItem("token");
-  console.log("event thunk");
-  return (dispatch) => {
-    return axios
-      .get(`${process.env.REACT_APP_API_SERVER}/data/eventitem`, {
-        headers: { Authorization: `Bearer ${user}` },
-      })
-      .then((data) => {
-        return axios
-          .put(
-            `${process.env.REACT_APP_API_SERVER}/data/eventitem`,
-            { eventid: data.data[0].id, item: itemid },
-            {
-              headers: { Authorization: `Bearer ${user}` },
-            }
-          )
-          .then(() => console.log("add event done"))
-          .catch((err) => console.log(err));
-      })
-      .then(() => console.log("added item"))
-      .catch((err) => console.log(err));
-  };
-};
-
 // INFORMATION
 export const updateInformationThunk = (userData) => {
   const user = localStorage.getItem("token");

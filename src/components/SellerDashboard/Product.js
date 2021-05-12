@@ -59,12 +59,14 @@ function Product() {
                     src={item.image}
                     alt="Card image"
                   />
-                </div>
+                </div>{" "}
+                <EventButton id={item.sku} />
                 <CardBody className="productDetail d-flex ">
+                  {" "}
                   <Col className="col-7 align-self-center">
                     <CardTitle>{shortText(item.name)}</CardTitle>
                     <CardText>Stock:{item.total_quantity}</CardText>
-                  </Col>
+                  </Col>{" "}
                   <Col className="align-self-center col-5">
                     <LinkContainer to={"/inventoryupdate/" + item.sku}>
                       <Button
@@ -89,8 +91,6 @@ function Product() {
                       Delete
                     </Button>
                   </Col>
-
-                  <EventButton id={item.sku} />
                 </CardBody>
               </Card>
             </Col>

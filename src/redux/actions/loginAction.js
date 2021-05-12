@@ -1,5 +1,5 @@
 import axios from "axios";
-import dotenv from "dotenv";
+
 import {
   LOGIN_FAILURE_ACTION,
   LOGIN_REQUEST_ACTION,
@@ -8,8 +8,6 @@ import {
   LOGIN_USER_TYPE,
 } from "../types/template";
 import dotenv from "dotenv";
-
-dotenv.config()
 
 dotenv.config();
 

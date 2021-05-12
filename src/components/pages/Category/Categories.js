@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 
 const Categories = () => {
   const { data: categories, loading, error } = useFetch(
-    "http://localhost:8080/Categories"
+    `${process.env.REACT_APP_API_SERVER}/Categories`
   );
 
   return (

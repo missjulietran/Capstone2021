@@ -11,6 +11,9 @@ import {
 import styles from "./ProductDetailPage.module.css";
 import Loader from "react-loader-spinner";
 import { addToCart } from "../../../redux/actions/cartActions";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const ProductDetailPage = () => {
   const dispatch = useDispatch();

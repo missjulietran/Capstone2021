@@ -5,6 +5,9 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import styles from "../Commons/SubSectionCard.module.css";
 import Loader from "react-loader-spinner";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const Brands = () => {
   const { data: brands, loading, error } = useFetch(

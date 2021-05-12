@@ -3,13 +3,17 @@ import BuyerSidebar from "./sidebar/BuyerSidebar";
 
 import { Card, CardTitle, CardBody, CardText, Col } from "reactstrap";
 import "./BuyerDashboard.css";
-
+import dotenv from "dotenv";
 import axios from "axios";
+
+
 function BuyerDashboard() {
   const [buyer, setBuyer] = useState();
   const [latestProducts, setLatestProducts] = useState();
   const [latestOrder, setLatestOrder] = useState();
   const [latestAmount, setLatestAmount] = useState();
+
+dotenv.config()
 
   const user = localStorage.getItem("token");
   useEffect(() => {

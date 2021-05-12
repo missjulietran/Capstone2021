@@ -3,6 +3,9 @@ import Form from "react-bootstrap/Form";
 import Select from "react-select";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 // BUYER SIGN UP FORM***
 function SignUpFormSeller() {

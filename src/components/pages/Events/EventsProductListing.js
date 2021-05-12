@@ -3,6 +3,9 @@ import { useParams } from "react-router";
 import useFetch from "../Commons/useFetch";
 import ProductList from "../Products/ProductList";
 import Loader from "react-loader-spinner";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const EventsProductListing = () => {
   const { id } = useParams();

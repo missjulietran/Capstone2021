@@ -32,7 +32,7 @@ export const getInventoryThunk = () => {
   const user = localStorage.getItem("token");
   return (dispatch) => {
     return axios
-      .get("http://localhost:8080/data/getInventoryData", {
+      .get(`${process.env.REACT_APP_API_SERVER}/data/getInventoryData`, {
         headers: { Authorization: `Bearer ${user}` },
       }) //USERID
       .then((data) => {

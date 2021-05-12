@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 const EventsProductListing = () => {
   const { id } = useParams();
   const { data: products, loading, error } = useFetch(
-    "http://localhost:8080/events/" + id
+    `${process.env.REACT_APP_API_SERVER}/events/` + id
   );
   return (
     <div>

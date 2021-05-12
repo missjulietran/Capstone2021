@@ -6,7 +6,7 @@ import Loader from "react-loader-spinner";
 
 const Events = () => {
   const { data: event, loading, error } = useFetch(
-    "http://localhost:8080/events"
+    `${process.env.REACT_APP_API_SERVER}/events`
   );
 
   return (

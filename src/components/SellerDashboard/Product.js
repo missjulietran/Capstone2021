@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "./sidebar/Sidebar";
+import EventButton from "./sidebar/EventButton";
 import {
   Card,
   CardImg,
@@ -27,6 +28,10 @@ function Product() {
     dispatch(getInventoryThunk());
   }, [dispatch]);
 
+  const delProductSubmission = (id) => {
+    dispatch(delProductThunk(id));
+  };
+
   const shortText = (longtext) => {
     const TEXT_LIMIT = 20;
     if (longtext.length > TEXT_LIMIT) {
@@ -34,10 +39,6 @@ function Product() {
     } else {
       return longtext;
     }
-  };
-
-  const delProductSubmission = (id) => {
-    dispatch(delProductThunk(id));
   };
 
   return (
@@ -58,12 +59,14 @@ function Product() {
                     src={item.image}
                     alt="Card image"
                   />
-                </div>
+                </div>{" "}
+                <EventButton id={item.sku} />
                 <CardBody className="productDetail d-flex ">
+                  {" "}
                   <Col className="col-7 align-self-center">
                     <CardTitle>{shortText(item.name)}</CardTitle>
                     <CardText>Stock:{item.total_quantity}</CardText>
-                  </Col>
+                  </Col>{" "}
                   <Col className="align-self-center col-5">
                     <LinkContainer to={"/inventoryupdate/" + item.sku}>
                       <Button

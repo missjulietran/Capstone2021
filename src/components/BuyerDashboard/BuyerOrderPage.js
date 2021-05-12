@@ -13,7 +13,7 @@ function BuyerOrderPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/buyerDashboard`, {
+      const { data } = await axios.get(`${process.env.REACT_APP_API_SERVER}/buyerDashboard`, {
         headers: { Authorization: `Bearer ${user}` },
       });
       setOrder(data.orderId);

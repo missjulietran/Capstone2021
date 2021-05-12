@@ -2,7 +2,7 @@ import React from 'react';
 import useFetch from '../Commons/useFetch';
 
 const EventSellerName=(props)=>{
-    const{data:name}=useFetch("http://localhost:8080/eventsellername/"+props.eventId)
+    const{data:name}=useFetch(`${process.env.REACT_APP_API_SERVER}/eventsellername/`+props.eventId)
 
     return(
         <div>

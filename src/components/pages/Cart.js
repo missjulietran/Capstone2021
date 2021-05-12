@@ -6,7 +6,7 @@ import { addQuantity, deleteFromCart, removeQuantity} from '../../redux/actions/
 import useFetch from '../pages/Commons/useFetch'
 
 const Cart=(props)=>{
-    const {data:userInfo}=useFetch('http://localhost:8080/user')
+    const {data:userInfo}=useFetch(`${process.env.REACT_APP_API_SERVER}/user`)
     console.log(userInfo)
 
     //**** COMMENTED IT OUT FOR YOU LUKASSSS FOR LOADING ****/

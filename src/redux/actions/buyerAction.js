@@ -5,7 +5,7 @@ export const updateBuyerThunk = (data) => {
 
   return (dispatch) => {
     return axios
-      .put(`http://localhost:8080/buyerDashboard`, data, {
+      .put(`${process.env.REACT_APP_API_SERVER}/buyerDashboard`, data, {
         headers: { Authorization: `Bearer ${user}` },
       })
       .then((data) => {

@@ -23,7 +23,7 @@ function UpdateInformation() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`http://localhost:8080/data/user`, {
+      const { data } = await axios.get(`${process.env.REACT_APP_API_SERVER}/data/user`, {
         headers: { Authorization: `Bearer ${user}` },
       });
       setName(data[0].name);

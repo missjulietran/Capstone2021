@@ -1,8 +1,14 @@
 .sideContainer {
-  width: 250px;
+  width: 230px;
   float: left;
-/* background-color: #000; */
+  background-color: #ffffff;
+  height: 100vh;
 }
+
+/* .mainCategoryDiv {
+  background-color: red;
+} */
+
 .card {
   border: none;
   margin: 20px;
@@ -14,7 +20,7 @@
 }
 .link:focus {
   color: #3d3d3d;
-  border-bottom: 2px solid #008000;
+  border-bottom: 2px solid #408c8d;
 }
 
 /* Brand */
@@ -23,8 +29,16 @@
 }
 .search {
   margin: 20px 0;
-  color: rgb(13, 82, 22);
+  color: #408c8d;
 }
 .all {
   margin-top: 50px;
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: inherit;
+  max-width: 100%;
 }

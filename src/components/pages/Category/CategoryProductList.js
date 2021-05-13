@@ -24,7 +24,6 @@ const CategoryProductList = () => {
       <div>
         <Categories />
       </div>
-      <div>
         {loading && (
           <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
         )}
@@ -39,7 +38,6 @@ const CategoryProductList = () => {
           />
         )}
       </div>
-    </div>
   );
 };
 

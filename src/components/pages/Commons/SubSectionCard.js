@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
 import styles from "./SubSectionCard.module.css";
 
 const SubSectionCard = (props) => {
@@ -12,9 +12,9 @@ const SubSectionCard = (props) => {
         })
         .map((subSection, i) => {
           return (
-            <div>
+            <div className="mainCategoryDiv">
               {/* // <Col lg={2} md={4} sm={6}> */}
-              <Card key={subSection.id} className={styles.card}>
+              <div key={subSection.id} className={styles.card}>
                 <Link
                   to={`${props.main}/${props.section}/${subSection.name}`}
                   className={styles.link}
@@ -22,7 +22,7 @@ const SubSectionCard = (props) => {
                   {" "}
                   {subSection.name}
                 </Link>
-              </Card>
+              </div>
               {/* // </Col> */}
             </div>
           );

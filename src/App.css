@@ -15,7 +15,7 @@
 
 * {
   box-sizing: border-box;
-  /* background-color: #fff; */
+  /* background-color: green; */
   color: #5a5a5a;
   font-family: "Muli",sans-serif;
   font-size: 15px;
@@ -30,6 +30,13 @@ p {
   margin: 0 0 3px;
   padding-bottom: 3px;
 }
+
+/* main div */
+/* .maincontainer {
+  background-color: red;
+  width: -webkit-fill-available;
+  height: 100vh;
+} */
 
 /* About page CSS */
 .aboutDiv {
@@ -125,6 +132,22 @@ input.form-control:focus {
 .eventdiv {
   background-color: #f8f6f5;
   height: 540px!important;
+  
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 0.5rem;
+  padding: 5px 5px 5px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 2px rgb(14 31 53 / 12%);
+  text-align: center;
+  /* width: 25vh; */
 }
 /* 
 

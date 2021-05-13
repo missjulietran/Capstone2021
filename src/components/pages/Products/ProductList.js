@@ -1,8 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import SortFeature from "../Commons/SortFeature";
+import styles from "./ProductList.module.css"
 
 const ProductList = (props) => {
   const [criteria, setCriteria] = React.useState("");
@@ -15,10 +16,10 @@ const ProductList = (props) => {
   console.log(path);
 
   return (
-    <div className="product-list">
+    <div className={styles.productlist}>
       <Container fluid>
         <SortFeature changeHandler={changeHandler} />
-        <Row>
+        <Row className="justify-content-md-left">
           {props.products
             .sort((a, b) => {
               switch (criteria) {
@@ -36,7 +37,7 @@ const ProductList = (props) => {
             })
             .map((product) => {
               return (
-                <Col>
+                <div className={styles.col}>
                   <ProductCard
                     main={path}
                     key={product.id}
@@ -50,7 +51,7 @@ const ProductList = (props) => {
                       product.best_before_date
                     ).toLocaleDateString()}
                   />
-                </Col>
+                </div>
               );
             })}
         </Row>

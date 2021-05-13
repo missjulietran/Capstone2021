@@ -38,7 +38,10 @@ export const About = () => {
                 </div>
                 <Card.Body>
                   <Card.Title>Give back</Card.Title>
-                  <Card.Text>Give back to the community</Card.Text>
+                  <Card.Text>
+                    Donating food and feminine products to support those in
+                    need, especially the elderly and low-income families.
+                  </Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
               </Card>
@@ -55,7 +58,11 @@ export const About = () => {
                 </div>
                 <Card.Body>
                   <Card.Title>Social Responsibility</Card.Title>
-                  <Card.Text>text text</Card.Text>
+                  <Card.Text>
+                    Continuing to work towards the mission of fighting hunger in
+                    Hong Kong. Also, raising more awareness of the waste issue
+                    by organising hike and beach cleanups.
+                  </Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
               </Card>
@@ -72,7 +79,10 @@ export const About = () => {
                 <Card.Body>
                   <Card.Title>Carbon Footprint</Card.Title>
                   <Card.Text>
-                    Reducing your companies carbon footprint
+                    Over 3600 tonnes of food waste are being sent to Hong Kong’s
+                    landfills each day. We aim at reducing the amount of food
+                    being sent to landfill in order to reduce greenhouse gas
+                    emissions.
                   </Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>

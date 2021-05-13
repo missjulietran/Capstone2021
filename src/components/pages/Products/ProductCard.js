@@ -31,7 +31,7 @@ const ProductCard = (props) => {
               <Card.Text>
                 <h6>{shortText(props.name)}</h6>
                 <hr />
-                <h6>${props.price}/unit</h6>
+                <h6>${props.price.toLocaleString()} / unit</h6>
                 <hr />
                 <h6>Best Before:{props.bbd}</h6>
                 <hr />

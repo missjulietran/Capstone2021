@@ -14,7 +14,7 @@ const EventsProductListing = () => {
   );
   return (
     <div>
-      <h1>Filtered listing - {id}</h1>
+      <h1>Event - {id}</h1>
       {loading && (
         <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
       )}

@@ -65,11 +65,11 @@ const handleAdd=async()=>{
           <div className={styles.detailBox}>
             <h1>{product && product[0].name}</h1> <hr />
             <p>{product && product[0].descriptions}</p>
-            <h6>Price: ${product && product[0].price}/unit</h6>
+            <h6>Price: ${product && product[0].price.toLocaleString()} / unit</h6>
             <br />
             <h6>MOQ: {product && product[0].units}</h6>
             <br />
-            {quantity>0?<h6>Remaining Quantity:{quantity}</h6>:<h6>Out of Stock</h6>}
+            {quantity>0?<h6>Remaining Quantity: {quantity.toLocaleString()}</h6>:<h6>Out of Stock</h6>}
             <br />
             {isAdded?(<Button disabled variant="outline-success">Added!</Button>):(quantity>0 && (product && <Button onClick={()=>{dispatch(addToCartThunk(id,product[0].image,product[0].name,product[0].price));handleAdd()}} variant="success" size="sm"><FontAwesomeIcon icon={faShoppingCart} />Add to Cart</Button>))}
           </div>

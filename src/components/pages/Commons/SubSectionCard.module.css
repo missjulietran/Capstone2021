@@ -1,8 +1,13 @@
 .sideContainer {
   width: 250px;
   float: left;
-/* background-color: #000; */
+background-color: #000;
 }
+
+/* .mainCategoryDiv {
+  background-color: red;
+} */
+
 .card {
   border: none;
   margin: 20px;
@@ -28,3 +33,4 @@
 .all {
   margin-top: 50px;
 }
+

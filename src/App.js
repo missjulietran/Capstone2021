@@ -89,7 +89,7 @@ function App() {
       <NavBar />
 
       <Navbar2 />
-
+<div className="maincontainer">
       <Route path="/" exact component={Home} />
       <Switch>
         {/* Navbar1 Links */}
@@ -145,7 +145,7 @@ function App() {
       <PrivateRoute path="/updatebuyer" component={UpdateBuyer} />
       <PrivateRoute path="/yourorder" component={BuyerOrderPage} />
       <PrivateRoute path="/orderdetails/:orderId" component={OrderDetails} />
-
+      </div>
       <Footer />
     </Router>
   );

@@ -15,7 +15,7 @@
 
 * {
   box-sizing: border-box;
-  /* background-color: #fff; */
+  /* background-color: green; */
   color: #5a5a5a;
   font-family: "Muli",sans-serif;
   font-size: 15px;
@@ -29,6 +29,12 @@
 p {
   margin: 0 0 3px;
   padding-bottom: 3px;
+}
+
+/* main div */
+.maincontainer {
+  background-color: red;
+  width: -webkit-fill-available;
 }
 
 /* About page CSS */

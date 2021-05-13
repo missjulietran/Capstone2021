@@ -2,6 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
 import SortFeature from "../Commons/SortFeature";
+import styles from "./ProductList.module.css"
 
 const ProductList = (props) => {
   const [criteria, setCriteria] = React.useState("");
@@ -11,7 +12,7 @@ const ProductList = (props) => {
   };
 
   return (
-    <div className="product-list">
+    <div className={styles.productlist}>
       <Container fluid>
         <SortFeature changeHandler={changeHandler} />
         <Row>

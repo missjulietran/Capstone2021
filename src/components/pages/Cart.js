@@ -9,7 +9,7 @@ dotenv.config()
 
 //Stripe
 
-const stripePromise = loadStripe('pk_test_51IppcNIrcJJ8VlaByzocVIhX5vgHrRDeyCzu4fjQ5vGbmfm5g2TRdcjEQFZ6Ijigcc7ChcQ0xRyc2mEl1F07VqVh00DgpnrWjK');
+const stripePromise = loadStripe(process.env.STRIPE_SECRET_TEST);
 
 const Cart=(props)=>{
     //User Info

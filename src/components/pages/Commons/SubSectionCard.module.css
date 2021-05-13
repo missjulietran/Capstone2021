@@ -1,6 +1,7 @@
 .sideContainer {
   width: 250px;
   float: left;
+/* background-color: #000; */
 }
 .card {
   border: none;
@@ -8,11 +9,11 @@
 }
 .link {
   font-size: medium;
-  font-weight: bold;
-  color: #2e4d4e;
+  /* font-weight: bold; */
+  color: #363636;
 }
 .link:focus {
-  color: #008000;
+  color: #3d3d3d;
   border-bottom: 2px solid #008000;
 }
 

@@ -1,7 +1,8 @@
 .sideContainer {
-  width: 250px;
+  width: 230px;
   float: left;
-background-color: #000;
+  background-color: #ffffff;
+  height: 100vh;
 }
 
 /* .mainCategoryDiv {
@@ -34,3 +35,10 @@ background-color: #000;
   margin-top: 50px;
 }
 
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: inherit;
+  max-width: 100%;
+}

@@ -2,19 +2,16 @@ import { Nav } from "react-bootstrap";
 import React, { useState } from "react";
 import "./NavBar2.css";
 import { LinkContainer } from "react-router-bootstrap";
-// import {useHistory} from "react-router-dom";
 
-
-function NavBar2() {
+function SellerNavBar2() {
   const [click, setClick] = useState(false);
-  // const history = useHistory();
 
   const handleClick = () => setClick(!click);
   return (
     <>
-      <Nav defaultActiveKey="/" as="ul">
+      <Nav defaultActiveKey="/seller" as="ul">
         <Nav.Item as="li">
-          <LinkContainer to="/">
+          <LinkContainer to="/seller">
             <Nav.Link
               href="/"
               activeClassName="active"
@@ -26,7 +23,7 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item as="li">
-          <LinkContainer to="/ishome/Categories/Asian">
+          <LinkContainer to="/seller/Categories/Asian">
             <Nav.Link
               activeClassName="active"
               className="nav-links2"
@@ -37,9 +34,9 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item as="li">
-          <LinkContainer to="/ishome/Brands/NotLush">
+          <LinkContainer to="/seller/Brands/NotLush">
             <Nav.Link
-              eventKey="/brands"
+              //   eventKey="/brands"
               activeClassName="active"
               className="nav-links2"
               onClick={handleClick}
@@ -49,8 +46,7 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
       </Nav>
-      {/* <i class="fas fa-arrow-circle-left fa-2x"onClick={() => history.goBack()} style={{margin:'10px'}}></i> */}
     </>
   );
 }
-export default NavBar2;
+export default SellerNavBar2;

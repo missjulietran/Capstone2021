@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import useFetch from "../Commons/useFetch";
 import SubSectionCard from "../Commons/SubSectionCard";
 import Container from "react-bootstrap/Container";
@@ -7,12 +8,17 @@ import styles from "../../pages/Commons/SubSectionCard.module.css"
 import Loader from "react-loader-spinner";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const Categories = () => {
-  const { data: categories, loading, error } = useFetch(
-    `${process.env.REACT_APP_API_SERVER}/Categories`
-  );
+  const {
+    data: categories,
+    loading,
+    error,
+  } = useFetch(`${process.env.REACT_APP_API_SERVER}/Categories`);
+
+  const location = useLocation();
+  const path = location.pathname.slice(0, 7);
 
   return (
     <Container fluid className={styles.sideContainer}>
@@ -21,7 +27,11 @@ const Categories = () => {
       )}
       {error && <p>{error}</p>}
       {categories && (
-        <SubSectionCard section="Categories" subSections={categories} />
+        <SubSectionCard
+          main={path}
+          section="Categories"
+          subSections={categories}
+        />
       )}
     </Container>
   );

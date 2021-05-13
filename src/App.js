@@ -4,8 +4,11 @@ import { useSelector } from "react-redux";
 
 //Fixed Components
 import NavBar from "./components/Navbar1/NavBar";
-
 import Navbar2 from "./components/Navbar2/NavBar2";
+import BuyerNavBar2 from "./components/Navbar2/BuyerNavBar2";
+import SellerNavBar2 from "./components/Navbar2/SellerNavBar2";
+import NavBarBuyerAuthenticated from "./components/Navbar1/NavBarBuyerAuthenticated";
+import NavBarSellerAuthenticated from "./components/Navbar1/NavBarSellerAuthenticated";
 import Home from "./components/pages/Home";
 import {
   BrowserRouter as Router,
@@ -42,9 +45,9 @@ import ProductDetailPage from "./components/pages/Products/ProductDetailPage.js"
 // import Events from "./components/pages/Events/Events.js";
 import EventsProductListing from "./components/pages/Events/EventsProductListing.js";
 
+import Chatbot from "./components/Chatbot";
 import { About } from "./components/pages/About";
 import { SignUp } from "./components/pages/SignUp";
-import { LogIn } from "./components/pages/LogIn";
 import Cart from "./components/pages/Cart.js";
 import { BuyerSeller } from "./components/Accounts/BuyerSeller";
 import { Contact } from "./components/pages/Contact";
@@ -72,7 +75,7 @@ function App() {
             ) : (
               <Redirect
                 to={{
-                  pathname: "/BuyerSeller",
+                  pathname: "/ishome/BuyerSeller",
                   state: { from: props.location },
                 }}
               />
@@ -86,66 +89,135 @@ function App() {
   };
   return (
     <Router>
-      <NavBar />
+      <Route path="/" exact>
+        <Redirect to="/ishome" />
+      </Route>
+      <Route path="/" component={Chatbot} />
 
-      <Navbar2 />
-<div className="maincontainer">
-      <Route path="/" exact component={Home} />
-      <Switch>
-        {/* Navbar1 Links */}
-        <Route path="/BuyerSeller" component={BuyerSeller} />
-        <Route path="/LogIn" component={LogIn} />
-        <Route path="/SignUp" component={SignUp} />
-        <Route path="/Cart" component={Cart} />
+      <Route path="/ishome" component={NavBar} />
+      <PrivateRoute path="/buyers" component={NavBarBuyerAuthenticated} />
+      <PrivateRoute path="/seller" component={NavBarSellerAuthenticated} />
 
-        {/* Navbar2 links */}
-        {/* Brands Routes */}
-        <Route exact path="/Brands/:brand" component={BrandsProductList} />
+      <Route path="/ishome" component={Navbar2} />
+      <PrivateRoute path="/buyers" component={BuyerNavBar2} />
+      <PrivateRoute path="/seller" component={SellerNavBar2} />
 
-        {/* Category Routes */}
-        <Route
-          exact
-          path="/Categories/:category"
-          component={CategoryProductList}
-        />
-        <Route
-          exact
-          path="/Categories/:category/:id"
-          component={ProductDetailPage}
-        />
+      <div className="maincontainer">
+        <Route exact path="/ishome" component={Home} />
+        <PrivateRoute exact path="/seller" component={Home} />
+        {/* <PrivateRoute exact path="/buyers" component={Home} /> */}
+        <Switch>
+          {/* Navbar1 Links */}
+          <Route path="/ishome/BuyerSeller" component={BuyerSeller} />
+          <Route path="/ishome/SignUp" component={SignUp} />
+          <Route path="/buyers/Cart" component={Cart} />
 
-        {/* Events Routes */}
-        <Route exact path="/Events/:id" component={EventsProductListing} />
-        {/* Cart */}
-        <Route exact path='/Cart' component={Cart}/>
+          {/* Navbar2 links */}
+          {/* Brands Routes */}
+          <Route
+            exact
+            path="/ishome/Brands/:brand"
+            component={BrandsProductList}
+          />
+          <PrivateRoute
+            exact
+            path="/buyers/Brands/:brand"
+            component={BrandsProductList}
+          />
+          <PrivateRoute
+            exact
+            path="/seller/Brands/:brand"
+            component={BrandsProductList}
+          />
 
-        {/* <Error /> */}
-        {/* Footer links */}
-        <Route path="/About" component={About} />
-        <Route path="/Contact" component={Contact} />
-        <Route path="/FAQ" component={FAQ} />
-        <Route path="/Thankyou" component={Thankyou} />
-        <Route path="/GiveBack" component={GiveBack} />
-      </Switch>
-      {/* SellerDashboard Links */}
-      {/* USERID */}
-      <PrivateRoute path="/sellerdashboard" component={SellerDashboard} />
-      <PrivateRoute path="/inventoryupload" component={InventoryForm} />
-      <PrivateRoute
-        path="/inventoryupdate/:itemId"
-        component={UpdateInventoryForm}
-      />
-      <PrivateRoute path="/eventupload" component={EventForm} />
-      <PrivateRoute path="/sellerproduct" component={Product} />
-      <PrivateRoute path="/informationupdate" component={Information} />
+          {/* Category Routes */}
+          <Route
+            exact
+            path="/ishome/Categories/:category"
+            component={CategoryProductList}
+          />
+          <PrivateRoute
+            exact
+            path="/buyers/Categories/:category"
+            component={CategoryProductList}
+          />
+          <PrivateRoute
+            exact
+            path="/seller/Categories/:category"
+            component={CategoryProductList}
+          />
 
-      {/* BuyerDashboard Links */}
+          <Route
+            exact
+            path="/ishome/Categories/:category/:id"
+            component={ProductDetailPage}
+          />
+          <PrivateRoute
+            exact
+            path="/buyers/Categories/:category/:id"
+            component={ProductDetailPage}
+          />
+          <PrivateRoute
+            exact
+            path="/seller/Categories/:category/:id"
+            component={ProductDetailPage}
+          />
 
-      <PrivateRoute path="/buyerdashboard" component={BuyerDashboard} />
-      <PrivateRoute path="/updatebuyer" component={UpdateBuyer} />
-      <PrivateRoute path="/yourorder" component={BuyerOrderPage} />
-      <PrivateRoute path="/orderdetails/:orderId" component={OrderDetails} />
+          {/* Events Routes */}
+          <Route
+            exact
+            path="/ishome/Events/:id"
+            component={EventsProductListing}
+          />
+
+          {/* <Error /> */}
+          {/* Footer links */}
+          <Route path="/ishome/About" component={About} />
+          <Route path="/ishome/Contact" component={Contact} />
+          <Route path="/ishome/FAQ" component={FAQ} />
+          <Route path="/ishome/Thankyou" component={Thankyou} />
+          <Route path="/ishome/GiveBack" component={GiveBack} />
+
+          <PrivateRoute
+            path="/seller/sellerdashboard"
+            component={SellerDashboard}
+          />
+          <PrivateRoute
+            path="/seller/inventoryupload"
+            component={InventoryForm}
+          />
+          <PrivateRoute
+            path="/seller/inventoryupdate/:itemId"
+            component={UpdateInventoryForm}
+          />
+          <PrivateRoute path="/seller/eventupload" component={EventForm} />
+          <PrivateRoute path="/seller/sellerproduct" component={Product} />
+          <PrivateRoute
+            path="/seller/informationupdate"
+            component={Information}
+          />
+
+          {/* BuyerDashboard Links */}
+
+          {/* <PrivateRoute path="/buyer" component={NavBarBuyerAuthenticated} /> */}
+
+          <PrivateRoute exact path="/buyers" component={Home} />
+          <PrivateRoute exact path="/buyers/Cart" component={Cart} />
+          <PrivateRoute
+            path="/buyers/buyerdashboard"
+            component={BuyerDashboard}
+          />
+          <PrivateRoute path="/buyers/updatebuyer" component={UpdateBuyer} />
+          <PrivateRoute path="/buyers/yourorder" component={BuyerOrderPage} />
+          <PrivateRoute
+            path="/buyers/orderdetails/:orderId"
+            component={OrderDetails}
+          />
+        </Switch>
+        {/* SellerDashboard Links */}
+        {/* USERID */}
       </div>
+
       <Footer />
     </Router>
   );

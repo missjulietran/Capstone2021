@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import useFetch from "../Commons/useFetch";
 import SubSectionCard from "../Commons/SubSectionCard";
 import Container from "react-bootstrap/Container";
@@ -7,12 +8,17 @@ import styles from "../Commons/SubSectionCard.module.css";
 import Loader from "react-loader-spinner";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const Brands = () => {
-  const { data: brands, loading, error } = useFetch(
-    `${process.env.REACT_APP_API_SERVER}/brands`
-  );
+  const location = useLocation();
+  const path = location.pathname.slice(0, 7);
+
+  const {
+    data: brands,
+    loading,
+    error,
+  } = useFetch(`${process.env.REACT_APP_API_SERVER}/brands`);
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
 

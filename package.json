@@ -38,6 +38,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",
+    "react-simple-chatbot": "^0.6.1",
     "react-stripe-elements": "^6.1.2",
     "reactstrap": "^8.9.0",
     "redux": "^4.1.0",

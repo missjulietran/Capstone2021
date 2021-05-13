@@ -6,8 +6,7 @@ import BuyerSidebar from "./sidebar/BuyerSidebar";
 import "./OrderDetails.css";
 import dotenv from "dotenv";
 
-dotenv.config()
-
+dotenv.config();
 
 function OrderDetails(props) {
   const user = localStorage.getItem("token");
@@ -37,7 +36,7 @@ function OrderDetails(props) {
 
   const back = (e) => {
     e.preventDefault();
-    history.push("/yourorder");
+    history.push("/buyers/yourorder");
   };
   return (
     <div className="d-flex">

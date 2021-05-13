@@ -20,7 +20,7 @@
 }
 .link:focus {
   color: #3d3d3d;
-  border-bottom: 2px solid #008000;
+  border-bottom: 2px solid #408c8d;
 }
 
 /* Brand */
@@ -29,7 +29,7 @@
 }
 .search {
   margin: 20px 0;
-  color: rgb(13, 82, 22);
+  color: #408c8d;
 }
 .all {
   margin-top: 50px;

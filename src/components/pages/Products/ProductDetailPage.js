@@ -22,15 +22,17 @@ const ProductDetailPage = () => {
   const { data: product, loading, error } = useFetch(
     `${process.env.REACT_APP_API_SERVER}/productpage/` + id
   );
-  //Quantity updaters
+  //Quantity updatersg
   const [quantity, setQuantity]=React.useState(0);
   const [isAdded,setIsAdded]=React.useState(false);
+
   React.useEffect(()=>{
     const fetchQuant=async()=>{
         let data=await axios.get('http://localhost:8080/productpage/'+id)
         setQuantity(data.data[0].total_quantity)
     };
     fetchQuant()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 
 const handleAdd=async()=>{

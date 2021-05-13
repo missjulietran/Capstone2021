@@ -18,12 +18,14 @@ function NavBarBuyerAuthenticated() {
   
   useEffect(()=>{
   if(cartCount.length){
+    // eslint-disable-next-line
     cartCount=cartCount.map(item=>item.quantity)
     cartCount=cartCount.reduce((a,b)=>{
       return a+b
     })
   }
     setInCart(cartCount)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[fullState])
 
 

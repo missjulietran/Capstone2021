@@ -24,6 +24,7 @@ const Cart=(props)=>{
       setUserInfo(data.buyer[0])
         }
         fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     
     //Cart Actions

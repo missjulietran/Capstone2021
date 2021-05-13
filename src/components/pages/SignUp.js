@@ -1,6 +1,6 @@
 import SignUpForm from "../Accounts/SignUp/SignUpform";
-
-import "../../App.css";
+import styles from "./SignUp.module.css"
+// import "../../App.css";
 import React, { useState } from "react";
 import SignUpFormSeller from "../Accounts/SignUp/SignUpFormSeller";
 
@@ -9,11 +9,11 @@ export const SignUp = () => {
   const handleClickA = () => setIsBuyer(true);
   const handleClickB = () => setIsBuyer(false);
   return (
-    <div className="signupdiv">
+    <div className={styles.signup}>
       {/* <div className="flex-container"> */}
-      <div className="d-flex justify-content-center">
+      <div className={styles.buyerseller}>
         <h3>
-          I want to register as a
+          Are you a
           <button onClick={handleClickA} className="userButton">
             BUYER
           </button>{" "}

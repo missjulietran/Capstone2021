@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutUserThunk } from "../../redux/actions/loginAction";
 
 function NavBarBuyerAuthenticated() {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  //Icon to show items in cart
+  const [inCart, setInCart]=useState(0)
+  var fullState = useSelector(state=>state)
+  var cartCount= useSelector(state=>state.cart.items);
+  
+  useEffect(()=>{
+  if(cartCount.length){
+    cartCount=cartCount.map(item=>item.quantity)
+    cartCount=cartCount.reduce((a,b)=>{
+      return a+b
+    })
+  }
+    setInCart(cartCount)
+  },[fullState])
+
 
   const logout = (e) => {
     e.preventDefault();
@@ -52,7 +68,7 @@ function NavBarBuyerAuthenticated() {
 
             <LinkContainer to="/Cart">
               <Nav.Link eventKey={5} href="/Cart">
-                Cart <i class="fas fa-shopping-cart"></i>
+                Cart <i class="fas fa-shopping-cart"></i> {inCart}
               </Nav.Link>
             </LinkContainer>
           </Nav>

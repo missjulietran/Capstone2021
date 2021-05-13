@@ -1,10 +1,9 @@
 // import React from 'react';
 // import "./Footer.css"
-import "./Footer.css";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import styles from "./Footer.module.css"
+// import styles from "./Footer.module.css";
 
 const stickyFooterStyle = {
   backgroundColor: "#ffffff",

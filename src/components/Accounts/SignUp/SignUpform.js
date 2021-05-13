@@ -5,8 +5,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import dotenv from "dotenv";
 
-dotenv.config()
-
+dotenv.config();
 
 function SignUpForm() {
   const [buyer] = useState(true);
@@ -94,8 +93,8 @@ function SignUpForm() {
     e.preventDefault();
     // console.log("businesscert");
     // console.log(e.target.files);
-    console.log(realcertOfInfo)
-    console.log(realbusinessCert)
+    console.log(realcertOfInfo);
+    console.log(realbusinessCert);
     setBusinessCert(e.target.files[0].name);
     setrealBusinessCert(e.target.files[0]);
   };
@@ -117,7 +116,7 @@ function SignUpForm() {
       })
       .then(function (res) {
         console.log(res);
-        history.push("/Thankyou");
+        history.push("/ishome/Thankyou");
       })
       .catch(function (err) {
         console.log(err);

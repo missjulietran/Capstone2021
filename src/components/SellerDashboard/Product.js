@@ -68,7 +68,7 @@ function Product() {
                     <CardText>Stock:{item.total_quantity}</CardText>
                   </Col>{" "}
                   <Col className="align-self-center col-5">
-                    <LinkContainer to={"/inventoryupdate/" + item.sku}>
+                    <LinkContainer to={"/seller/inventoryupdate/" + item.sku}>
                       <Button
                         id={item.id}
                         color="light"

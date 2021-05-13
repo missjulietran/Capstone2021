@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import "./NavBar2.css";
 import { LinkContainer } from "react-router-bootstrap";
 
-function NavBar2() {
+function BuyerNavBar2() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
   return (
     <>
-      <Nav defaultActiveKey="/" as="ul">
+      <Nav defaultActiveKey="/buyers" as="ul">
         <Nav.Item as="li">
-          <LinkContainer to="/">
+          <LinkContainer to="/buyers">
             <Nav.Link
               href="/"
               activeClassName="active"
@@ -23,7 +23,7 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item as="li">
-          <LinkContainer to="/ishome/Categories/Asian">
+          <LinkContainer to="/buyers/Categories/Asian">
             <Nav.Link
               activeClassName="active"
               className="nav-links2"
@@ -34,9 +34,9 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item as="li">
-          <LinkContainer to="/ishome/Brands/NotLush">
+          <LinkContainer to="/buyers/Brands/NotLush">
             <Nav.Link
-              eventKey="/brands"
+              //   eventKey="/brands"
               activeClassName="active"
               className="nav-links2"
               onClick={handleClick}
@@ -49,4 +49,4 @@ function NavBar2() {
     </>
   );
 }
-export default NavBar2;
+export default BuyerNavBar2;

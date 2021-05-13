@@ -64,9 +64,9 @@ export const handleInventorySubmissionThunk = (data, inventoryData) => {
             }
           ) //USERID
           .then((data) => {
-            alert("Thank you! Your form was submitted successfully");
+            alert("Thank you! Your form is submitted successfully");
             if (data.data === "updated") {
-              window.location = "/Sellerproduct";
+              window.location = "/seller/Sellerproduct";
             }
           })
           .catch((err) => {
@@ -99,9 +99,9 @@ export const updateInventoryThunk = (data, inventoryData) => {
               }
             ) //USERID
             .then((data) => {
-              alert("Thank you! Your product was updated successfully");
+              alert("Thank you! Your product is updated successfully");
               if (data.data === "updated") {
-                window.location = "/Sellerproduct";
+                window.location = "/seller/Sellerproduct";
               }
             })
             .catch((err) => {
@@ -127,7 +127,7 @@ export const updateInventoryThunk = (data, inventoryData) => {
         .then((data) => {
           alert("Thank you! Your product was updated successfully");
           if (data.data === "updated") {
-            window.location = "/Sellerproduct";
+            window.location = "/seller/Sellerproduct";
           }
         })
         .catch((err) => {
@@ -146,7 +146,7 @@ export const delProductThunk = (itemid) => {
       })
       .then(() => {
         dispatch(delProductAction(itemid));
-        window.location = "/Sellerproduct";
+        window.location = "/seller/Sellerproduct";
       })
 
       .catch((err) => console.log(err));
@@ -185,7 +185,10 @@ export const handleEventSubmissionThunk = (data, eventData) => {
           });
       })
       .then(() => {
-        console.log("uploaded done");
+        alert("Thank you! Your event is created successfully");
+        if (data.data === "updated") {
+          window.location = "/seller/Sellerproduct";
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -217,9 +220,9 @@ export const updateInformationThunk = (userData) => {
             }
           ) //USERID
           .then((data) => {
-            console.log(data);
+            alert("Thank you! Your information is updated successfully.");
             if (data.data === "updated") {
-              window.location = "/SellerDashBoard";
+              window.location = "/seller/SellerDashBoard";
             }
           })
           .catch((err) => {

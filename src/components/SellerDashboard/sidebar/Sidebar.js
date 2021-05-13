@@ -14,7 +14,7 @@ import styles from "./Sidebar.module.css";
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
-      <LinkContainer to="/sellerdashboard">
+      <LinkContainer to="/seller/sellerdashboard">
         <Nav.Link className={styles.link}>
           {" "}
           <FontAwesomeIcon className={styles.icon} icon={faChartLine} />{" "}
@@ -22,7 +22,7 @@ const Sidebar = () => {
         </Nav.Link>
       </LinkContainer>
 
-      <LinkContainer to="/informationupdate">
+      <LinkContainer to="/seller/informationupdate">
         <Nav.Link className={styles.link}>
           {" "}
           <FontAwesomeIcon className={styles.icon} icon={faUserEdit} />{" "}
@@ -30,21 +30,21 @@ const Sidebar = () => {
         </Nav.Link>
       </LinkContainer>
 
-      <LinkContainer to="/sellerproduct">
+      <LinkContainer to="/seller/sellerproduct">
         <Nav.Link className={styles.link}>
           {" "}
           <FontAwesomeIcon className={styles.icon} icon={faBoxes} /> Inventory
         </Nav.Link>
       </LinkContainer>
 
-      <LinkContainer to="/inventoryupload">
+      <LinkContainer to="/seller/inventoryupload">
         <Nav.Link className={styles.link}>
           {" "}
           <FontAwesomeIcon className={styles.icon} icon={faPlus} /> Add Product
         </Nav.Link>
       </LinkContainer>
 
-      <LinkContainer to="/eventupload">
+      <LinkContainer to="/seller/eventupload">
         <Nav.Link className={styles.link}>
           {" "}
           <FontAwesomeIcon className={styles.icon} icon={faCalendarPlus} /> Add

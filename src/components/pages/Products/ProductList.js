@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
 import SortFeature from "../Commons/SortFeature";
@@ -7,8 +8,11 @@ const ProductList = (props) => {
   const [criteria, setCriteria] = React.useState("");
   const changeHandler = (e) => {
     setCriteria(e.target.value);
-    console.log(e.target.value);
   };
+
+  const location = useLocation();
+  const path = location.pathname.slice(0, 7);
+  console.log(path);
 
   return (
     <div className="product-list">
@@ -34,6 +38,7 @@ const ProductList = (props) => {
               return (
                 <Col>
                   <ProductCard
+                    main={path}
                     key={product.id}
                     img={product.image}
                     section={props.section}

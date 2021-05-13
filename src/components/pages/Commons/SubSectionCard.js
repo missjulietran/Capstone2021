@@ -16,7 +16,7 @@ const SubSectionCard = (props) => {
               {/* // <Col lg={2} md={4} sm={6}> */}
               <Card key={subSection.id} className={styles.card}>
                 <Link
-                  to={`/${props.section}/${subSection.name}`}
+                  to={`${props.main}/${props.section}/${subSection.name}`}
                   className={styles.link}
                 >
                   {" "}

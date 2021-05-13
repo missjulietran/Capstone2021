@@ -13,14 +13,16 @@ import Loader from "react-loader-spinner";
 import { addToCart } from "../../../redux/actions/cartActions";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const ProductDetailPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { data: product, loading, error } = useFetch(
-    `${process.env.REACT_APP_API_SERVER}/productpage/` + id
-  );
+  const {
+    data: product,
+    loading,
+    error,
+  } = useFetch(`${process.env.REACT_APP_API_SERVER}/productpage/` + id);
 
   const back = (e) => {
     e.preventDefault();

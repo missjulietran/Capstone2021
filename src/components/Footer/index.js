@@ -1,10 +1,9 @@
 // import React from 'react';
 // import "./Footer.css"
-import "./Footer.css";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import styles from "./Footer.module.css"
+// import styles from "./Footer.module.css";
 
 const stickyFooterStyle = {
   backgroundColor: "#ffffff",
@@ -32,10 +31,9 @@ export default class Footer extends Component {
             <div className="footer2">
               {" "}
               {/* &copy; Copyright 2021 - 2022 | StillGood{" "} */}
-              <Link to="/about">
-                About
-              </Link> <Link to="/Contact">Contact</Link>{" "}
-              <Link to="/FAQ">FAQ</Link>
+              <Link to="/ishome/about">About</Link>{" "}
+              <Link to="/ishome/Contact">Contact</Link>{" "}
+              <Link to="/ishome/FAQ">FAQ</Link>
             </div>
           </Col>
         </Row>

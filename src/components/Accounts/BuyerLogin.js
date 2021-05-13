@@ -17,7 +17,7 @@ const BuyerLogin = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push("/");
+      history.push("/buyers");
     }
   }, [isAuthenticated, history]);
 

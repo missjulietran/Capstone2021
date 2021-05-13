@@ -13,19 +13,19 @@ import styles from "./BuyerSidebar.module.css";
 const BuyerSidebar = () => {
   return (
     <div className={styles.sidebar}>
-      <LinkContainer to="/buyerdashboard">
+      <LinkContainer to="/buyers/buyerdashboard">
         <Nav.Link className={styles.link}>
           <FontAwesomeIcon className={styles.icon} icon={faColumns} /> Your
           Information
         </Nav.Link>
       </LinkContainer>
-      <LinkContainer to="updatebuyer">
+      <LinkContainer to="/buyers/updatebuyer">
         <Nav.Link className={styles.link}>
           <FontAwesomeIcon className={styles.icon} icon={faUserEdit} /> Update
           Information
         </Nav.Link>
       </LinkContainer>
-      <LinkContainer to="/yourorder">
+      <LinkContainer to="/buyers/yourorder">
         <Nav.Link className={styles.link}>
           <FontAwesomeIcon className={styles.icon} icon={faShoppingCart} /> Your
           Orders

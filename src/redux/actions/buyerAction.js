@@ -14,7 +14,7 @@ export const updateBuyerThunk = (data) => {
       .then((data) => {
         alert("Thank you! Your information is updated!");
         if (data.data === "updated") {
-          window.location = "/buyerdashboard";
+          window.location = "/buyer/buyerdashboard";
         }
       })
       .catch((err) => {

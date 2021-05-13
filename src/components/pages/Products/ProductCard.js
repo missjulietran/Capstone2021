@@ -13,6 +13,7 @@ import styles from "./ProductCard.module.css";
 
 
 const ProductCard = (props) => {
+  console.log("product card", props.main);
   const shortText = (longtext) => {
     const TEXT_LIMIT = 20;
     if (longtext.length > TEXT_LIMIT) {
@@ -25,7 +26,9 @@ const ProductCard = (props) => {
     <div className="d-flex">
       {/* <Col> */}
         <Card className={styles.card}>
-          <Link to={`/${props.section}/${props.subSection}/${props.sku}`}>
+          <Link
+            to={`${props.main}/${props.section}/${props.subSection}/${props.sku}`}
+          >
             <Card.Img variant="top" src={props.img} className={styles.image} />
             <Card.Body key={props.id}>
               <Card.Text>

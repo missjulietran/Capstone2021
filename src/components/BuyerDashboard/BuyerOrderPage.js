@@ -10,13 +10,16 @@ function BuyerOrderPage() {
   const user = localStorage.getItem("token");
   const [order, setOrder] = useState();
 
-  dotenv.config()
+  dotenv.config();
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`${process.env.REACT_APP_API_SERVER}/buyerDashboard`, {
-        headers: { Authorization: `Bearer ${user}` },
-      });
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_SERVER}/buyerDashboard`,
+        {
+          headers: { Authorization: `Bearer ${user}` },
+        }
+      );
       setOrder(data.orderId);
     };
     fetchData();
@@ -45,7 +48,7 @@ function BuyerOrderPage() {
                   <td>{new Date(item.created_at).toLocaleDateString()}</td>
                   <td>{item.shipped}</td>
                   <LinkContainer
-                    to={"/orderdetails/" + item.id}
+                    to={"/buyers/orderdetails/" + item.id}
                     className="justify-content-center linkButton"
                   >
                     <Button>Details</Button>

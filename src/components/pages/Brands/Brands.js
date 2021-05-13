@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import useFetch from "../Commons/useFetch";
 import SubSectionCard from "../Commons/SubSectionCard";
 import Container from "react-bootstrap/Container";
@@ -7,12 +8,17 @@ import styles from "../Commons/SubSectionCard.module.css";
 import Loader from "react-loader-spinner";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const Brands = () => {
-  const { data: brands, loading, error } = useFetch(
-    `${process.env.REACT_APP_API_SERVER}/brands`
-  );
+  const location = useLocation();
+  const path = location.pathname.slice(0, 7);
+
+  const {
+    data: brands,
+    loading,
+    error,
+  } = useFetch(`${process.env.REACT_APP_API_SERVER}/brands`);
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
 
@@ -45,7 +51,7 @@ const Brands = () => {
           }}
         />{" "}
         <h4>Search Result</h4>
-        <Link to={`/Brands/${result}`} className={styles.link}>
+        <Link to={`${path}/Brands/${result}`} className={styles.link}>
           {" "}
           {result}
         </Link>
@@ -56,7 +62,9 @@ const Brands = () => {
           <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
         )}
         {error && <p>{error}</p>}
-        {brands && <SubSectionCard section="Brands" subSections={brands} />}
+        {brands && (
+          <SubSectionCard main={path} section="Brands" subSections={brands} />
+        )}
       </div>
     </Container>
   );

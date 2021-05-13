@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useParams, useLocation } from "react-router-dom";
 import useFetch from "../Commons/useFetch";
 import ProductList from "../Products/ProductList";
 import Brands from "./Brands";
@@ -7,13 +7,17 @@ import styles from "../Category/CategoryProductList.module.css";
 import Loader from "react-loader-spinner";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const BrandsProductList = () => {
   const { brand } = useParams();
-  const { data: products, loading, error } = useFetch(
-    `${process.env.REACT_APP_API_SERVER}/brands/` + brand
-  );
+  const location = useLocation();
+  const path = location.pathname.slice(0, 7);
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch(`${process.env.REACT_APP_API_SERVER}/brands/` + brand);
   return (
     <div className={styles.container}>
       <div>
@@ -26,6 +30,7 @@ const BrandsProductList = () => {
       {error && <p>{error}</p>}
       {products && (
         <ProductList
+          main={path}
           products={products}
           title={`${brand} Products`}
           section="Categories"

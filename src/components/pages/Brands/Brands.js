@@ -37,15 +37,16 @@ const Brands = () => {
       <div className={styles.searchContainer}>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search for an item"
           value={search}
           className={styles.search}
           onChange={(e) => {
             setSearch(e.target.value);
           }}
         />{" "}
-        <h4>Search Result</h4>
-        <Link to={`/Brands/${result}`} className={styles.link}>
+        
+        <h4><br />Search Result <i class="fas fa-search"></i></h4>
+        <Link to={`/Brands/${result}`} className={styles.searchlink}>
           {" "}
           {result}
         </Link>
@@ -56,7 +57,7 @@ const Brands = () => {
           <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
         )}
         {error && <p>{error}</p>}
-        {brands && <SubSectionCard section="Brands" subSections={brands} />}
+        {brands && <SubSectionCard section="Brands" subSections={brands} className={styles.link}/>}
       </div>
     </Container>
   );

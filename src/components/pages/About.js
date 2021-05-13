@@ -1,26 +1,19 @@
 import React from "react";
 // import Button from "react-bootstrap/Button";
-// import Jumbotron from "react-bootstrap/Jumbotron";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // import Image from "react-bootstrap/Image";
 import "../../App.css";
 import Card from "react-bootstrap/Card";
+import aboutimg from "../../images/jumbotron4.png"
 
 export const About = () => {
   return (
     <div>
-      {/* <Jumbotron>
-        <h1>Future Jumbotron</h1>
-        <p>
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
-        </p>
-        <p>
-          <Button variant="primary">Learn more</Button>
-        </p>
-      </Jumbotron> */}
+      <Jumbotron style={{ backgroundImage: `url(${aboutimg})`, backgroundSize: 'cover'}}>
+      </Jumbotron>
 
       <Container className="aboutDiv">
         <h2>Our Company</h2>

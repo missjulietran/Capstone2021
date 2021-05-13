@@ -15,11 +15,11 @@ export const BuyerSeller = () => {
             <h1>
               Are you a{" "}
               <button className="userButton" onClick={handleClick}>
-                BUYER
+                Buyer
               </button>{" "}
               or a{" "}
               <button className="userButton" onClick={handleClick}>
-                SELLER
+                Seller
               </button>{" "}
               ?
             </h1>

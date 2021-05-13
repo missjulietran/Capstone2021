@@ -33,7 +33,7 @@ const ProductCard = (props) => {
                 <hr />
                 <h6>${props.price.toLocaleString()} / unit</h6>
                 <hr />
-                <h6>Best Before:{props.bbd}</h6>
+                <h6 className={styles.bbd}><b>Best Before:</b><br />{props.bbd}</h6>
               </Card.Text>
             </Card.Body>
           </Link>

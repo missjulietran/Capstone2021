@@ -60,27 +60,6 @@ function SignUpForm() {
   //Redirect to Login Page
   let history = useHistory();
 
-  //select district
-  // const options = [
-  //   { value: "Central and Western", label: "Central and Western" },
-  //   { value: "Eastern", label: "Eastern" },
-  //   { value: "Southern", label: "Southern" },
-  //   { value: "Wan Chai", label: "Wan Chai" },
-  //   { value: "Sham Shui Po", label: "Sham Shui Po" },
-  //   { value: "Kowloon City", label: "Kowloon City" },
-  //   { value: "Kwun Tong", label: "Kwun Tong" },
-  //   { value: "Wong Tai Sin", label: "Wong Tai Sin" },
-  //   { value: "Yau Tsim Mong", label: "Yau Tsim Mong" },
-  //   { value: "Island", label: "Island" },
-  //   { value: "Kwai Tsing", label: "Kwai Tsing" },
-  //   { value: "North", label: "North" },
-  //   { value: "Sai Kung", label: "Sai Kung" },
-  //   { value: "Sha Tin", label: "Sha Tin" },
-  //   { value: "Tai Po", label: "Tai Po" },
-  //   { value: "Tsuen Wan", label: "Tsuen Wan" },
-  //   { value: "Tuen Mun", label: "Tuen Mun" },
-  //   { value: "Yuen Long", label: "Yuen Long" },
-  // ];
 
   const handleCertOfInfoFile = (e) => {
     e.preventDefault();
@@ -127,7 +106,7 @@ function SignUpForm() {
 
   return (
     <>
-      <h1>Buyer</h1>
+      <h4>I want to Buy products</h4>
       <Form size="sm" id="form" onSubmit={handleSubmission}>
         <Form.Label>Business Name</Form.Label>
         <Form.Control
@@ -244,7 +223,7 @@ function SignUpForm() {
         />
 
         <button
-          className="btn btn-dark mt-3"
+          className="btn btn-info mt-3"
           name="form"
           type="submit"
           value="submit"
@@ -252,14 +231,11 @@ function SignUpForm() {
             history.push("/Thankyou");
           }}
 
-          // onClick={() => {
-          //   history.push("/Thankyou");
-          // }}
         >
           Register
         </button>
         <button
-          className="btn btn-danger mt-3 ml-3"
+          className="btn btn-outline-info mt-3 ml-3"
           type="reset"
           value="reset"
           onClick={clearState}

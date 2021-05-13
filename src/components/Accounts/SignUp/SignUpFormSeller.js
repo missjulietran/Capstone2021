@@ -57,7 +57,6 @@ function SignUpFormSeller() {
     setrealBusinessCert(null);
   };
 
-  
 
   //Redirect to Login Page
   let history = useHistory();
@@ -109,7 +108,7 @@ function SignUpFormSeller() {
 
   return (
     <>
-      <h1>Seller</h1>
+      <h4>I want to Sell products</h4>
       <Form size="sm" id="form" onSubmit={handleSubmission}>
         <Form.Label>Business Name</Form.Label>
         <Form.Control
@@ -225,7 +224,7 @@ function SignUpFormSeller() {
         />
 
         <button
-          className="btn btn-dark mt-3"
+          className="btn btn-info mt-3"
           type="submit"
           value="submit"
           // onClick={() => {
@@ -235,7 +234,7 @@ function SignUpFormSeller() {
           Register
         </button>
         <button
-          className="btn btn-danger mt-3 ml-3"
+          className="btn btn-outline-info mt-3 ml-3"
           type="reset"
           value="reset"
           onClick={clearState}

@@ -27,7 +27,7 @@ const SellerLogin = (props) => {
   };
   return (
     <div>
-      <h1 className={styles.text}>Welcome back, Seller</h1>
+      <h3 className={styles.text}>Logging in as a Seller</h3>
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -38,7 +38,7 @@ const SellerLogin = (props) => {
             value={email}
           />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+            Please sign in with the e-mail you registered with.
           </Form.Text>
         </Form.Group>
 

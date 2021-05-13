@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import {
   faShoppingCart,
-  faLongArrowAltLeft,
+  faHandPointLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ProductDetailPage.module.css";
 import Loader from "react-loader-spinner";
@@ -46,6 +46,9 @@ const handleAdd=async()=>{
   };
   return (
     <div className={styles.container}>
+            <button className={styles.back} onClick={back}>
+        <FontAwesomeIcon icon={faHandPointLeft} /> Go back
+      </button>
       <div className={styles.box}>
         {loading && (
           <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
@@ -75,9 +78,6 @@ const handleAdd=async()=>{
           </div>
         </Col>
       </div>
-      <button className={styles.back} onClick={back}>
-        <FontAwesomeIcon icon={faLongArrowAltLeft} /> Back
-      </button>
     </div>
   );
 };

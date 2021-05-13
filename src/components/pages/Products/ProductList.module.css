@@ -1,4 +1,6 @@
 .productlist {
     background-color: #f8f6f5;
     width: -webkit-fill-available;
+    height: 100vh;
+    padding-left:5rem
 }

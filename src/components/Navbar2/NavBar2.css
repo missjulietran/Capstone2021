@@ -1,5 +1,5 @@
 .nav-links2 {
-    color: rgb(78 74 61);
+    color: white;
     text-decoration: none;
     padding: 0.5rem 1.5rem;
     height: 100%;
@@ -10,11 +10,12 @@
   .nav-links2:hover {
 /* text-decoration: bold; */
 font-weight: bold;
-color:#238c8c;
+color:white;
 }
 
   .nav {
-    background-color: #efefef;
+    /* background-color: #efefef; */
+    background-color: #408c8d;
     height: 50px;
     display: flex;
     justify-content: center;

@@ -45,6 +45,7 @@ import ProductDetailPage from "./components/pages/Products/ProductDetailPage.js"
 // import Events from "./components/pages/Events/Events.js";
 import EventsProductListing from "./components/pages/Events/EventsProductListing.js";
 
+import Chatbot from "./components/Chatbot";
 import { About } from "./components/pages/About";
 import { SignUp } from "./components/pages/SignUp";
 import Cart from "./components/pages/Cart.js";
@@ -91,6 +92,7 @@ function App() {
       <Route path="/" exact>
         <Redirect to="/ishome" />
       </Route>
+      <Route path="/" component={Chatbot} />
 
       <Route path="/ishome" component={NavBar} />
       <PrivateRoute path="/buyers" component={NavBarBuyerAuthenticated} />

@@ -56,7 +56,7 @@ const Countdown = (props) => {
   return (
     <div>
       {isOpen ? (
-        <Link to={`/Events/${props.event.id}`}>
+        <Link to={`${props.main}/Events/${props.event.id}`}>
           <Button variant="primary">Go to event</Button>
         </Link>
       ) : (

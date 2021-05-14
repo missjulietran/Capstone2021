@@ -131,7 +131,7 @@ const steps = [
 
 const Chatbot = () => (
   <ThemeProvider theme={theme}>
-    <ChatBot steps={steps} {...config} />;
+    <ChatBot steps={steps} {...config} />
   </ThemeProvider>
 );
 

@@ -1,6 +1,7 @@
 .productlist {
-    background-color: #f8f6f5;
-    width: -webkit-fill-available;
-    /* height: 100vh; */
-    padding-left:2rem
+  background-color: #f8f6f5;
+  width: -webkit-fill-available;
+  min-height: 100vh;
+  /* height: 100vh; */
+  padding-left: 2rem;
 }

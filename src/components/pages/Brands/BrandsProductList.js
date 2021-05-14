@@ -13,11 +13,9 @@ const BrandsProductList = () => {
   const { brand } = useParams();
   const location = useLocation();
   const path = location.pathname.slice(0, 7);
-  const {
-    data: products,
-    loading,
-    error,
-  } = useFetch(`${process.env.REACT_APP_API_SERVER}/brands/` + brand);
+  const { data: products, loading, error } = useFetch(
+    `${process.env.REACT_APP_API_SERVER}/brands/` + brand
+  );
   return (
     <div className={styles.container}>
       <div>

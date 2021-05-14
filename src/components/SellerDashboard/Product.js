@@ -51,6 +51,7 @@ function Product() {
           {inventoryList.map((item, index) => (
             <Col>
               <Card id={index} className="productCard text-dark bg-light">
+                <EventButton id={item.sku} />
                 <div className="text-center cardImgBox">
                   <CardImg
                     className="productImage"
@@ -60,7 +61,6 @@ function Product() {
                     alt="Card image"
                   />
                 </div>{" "}
-                <EventButton id={item.sku} />
                 <CardBody className="productDetail d-flex ">
                   {" "}
                   <Col className="col-7 align-self-center">
@@ -71,7 +71,7 @@ function Product() {
                     <LinkContainer to={"/seller/inventoryupdate/" + item.sku}>
                       <Button
                         id={item.id}
-                        color="light"
+                        color="info"
                         type="submit"
                         className="updateBtn"
                       >
@@ -80,7 +80,7 @@ function Product() {
                     </LinkContainer>
                     <Button
                       id={item.id}
-                      color="light"
+                      color="dark"
                       type="submit"
                       className="deleteBtn"
                       onClick={(e) => {
@@ -91,7 +91,7 @@ function Product() {
                       Delete
                     </Button>
                   </Col>
-                </CardBody>
+                </CardBody>{" "}
               </Card>
             </Col>
           ))}

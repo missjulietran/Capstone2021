@@ -61,7 +61,7 @@ function EventButton(props) {
   }, [props.id]);
 
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       {choose === false ? (
         <Button
           className="btn btn-info"

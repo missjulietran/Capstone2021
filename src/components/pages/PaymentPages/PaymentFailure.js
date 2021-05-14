@@ -7,3 +7,4 @@ const PaymentFailure=()=>{
         </div>
     )
 }
+export default PaymentFailure;

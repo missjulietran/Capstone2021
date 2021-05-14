@@ -11,7 +11,7 @@ dotenv.config()
 const Events = () => {
   const { data: event, loading, error } = useFetch(
     `${process.env.REACT_APP_API_SERVER}/events`
-  );
+  )
 
   return (
     <>

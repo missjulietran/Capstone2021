@@ -3,11 +3,11 @@
 }
 .h1 {
   text-align: center;
-  margin: 50px;
+  margin: 10px;
 }
-.h2 {
+.h3 {
   text-align: center;
-  margin: 50px;
+  /* margin: 50px; */
 }
 
 .accordion {
@@ -21,7 +21,7 @@
 }
 
 .toggle {
-  background-color: #04301a;
+  background-color: #ececec;
 }
 .cardbody {
   color: #000;

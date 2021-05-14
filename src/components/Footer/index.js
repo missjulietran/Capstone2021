@@ -1,13 +1,15 @@
 // import React from 'react';
 // import "./Footer.css"
+// import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import styles from "./Footer.module.css";
+import styles from "./Footer.module.css";
 
 const stickyFooterStyle = {
   backgroundColor: "#ffffff",
   fontSize: "13px",
+  fontWeight: "bold",
   color: "black",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
@@ -16,7 +18,7 @@ const stickyFooterStyle = {
   position: "fixed",
   left: "0",
   bottom: "0",
-  height: "40px",
+  height: "45px",
   width: "100%",
   wordSpacing: "1.5rem",
   zIndex: "1",
@@ -28,7 +30,7 @@ export default class Footer extends Component {
       <Container>
         <Row>
           <Col style={stickyFooterStyle} sm={12}>
-            <div className="footer2">
+            <div className={styles.footer2}>
               {" "}
               {/* &copy; Copyright 2021 - 2022 | StillGood{" "} */}
               <Link to="/ishome/about">About</Link>{" "}

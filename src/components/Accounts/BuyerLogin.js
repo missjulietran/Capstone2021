@@ -27,7 +27,7 @@ const BuyerLogin = () => {
   };
   return (
     <div>
-      <h1 className={styles.text}>Welcome back, Buyer</h1>
+      <h3 className={styles.text}>Logging in as a Buyer</h3>
 
       <Form>
         <Form.Group controlId="formBasicEmail">
@@ -39,7 +39,7 @@ const BuyerLogin = () => {
             value={email}
           />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+          Please sign in with the e-mail you registered with.
           </Form.Text>
         </Form.Group>
 
@@ -55,7 +55,7 @@ const BuyerLogin = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={login}>
+        <Button variant="info" type="submit" onClick={login}>
           Submit
         </Button>
         {isLoading && (

@@ -2,12 +2,12 @@ import { Nav } from "react-bootstrap";
 import React, { useState } from "react";
 import "./NavBar2.css";
 import { LinkContainer } from "react-router-bootstrap";
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 
 
 function NavBar2() {
   const [click, setClick] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleClick = () => setClick(!click);
   return (
@@ -49,7 +49,7 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
       </Nav>
-      <i class="fas fa-arrow-circle-left fa-2x"onClick={() => history.goBack()} style={{margin:'10px'}}></i>
+      {/* <i class="fas fa-arrow-circle-left fa-2x"onClick={() => history.goBack()} style={{margin:'10px'}}></i> */}
     </>
   );
 }

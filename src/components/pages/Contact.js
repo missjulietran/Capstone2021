@@ -1,10 +1,14 @@
 import React from "react";
 import ContactUsForm from "../Footer/ContactUsForm";
 import "../../App.css";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import jumbotronpic from "./../../images/jumbotron8.jpeg";
 
 export const Contact = () => {
   return (
     <div>
+            <Jumbotron style={{ backgroundImage: `url(${jumbotronpic})`, backgroundSize: 'cover'}}>
+      </Jumbotron> 
       <div className="contactDiv">
         <div>
           <h3 className="text-center col-md-12 text-center">Contact Us</h3>

@@ -7,6 +7,8 @@ import {
   faHiking,
   faHandsHelping,
 } from "@fortawesome/free-solid-svg-icons";
+// import beach from "../../images/beachcleanup.jpeg"
+// import female from "../../images/womanshealth.jpeg"
 
 function GiveBack() {
   return (
@@ -64,6 +66,10 @@ function GiveBack() {
           </Card>
         </Col>
       </div>
+      <div>
+        {/* <img src={female} alt="female" className={styles.givebackimg} />
+      <img src={beach} alt="beach"  className={styles.givebackimg}/> */}
+        </div>
     </div>
   );
 }

@@ -2,24 +2,30 @@ import React, { useState } from "react";
 import "./BuyerSeller.css";
 import SellerLogin from "./SellerLogin";
 import BuyerLogin from "./BuyerLogin";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import jumbotronpic from "./../../images/jumbotron5.jpeg";
 
 export const BuyerSeller = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
   return (
-    <div className="container">
+    <>
+ <Jumbotron style={{ backgroundImage: `url(${jumbotronpic})`, backgroundSize: 'cover'}}>
+      </Jumbotron> 
+      <div className="container">
+
       <div className="flex-container">
         <div className="flex-child magenta">
           <div className="left">
             <h1>
               Are you a{" "}
               <button className="userButton" onClick={handleClick}>
-                BUYER
+                Buyer
               </button>{" "}
               or a{" "}
               <button className="userButton" onClick={handleClick}>
-                SELLER
+                Seller
               </button>{" "}
               ?
             </h1>
@@ -33,5 +39,6 @@ export const BuyerSeller = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

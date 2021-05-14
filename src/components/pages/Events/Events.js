@@ -14,7 +14,6 @@ const Events = () => {
   );
 
   return (
-
     <>
       {loading && (
         <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
@@ -22,7 +21,6 @@ const Events = () => {
       {error && <p>{error}</p>}
       {event && <EventsCard section={event} />}
     </>
-
   );
 };
 

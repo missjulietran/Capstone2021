@@ -175,7 +175,7 @@ const Cart = (props) => {
               <br />
               Email: {userInfo.email}
               <br />
-              <Link to="/updatebuyer">
+              <Link to="/buyers/updatebuyer">
                 <Button variant="outline-info" size="sm">
                   Update Address
                 </Button>

@@ -17,11 +17,10 @@ function NavBarSellerAuthenticated() {
   };
 
   return (
-    <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/seller">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good
+            Still Good  <i className="fas fa-seedling"></i>
           </Navbar.Brand>
         </LinkContainer>
 
@@ -33,12 +32,12 @@ function NavBarSellerAuthenticated() {
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
               <LinkContainer to="/seller/sellerdashboard">
                 <NavDropdown.Item>
-                  Account Settings <i class="fas fa-cog pull-right"></i>
+                  Account Settings <i className="fas fa-cog pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
               <LinkContainer to="/">
                 <NavDropdown.Item onClick={logout}>
-                  Logout <i class="fas fa-sign-out-alt pull-right"></i>
+                  Logout <i className="fas fa-sign-out-alt pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
@@ -50,7 +49,6 @@ function NavBarSellerAuthenticated() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
   );
 }
 

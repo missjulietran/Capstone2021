@@ -16,19 +16,19 @@ export const Contact = () => {
         <div className="container mt-3">
           <div className="row">
             <div className="col-md-5 text-center">
-              <ul class="list-unstyled mb-0">
+              <ul className="list-unstyled mb-0">
                 <li>
-                  <i class="fas fa-map-marker-alt fa-2x"></i>
+                  <i className="fas fa-map-marker-alt fa-2x"></i>
                   <h5>Hong Kong</h5>
                 </li>
 
                 <li>
-                  <i class="fas fa-phone mt-4 fa-2x"></i>
+                  <i className="fas fa-phone mt-4 fa-2x"></i>
                   <h5>+852 8888 8888</h5>
                 </li>
 
                 <li>
-                  <i class="fas fa-envelope mt-4 fa-2x"></i>
+                  <i className="fas fa-envelope mt-4 fa-2x"></i>
                   <h5>contact@stillgood.com</h5>
                 </li>
               </ul>

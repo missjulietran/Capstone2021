@@ -12,6 +12,7 @@
   grid-template-rows: none;
   grid-gap: normal;
   padding-top: 1rem;
+  justify-content: center;
 }
 
 /* .card {

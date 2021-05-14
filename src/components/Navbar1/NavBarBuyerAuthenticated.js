@@ -21,7 +21,7 @@ function NavBarBuyerAuthenticated() {
       // eslint-disable-next-line
       cartCount = cartCount.map((item) => item.quantity);
       cartCount = cartCount.reduce((a, b) => {
-        return a + b;
+        return a + b
       });
     }
     setInCart(cartCount);
@@ -37,11 +37,10 @@ function NavBarBuyerAuthenticated() {
   };
 
   return (
-    <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar2}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/buyers">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good
+            Still Good <i className="fas fa-seedling"></i>
           </Navbar.Brand>
         </LinkContainer>
 
@@ -57,26 +56,25 @@ function NavBarBuyerAuthenticated() {
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
               <LinkContainer to="/buyers/buyerdashboard">
                 <NavDropdown.Item>
-                  Account Settings <i class="fas fa-cog pull-right"></i>
+                  Account Settings <i className="fas fa-cog pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
 
               <LinkContainer to="/">
                 <NavDropdown.Item onClick={logout}>
-                  Logout <i class="fas fa-sign-out-alt pull-right"></i>
+                  Logout <i className="fas fa-sign-out-alt pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
 
             <LinkContainer to="/buyers/Cart">
               <Nav.Link eventKey={5} href="/buyers/Cart">
-                Cart <i class="fas fa-shopping-cart"></i>
+                Cart <i className="fas fa-shopping-cart"></i>
               </Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
   );
 }
 

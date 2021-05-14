@@ -23,35 +23,7 @@ const Cart = (props) => {
   const user = localStorage.getItem("token");
   const [userInfo, setUserInfo] = useState("");
 
-<<<<<<< Updated upstream
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_API_SERVER}/buyerDashboard`,
-        {
-          headers: { Authorization: `Bearer ${user}` },
-        }
-      );
-      setUserInfo(data.buyer[0]);
-    };
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
-  //Cart Actions
-  const add = (id) => {
-    props.addQuantity(id);
-  };
-  const minus = (id) => {
-    props.subQuantity(id);
-  };
-  const remove = (id) => {
-    props.removeFromCart(id);
-  };
-  const handleCheckout = async (event) => {
-    setLoading(true);
-    const stripe = await stripePromise;
-=======
     useEffect(()=>{
         const fetchData=async()=>{
         const {data}=await axios.get(`${process.env.REACT_APP_API_SERVER}/buyerDashboard`, {
@@ -80,7 +52,7 @@ const Cart = (props) => {
         setLoading(true)
         axios.post(`${process.env.REACT_APP_API_SERVER}/cartcommit`, {id:userInfo.id, items:props.items});
         const stripe = await stripePromise;
->>>>>>> Stashed changes
+
     //Call your backend to create the Checkout Session
     const response = await fetch(
       `${process.env.REACT_APP_API_SERVER}/create-checkout-session`,
@@ -89,23 +61,19 @@ const Cart = (props) => {
     const session = await response.json();
 
     //When the customer clicks on the button, redirect them to Checkout.
-<<<<<<< Updated upstream
+
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
 
-=======
-   const result = await stripe.redirectToCheckout({
-     sessionId: session.id,
-   });
-   console.log('result', result)
->>>>>>> Stashed changes
+
     if (result.error) {
       console.log(result.error.message);
     }
   };
 
   //Styling
+
 
     const lineItem={
         marginTop:'20px',
@@ -166,21 +134,7 @@ const Cart = (props) => {
                     </Col>
 
                     <Col lg={6}>
-<<<<<<< Updated upstream
-                    <div className="card" style={{textAlign:'center', fontSize:'1.2em'}}> 
-                
-                    Delivery Address:<br/><br/>
-                    Name: {userInfo.name}<br/>
-                    Address: {userInfo.address}<br/>
-                    Phone: {userInfo.phone_no}<br/>
-                    Email: {userInfo.email}<br/>
-                    <Link to="/updatebuyer"><Button variant="outline-info" size="md">Update Address</Button></Link>
-                    <Button style={{margin:"30px"}} variant="outline-secondary" size="lg" role="link" onClick={handleCheckout}>Checkout</Button>
-                    {loading && (
-                    <Loader type="ThreeDots" color="#ccc" height={30} width={60} />
-                )}
-                </div>
-=======
+
                     <   div style={{textAlign:'center', fontSize:'1.2em'}}> 
                 
                             Delivery Address:<br/><br/>
@@ -192,7 +146,7 @@ const Cart = (props) => {
                             <Button style={{margin:"50px"}} variant="outline-secondary" size="lg" role="link" onClick={handleCheckout}>Checkout</Button>
                     
                         </div>
->>>>>>> Stashed changes
+
                     </Col>
                 
                 </Row>
@@ -208,6 +162,7 @@ const mapStateToProps=(state)=>{
         total:state.cart.total
     }
 }
+
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -31,7 +31,8 @@ const Cart = (props) => {
           headers: { Authorization: `Bearer ${user}` },
         }
       );
-      setUserInfo(data.buyer[0]);
+      await setUserInfo(data.buyer[0]);
+      console.log(data.buyer[0]);
     };
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,6 +50,10 @@ const Cart = (props) => {
   };
   const handleCheckout = async (event) => {
     setLoading(true);
+    axios.post(`${process.env.REACT_APP_API_SERVER}/cartcommit`, {
+      id: userInfo.id,
+      items: props.items,
+    });
     const stripe = await stripePromise;
     //Call your backend to create the Checkout Session
     const response = await fetch(
@@ -61,7 +66,7 @@ const Cart = (props) => {
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
-
+    console.log("result", result);
     if (result.error) {
       console.log(result.error.message);
     }

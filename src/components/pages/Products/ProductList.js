@@ -35,9 +35,9 @@ const ProductList = (props) => {
                   return a.name > b.name ? 1 : -1;
               }
             })
-            .map((product) => {
+            .map((product, i) => {
               return (
-                <div className={styles.col}>
+                <div className={styles.col} key={i}>
                   <ProductCard
                     main={path}
                     key={product.id}

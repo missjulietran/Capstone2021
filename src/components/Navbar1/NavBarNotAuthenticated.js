@@ -10,7 +10,7 @@ function NavBarNotAuthenticated() {
       <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good <i class="fas fa-seedling"></i>
+            Still Good <i className="fas fa-seedling"></i>
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -12,9 +12,9 @@ const SubSectionCard = (props) => {
         })
         .map((subSection, i) => {
           return (
-            <div className="mainCategoryDiv">
+            <div className="mainCategoryDiv" key={i}>
               {/* // <Col lg={2} md={4} sm={6}> */}
-              <div key={subSection.id} className={styles.card}>
+              <div className={styles.card}>
                 <Link
                   to={`${props.main}/${props.section}/${subSection.name}`}
                   className={styles.link}

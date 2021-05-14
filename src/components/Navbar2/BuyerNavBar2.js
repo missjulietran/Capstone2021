@@ -14,7 +14,7 @@ function BuyerNavBar2() {
           <LinkContainer to="/buyers">
             <Nav.Link
               href="/"
-              activeClassName="active"
+              activeclassname="active"
               className="nav-links2"
               onClick={handleClick}
             >
@@ -25,7 +25,7 @@ function BuyerNavBar2() {
         <Nav.Item as="li">
           <LinkContainer to="/buyers/Categories/Asian">
             <Nav.Link
-              activeClassName="active"
+              activeclassname="active"
               className="nav-links2"
               onClick={handleClick}
             >
@@ -37,7 +37,7 @@ function BuyerNavBar2() {
           <LinkContainer to="/buyers/Brands/NotLush">
             <Nav.Link
               //   eventKey="/brands"
-              activeClassName="active"
+              activeclassname="active"
               className="nav-links2"
               onClick={handleClick}
             >

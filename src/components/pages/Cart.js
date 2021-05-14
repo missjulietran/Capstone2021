@@ -102,12 +102,12 @@ const Cart=(props)=>{
 
                             </div>
                             <div style={lineItem}>
-                                <i style={quantButton} class='fas fa-plus fa-1x' onClick={()=>{add(item.id)}}></i>
+                                <i style={quantButton} className='fas fa-plus fa-1x' onClick={()=>{add(item.id)}}></i>
                                 {item.quantity}
-                                <i style={quantButton} class="fas fa-minus fa-1x" onClick={()=>{minus(item.id)}}></i>
+                                <i style={quantButton} className="fas fa-minus fa-1x" onClick={()=>{minus(item.id)}}></i>
                             </div>
                             <div style={lineItem}>
-                            <i style={crossIcon} class="fas fa-times fa-1x" onClick={()=>{remove(item.id)}}></i>
+                            <i style={crossIcon} className="fas fa-times fa-1x" onClick={()=>{remove(item.id)}}></i>
                             ${(item.quantity*item.price).toLocaleString()}<br/>
                             </div>
                         </div>

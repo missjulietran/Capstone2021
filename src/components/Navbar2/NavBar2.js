@@ -17,7 +17,7 @@ function NavBar2() {
           <LinkContainer to="/">
             <Nav.Link
               href="/"
-              activeClassName="active"
+              activeclassname="active"
               className="nav-links2"
               onClick={handleClick}
             >
@@ -28,7 +28,7 @@ function NavBar2() {
         <Nav.Item as="li">
           <LinkContainer to="/ishome/Categories/Asian">
             <Nav.Link
-              activeClassName="active"
+              activeclassname="active"
               className="nav-links2"
               onClick={handleClick}
             >
@@ -40,7 +40,7 @@ function NavBar2() {
           <LinkContainer to="/ishome/Brands/NotLush">
             <Nav.Link
               eventKey="/brands"
-              activeClassName="active"
+              activeclassname="active"
               className="nav-links2"
               onClick={handleClick}
             >
@@ -49,7 +49,7 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
       </Nav>
-      {/* <i class="fas fa-arrow-circle-left fa-2x"onClick={() => history.goBack()} style={{margin:'10px'}}></i> */}
+      {/* <i className="fas fa-arrow-circle-left fa-2x"onClick={() => history.goBack()} style={{margin:'10px'}}></i> */}
     </>
   );
 }

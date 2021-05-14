@@ -22,7 +22,7 @@ export const Home = () => {
       <h3>Upcoming Events</h3>
 <div className="eventdiv">
  
-      <Container Fluid>
+      <Container fluid>
         <Events />
       </Container>
       </div>

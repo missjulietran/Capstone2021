@@ -57,20 +57,20 @@ function NavBarBuyerAuthenticated() {
             <NavDropdown title="My Account" id="collasible-nav-dropdown">
               <LinkContainer to="/buyers/buyerdashboard">
                 <NavDropdown.Item>
-                  Account Settings <i class="fas fa-cog pull-right"></i>
+                  Account Settings <i className="fas fa-cog pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
 
               <LinkContainer to="/">
                 <NavDropdown.Item onClick={logout}>
-                  Logout <i class="fas fa-sign-out-alt pull-right"></i>
+                  Logout <i className="fas fa-sign-out-alt pull-right"></i>
                 </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
 
             <LinkContainer to="/buyers/Cart">
               <Nav.Link eventKey={5} href="/buyers/Cart">
-                Cart <i class="fas fa-shopping-cart"></i>
+                Cart <i className="fas fa-shopping-cart"></i>
               </Nav.Link>
             </LinkContainer>
           </Nav>

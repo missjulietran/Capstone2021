@@ -106,7 +106,7 @@ export const FAQ = () => {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body className={styles.cardbody}>
-                  STILLGOOD has a no refund, no return, no exchange, & no resale
+                  Still Good has a no refund, no return, no exchange, & no resale
                   policy. Please confirm all items before proceed to the
                   checkout.
                 </Card.Body>

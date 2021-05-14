@@ -12,17 +12,11 @@ export const Home = () => {
   return (
     <div>
       <Jumbotron style={{ backgroundImage: `url(${jumbotronpic})`, backgroundSize: 'cover'}}>
-        <p>
-          ghello
-        </p>
-        <p>
-          <Button variant="primary">Learn more</Button>
-        </p>
       </Jumbotron> 
       <h3>Upcoming Events</h3>
 <div className="eventdiv">
  
-      <Container Fluid>
+      <Container fluid>
         <Events />
       </Container>
       </div>

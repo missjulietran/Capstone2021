@@ -105,7 +105,8 @@ const ProductDetailPage = () => {
                     handleAdd();
                   }}
                   variant="success"
-                  size="sm"
+                  size="md"
+                  className="btn btn-info"
                 >
                   <FontAwesomeIcon icon={faShoppingCart} />
                   Add to Cart

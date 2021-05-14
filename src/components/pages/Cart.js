@@ -68,6 +68,93 @@ const Cart = (props) => {
   };
 
   //Styling
+
+    const lineItem={
+        textAlign:"center",
+        padding:"2px",
+        height:'100px',
+        width:'25%',
+        fontSize:'1.1em'
+    } 
+    
+    const crossIcon={
+        position:'relative',
+        left:"50%",
+        bottom:"20%"
+    }
+    const quantButton={
+        margin:"10px"
+    }
+    const cartTotal={
+        fontSize:"1.3em",
+        margin:"40px"
+    }
+
+    //Loader
+    const [loading, setLoading]=useState(false);
+    return(
+        <div className="shoppingCart">
+            <h1>Checkout Page</h1><br />
+            <Container fluid>
+                <Row>
+                    <Col lg={6}>
+                    {props.items.length?props.items.map(item=>{
+                    return(
+                        <div style={{display:'flex'}}>
+                             <div style={lineItem}>
+                               <img style={{height:"80px"}} src={item.image} alt={item.name}/>
+                            </div>
+                               <div style={lineItem}>
+                               {item.name}<br/>${item.price.toLocaleString()} / unit
+
+                            </div>
+                            <div style={lineItem}>
+                                <i style={quantButton} className='fas fa-plus fa-1x' onClick={()=>{add(item.id)}}></i>
+                                {item.quantity}
+                                <i style={quantButton} className="fas fa-minus fa-1x" onClick={()=>{minus(item.id)}}></i>
+                            </div>
+                            <div style={lineItem}>
+                            <i style={crossIcon} className="fas fa-times fa-1x" onClick={()=>{remove(item.id)}}></i>
+                            ${(item.quantity*item.price).toLocaleString()}<br/>
+                            
+                            </div>
+                            
+                        </div>
+                        
+                    )
+                }):"Cart is Emtpy"}
+                <br /><hr/><p style={cartTotal}>{props.total>0 && `Cart Total: $${props.total.toLocaleString()}`}</p>
+                    </Col>
+
+                    <Col lg={6}>
+                    <div className="card" style={{textAlign:'center', fontSize:'1.2em'}}> 
+                
+                    Delivery Address:<br/><br/>
+                    Name: {userInfo.name}<br/>
+                    Address: {userInfo.address}<br/>
+                    Phone: {userInfo.phone_no}<br/>
+                    Email: {userInfo.email}<br/>
+                    <Link to="/updatebuyer"><Button variant="outline-info" size="md">Update Address</Button></Link>
+                    <Button style={{margin:"30px"}} variant="outline-secondary" size="lg" role="link" onClick={handleCheckout}>Checkout</Button>
+                    {loading && (
+                    <Loader type="ThreeDots" color="#ccc" height={30} width={60} />
+                )}
+                </div>
+                    </Col>
+                
+                </Row>
+            </Container>
+                
+        </div>
+    )
+}
+
+const mapStateToProps=(state)=>{
+    return{
+        items:state.cart.items,
+        total:state.cart.total
+    }
+
   const lineItem = {
     textAlign: "center",
     padding: "2px",
@@ -75,6 +162,7 @@ const Cart = (props) => {
     width: "25%",
     fontSize: "1.1em",
   };
+
 
   const crossIcon = {
     position: "relative",

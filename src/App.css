@@ -63,6 +63,10 @@ p {
   width: 30vh !important;
 }
 
+.buyersellercontainer{
+width: cover;
+}
+
 /* Sign up CSS */
 label {
   font-size: 0.9rem;
@@ -138,6 +142,18 @@ min-height: 450px;
   box-shadow: 0 0 2px rgb(14 31 53 / 12%);
   text-align: center;
   /* width: 25vh; */
+}
+
+.shoppingCart{
+  /* margin: 2rem !important; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 2rem;
+  width: 75rem;
 }
 /* 
 

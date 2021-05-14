@@ -1,14 +1,7 @@
 import React from "react";
-// import {useSelector, useDispatch} from 'react-redux'
 import { Link } from "react-router-dom";
-
 import { Card } from "react-bootstrap";
 import styles from "./ProductCard.module.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-
-//**** COMMENTED IT OUT FOR YOU LUKASSSS FOR LOADING ****/
-// import { Card, Button, Col } from "react-bootstrap";
 
 
 
@@ -24,7 +17,6 @@ const ProductCard = (props) => {
   };
   return (
     <div className="d-flex">
-      {/* <Col> */}
         <Card className={styles.card}>
           <Link
             to={`${props.main}/${props.section}/${props.subSection}/${props.sku}`}
@@ -41,7 +33,6 @@ const ProductCard = (props) => {
             </Card.Body>
           </Link>
         </Card>
-      {/* </Col> */}
     </div>
   );
 };

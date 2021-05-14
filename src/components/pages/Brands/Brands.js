@@ -48,10 +48,9 @@ const Brands = () => {
             setSearch(e.target.value);
           }}
         />{" "}
-        <h4>
-          <br />
-          Search Result <i class="fas fa-search"></i>
-        </h4>
+        
+        <h4><br />Search Result <i className="fas fa-search"></i></h4>
+
         <Link to={`/Brands/${result}`} className={styles.searchlink}>
           {" "}
           {result}
@@ -63,6 +62,7 @@ const Brands = () => {
           <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
         )}
         {error && <p>{error}</p>}
+
         {brands && (
           <SubSectionCard
             main={path}

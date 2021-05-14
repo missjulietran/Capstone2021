@@ -85,7 +85,7 @@ function App() {
     } else {
       return null;
     }
-  };
+  }
   return (
     <Router>
       <Route path="/" exact>

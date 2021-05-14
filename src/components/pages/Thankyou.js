@@ -12,7 +12,7 @@ export const Thankyou = () => {
     <Container fluid="sm" className="thankyoudiv">
       <div className="thankyouinside">
         <div>
-          <i style={{ color: "green" }} class="fas fa-check fa-3x"></i>
+          <i style={{ color: "green" }} className="fas fa-check fa-3x"></i>
         </div>
         <div>
           <h2>Thank You for Signing Up!</h2>

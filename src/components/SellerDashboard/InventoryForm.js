@@ -48,7 +48,6 @@ function InventoryUploadPage() {
 
     const data = new FormData();
     data.append("file", selectedImage);
-    
 
     if (Number(minUnits) > Number(totalQuantity)) {
       alert("The minimum order quantity should be less than total quantity");

@@ -56,7 +56,9 @@ import { Thankyou } from "./components/pages/Thankyou";
 import GiveBack from "./components/pages/GiveBack";
 // import Error from "./components/pages/Error";
 
-//Stripe Payment Cart
+//Stripe Payment Pages
+import PaymentSuccess from './components/pages/PaymentPages/PaymentSuccess.js'
+import PaymentFailure from './components/pages/PaymentPages/PaymentFailure.js'
 
 function App() {
   const PrivateRoute = ({ component, ...rest }) => {
@@ -178,6 +180,7 @@ function App() {
             path="/seller/Events/:id"
             component={EventsProductListing}
           />
+
 
           {/* <Error /> */}
           {/* Footer links */}

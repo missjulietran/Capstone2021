@@ -56,17 +56,16 @@ const ContactUsForm = () => {
         />
       </Form.Group>
 
-      <br />
       <button
         variant="primary"
         type="button"
-        className="btn btn-primary mt-2 ml-2"
+        className="btn btn-info mt-2 ml-2"
         onClick={() => setModalShow(true)}
       >
         Submit
       </button>
       <button
-        className="btn btn-danger mt-2 ml-2"
+        className="btn btn-outline-info mt-2 ml-2"
         type="reset"
         value="reset"
         onClick={clearContactForm}

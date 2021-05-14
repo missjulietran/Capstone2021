@@ -12,7 +12,7 @@ dotenv.config()
 
 //Stripe
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_TEST);
+const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLIC_TEST}`);
 
 const Cart=(props)=>{
     //User Info

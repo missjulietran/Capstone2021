@@ -8,12 +8,6 @@ export const Contact = () => {
   return (
     <div>
             <Jumbotron style={{ backgroundImage: `url(${jumbotronpic})`, backgroundSize: 'cover'}}>
-        <p>
-          ghello
-        </p>
-        <p>
-          {/* <Button variant="primary">Learn more</Button> */}
-        </p>
       </Jumbotron> 
       <div className="contactDiv">
         <div>

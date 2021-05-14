@@ -14,11 +14,9 @@ const Brands = () => {
   const location = useLocation();
   const path = location.pathname.slice(0, 7);
 
-  const {
-    data: brands,
-    loading,
-    error,
-  } = useFetch(`${process.env.REACT_APP_API_SERVER}/brands`);
+  const { data: brands, loading, error } = useFetch(
+    `${process.env.REACT_APP_API_SERVER}/brands`
+  );
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
 
@@ -52,6 +50,7 @@ const Brands = () => {
         />{" "}
         
         <h4><br />Search Result <i className="fas fa-search"></i></h4>
+
         <Link to={`/Brands/${result}`} className={styles.searchlink}>
           {" "}
           {result}
@@ -63,7 +62,15 @@ const Brands = () => {
           <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
         )}
         {error && <p>{error}</p>}
-        {brands && <SubSectionCard main={path} section="Brands" subSections={brands} className={styles.link}/>}
+
+        {brands && (
+          <SubSectionCard
+            main={path}
+            section="Brands"
+            subSections={brands}
+            className={styles.link}
+          />
+        )}
       </div>
     </Container>
   );

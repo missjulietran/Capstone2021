@@ -54,10 +54,9 @@ import { Contact } from "./components/pages/Contact";
 import { FAQ } from "./components/pages/FAQ";
 import { Thankyou } from "./components/pages/Thankyou";
 import GiveBack from "./components/pages/GiveBack";
+// import Error from "./components/pages/Error";
 
 //Stripe Payment Cart
-
-// import Error from "./components/pages/Error"
 
 function App() {
   const PrivateRoute = ({ component, ...rest }) => {
@@ -169,6 +168,16 @@ function App() {
             path="/ishome/Events/:id"
             component={EventsProductListing}
           />
+          <PrivateRoute
+            exact
+            path="/buyers/Events/:id"
+            component={EventsProductListing}
+          />
+          <PrivateRoute
+            exact
+            path="/seller/Events/:id"
+            component={EventsProductListing}
+          />
 
           {/* <Error /> */}
           {/* Footer links */}
@@ -178,6 +187,7 @@ function App() {
           <Route path="/ishome/Thankyou" component={Thankyou} />
           <Route path="/ishome/GiveBack" component={GiveBack} />
 
+          {/* SellerDashboard Links */}
           <PrivateRoute
             path="/seller/sellerdashboard"
             component={SellerDashboard}
@@ -198,9 +208,6 @@ function App() {
           />
 
           {/* BuyerDashboard Links */}
-
-          {/* <PrivateRoute path="/buyer" component={NavBarBuyerAuthenticated} /> */}
-
           <PrivateRoute exact path="/buyers" component={Home} />
           <PrivateRoute exact path="/buyers/Cart" component={Cart} />
           <PrivateRoute
@@ -214,11 +221,10 @@ function App() {
             component={OrderDetails}
           />
         </Switch>
-        {/* SellerDashboard Links */}
-        {/* USERID */}
       </div>
 
       <Footer />
+      {/* <Route path="*" component={Error} /> */}
     </Router>
   );
 }

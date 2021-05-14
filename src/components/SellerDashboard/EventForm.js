@@ -74,6 +74,7 @@ function EventUploadPage() {
               type="file"
               name="uploadImage"
               id="uploadImage"
+              accept=".png"
               onChange={(e) => setImage(e.target.files[0])}
               required
             />

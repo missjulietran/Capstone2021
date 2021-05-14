@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Countdown from "../Commons/CountdownTimer.js";
@@ -6,6 +7,8 @@ import EventSellerName from "./EventSellerName";
 import styles from "./Events.module.css";
 
 export const EventsCard = (props) => {
+  const location = useLocation();
+  const path = location.pathname.slice(0, 7);
   return (
     <div>
       <Container className={styles.container}>
@@ -26,6 +29,7 @@ export const EventsCard = (props) => {
                 </Card.Text>
                 <Countdown
                   className={styles.timer}
+                  main={path}
                   event={event}
                   startDate={new Date(event.start_date).getTime()}
                   endDate={new Date(event.end_date).getTime()}

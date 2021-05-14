@@ -1,10 +1,9 @@
 .sidebar {
-  
+
   height: 100%;
   min-height: 100vh;
   width: 20vw;
   padding: 50px;
-  position: static;
 }
 
 .link {
@@ -15,8 +14,6 @@
   list-style-type: none;
   margin-bottom: 40px;
 }
-
-
 
 .buyerDashboardContainer {
   margin: 50px;

@@ -6,7 +6,6 @@ import { LinkContainer } from "react-router-bootstrap";
 
 function NavBarNotAuthenticated() {
   return (
-    <>
       <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/">
           <Navbar.Brand href="#home" className={styles.logo}>
@@ -35,7 +34,6 @@ function NavBarNotAuthenticated() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
   );
 }
 

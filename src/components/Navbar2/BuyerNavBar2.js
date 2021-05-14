@@ -8,7 +8,6 @@ function BuyerNavBar2() {
 
   const handleClick = () => setClick(!click);
   return (
-    <>
       <Nav defaultActiveKey="/buyers" as="ul">
         <Nav.Item as="li">
           <LinkContainer to="/buyers">
@@ -46,7 +45,6 @@ function BuyerNavBar2() {
           </LinkContainer>
         </Nav.Item>
       </Nav>
-    </>
   );
 }
 export default BuyerNavBar2;

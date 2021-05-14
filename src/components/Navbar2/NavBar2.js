@@ -49,7 +49,6 @@ function NavBar2() {
           </LinkContainer>
         </Nav.Item>
       </Nav>
-      {/* <i className="fas fa-arrow-circle-left fa-2x"onClick={() => history.goBack()} style={{margin:'10px'}}></i> */}
     </>
   );
 }

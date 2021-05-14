@@ -84,11 +84,9 @@ const Cart=(props)=>{
     //Loader
     const [loading, setLoading]=useState(false);
     return(
-        <div>
+        <div className="shoppingCart">
+            <h1>Checkout Page</h1><br />
             <Container fluid>
-                {loading && (
-                    <Loader type="ThreeDots" color="#ccc" height={60} width={60} />
-                )}
                 <Row>
                     <Col lg={6}>
                     {props.items.length?props.items.map(item=>{
@@ -109,24 +107,29 @@ const Cart=(props)=>{
                             <div style={lineItem}>
                             <i style={crossIcon} className="fas fa-times fa-1x" onClick={()=>{remove(item.id)}}></i>
                             ${(item.quantity*item.price).toLocaleString()}<br/>
+                            
                             </div>
+                            
                         </div>
+                        
                     )
                 }):"Cart is Emtpy"}
-                <p style={cartTotal}>{props.total>0 && `Cart Total: $${props.total.toLocaleString()}`}</p><hr/>
+                <br /><hr/><p style={cartTotal}>{props.total>0 && `Cart Total: $${props.total.toLocaleString()}`}</p>
                     </Col>
 
                     <Col lg={6}>
-                    <div style={{textAlign:'center', fontSize:'1.2em'}}> 
+                    <div className="card" style={{textAlign:'center', fontSize:'1.2em'}}> 
                 
                     Delivery Address:<br/><br/>
                     Name: {userInfo.name}<br/>
                     Address: {userInfo.address}<br/>
                     Phone: {userInfo.phone_no}<br/>
                     Email: {userInfo.email}<br/>
-                    <Link to="/updatebuyer"><Button variant="outline-info" size="sm">Update Address</Button></Link><br/>
-                    <Button style={{margin:"50px"}} variant="outline-secondary" size="lg" role="link" onClick={handleCheckout}>Checkout</Button>
-                    
+                    <Link to="/updatebuyer"><Button variant="outline-info" size="md">Update Address</Button></Link>
+                    <Button style={{margin:"30px"}} variant="outline-secondary" size="lg" role="link" onClick={handleCheckout}>Checkout</Button>
+                    {loading && (
+                    <Loader type="ThreeDots" color="#ccc" height={30} width={60} />
+                )}
                 </div>
                     </Col>
                 

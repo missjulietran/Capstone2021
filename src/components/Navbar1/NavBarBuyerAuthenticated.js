@@ -21,7 +21,7 @@ function NavBarBuyerAuthenticated() {
       // eslint-disable-next-line
       cartCount = cartCount.map((item) => item.quantity);
       cartCount = cartCount.reduce((a, b) => {
-        return a + b;
+        return a + b
       });
     }
     setInCart(cartCount);
@@ -37,11 +37,10 @@ function NavBarBuyerAuthenticated() {
   };
 
   return (
-    <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar2}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/buyers">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good
+            Still Good <i className="fas fa-seedling"></i>
           </Navbar.Brand>
         </LinkContainer>
 
@@ -76,7 +75,6 @@ function NavBarBuyerAuthenticated() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
   );
 }
 

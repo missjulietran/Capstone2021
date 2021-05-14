@@ -17,11 +17,10 @@ function NavBarSellerAuthenticated() {
   };
 
   return (
-    <>
-      <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/seller">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good
+            Still Good  <i className="fas fa-seedling"></i>
           </Navbar.Brand>
         </LinkContainer>
 
@@ -50,7 +49,6 @@ function NavBarSellerAuthenticated() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
   );
 }
 

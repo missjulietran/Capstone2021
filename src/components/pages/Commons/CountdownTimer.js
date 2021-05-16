@@ -63,11 +63,11 @@ const Countdown = (props) => {
 
   return (
     <div>
-      {isOpen ? (
+      {isOpen ? (!isClosed &&
         <Link to={`${props.main}/Events/${props.event.id}`}>
           <Button variant="primary">Go to event</Button>
         </Link>
-      ) : (!isClosed &&
+      ) : (
         `Starts: ${new Date(props.event.start_date).toUTCString()}`
       )}
       <br />

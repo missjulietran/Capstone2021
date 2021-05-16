@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "reactstrap";
 import axios from "axios";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 function EventButton(props) {
   const [choose, setChoose] = useState(false);

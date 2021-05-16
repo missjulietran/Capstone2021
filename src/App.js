@@ -147,6 +147,7 @@ function App() {
             path="/seller/Categories/:category"
             component={CategoryProductList}
           />
+          
 
           <Route
             exact
@@ -181,6 +182,9 @@ function App() {
             component={EventsProductListing}
           />
 
+          {/* Payment Routes */}
+          <Route exact path="/buyers/paymentsuccess" component={PaymentSuccess}/>
+          <Route exact path="/buyers/paymentcancelled" component={PaymentFailure}/>
 
           {/* <Error /> */}
           {/* Footer links */}

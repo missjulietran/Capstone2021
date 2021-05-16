@@ -1,9 +1,14 @@
-.inventoryForm {
-  margin: 50px;
-}
+/* .inventoryForm {
+  margin-top: 50px;
+} */
+
+
 .inventoryContainer {
   padding-bottom: 50px;
 }
 .inventoryBtn {
   margin-left: 50px;
+}
+.inventoryform{
+  margin:30px;
 }

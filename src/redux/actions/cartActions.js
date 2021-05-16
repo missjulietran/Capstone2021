@@ -1,17 +1,21 @@
 import axios from 'axios'
+import dotenv from "dotenv";
+
+
 import {
     ADD_TO_CART,
     ADD_QUANTITY,
     REMOVE_QUANTITY,
     DELETE_FROM_CART
 } from '../types/template'
+dotenv.config();
 
 export const addToCartThunk=(id,image,name,price)=>async(dispatch,getState)=>{
     try{
         dispatch({type:ADD_TO_CART, id,image,name,price})
-        const state= getState().cart
-        axios.post("http://localhost:8080/addtocart", {id})
-        await axios.post("http://localhost:8080/cartstatechange",{
+        const state= await getState().cart
+        await axios.post(`${process.env.REACT_APP_API_SERVER}/addtocart`, {id})
+        await axios.post(`${process.env.REACT_APP_API_SERVER}/cartstatechange`,{
            state
         })
         
@@ -24,8 +28,8 @@ export const addQuantityThunk=(id)=>async(dispatch,getState)=>{
         dispatch({type:ADD_QUANTITY,id})
         const state= getState().cart
         console.log(id)
-        axios.post("http://localhost:8080/addtocart", {id})
-        await axios.post("http://localhost:8080/cartstatechange",{
+        axios.post(`${process.env.REACT_APP_API_SERVER}/addtocart`, {id})
+        await axios.post(`${process.env.REACT_APP_API_SERVER}/cartstatechange`,{
            state
         })
         
@@ -39,8 +43,8 @@ export const removeQuantityThunk=(id)=>async(dispatch,getState)=>{
     try{
         dispatch({type:REMOVE_QUANTITY,id})
         const state= getState().cart
-        axios.post("http://localhost:8080/removequantity", {id})
-        await axios.post("http://localhost:8080/cartstatechange",{
+        axios.post(`${process.env.REACT_APP_API_SERVER}/removequantity`, {id})
+        await axios.post(`${process.env.REACT_APP_API_SERVER}/cartstatechange`,{
            state
         })
 
@@ -60,8 +64,8 @@ export const deleteFromCartThunk=(id)=>async(dispatch,getState)=>{
         //New state with removed item
         const state=getState().cart
         //updating db quantity
-        axios.post("http://localhost:8080/deletefromcart",{id,initQuant})
-        await axios.post("http://localhost:8080/cartstatechange",{
+        axios.post(`${process.env.REACT_APP_API_SERVER}/deletefromcart`,{id,initQuant})
+        await axios.post(`${process.env.REACT_APP_API_SERVER}/cartstatechange`,{
            state
         })
         

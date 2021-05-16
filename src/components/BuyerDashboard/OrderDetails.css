@@ -1,6 +1,8 @@
 .detailContainer {
   margin: 50px;
   width: 800px;
+  text-align: left;
+  /* height: 100vh; */
 }
 .detailBox {
   width: 800px;
@@ -26,4 +28,7 @@
   position: relative;
   top: 50%;
   transform: translateY(50%);
+}
+.tableborder {
+  border-bottom: solid rgb(190, 190, 190) 1px;
 }

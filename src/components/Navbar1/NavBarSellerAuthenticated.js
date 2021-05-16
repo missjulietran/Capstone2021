@@ -17,7 +17,7 @@ function NavBarSellerAuthenticated() {
   };
 
   return (
-      <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
+      <Navbar collapseOnSelect expand="lg" className={styles.navbarSeller}>
         <LinkContainer to="/seller">
           <Navbar.Brand href="#home" className={styles.logo}>
             Still Good  <i className="fas fa-seedling"></i>

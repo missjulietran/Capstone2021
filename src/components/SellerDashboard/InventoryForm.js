@@ -67,11 +67,12 @@ function InventoryUploadPage() {
   };
 
   return (
+    
     <div className="d-flex ">
       <div>
         <Sidebar />
       </div>
-      <div className="inventoryContainer">
+      <div className="inventoryform"><div className="inventoryContainer">
         <Form onSubmit={handleSubmission}>
           <FormGroup className="inventoryForm">
             <Label for="name">Product Name</Label>
@@ -195,6 +196,7 @@ function InventoryUploadPage() {
             SUBMIT
           </Button>
         </Form>
+      </div>
       </div>
     </div>
   );

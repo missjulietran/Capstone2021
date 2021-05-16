@@ -21,6 +21,11 @@
   background-color: #ffffff;
 }
 
+.navbarSeller {
+  background-color: rgb(255 232 179);
+  color: green!important;
+}
+
 .nav-link {
   color: black;
 }

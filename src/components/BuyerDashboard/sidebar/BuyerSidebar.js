@@ -7,30 +7,36 @@ import {
   faUserEdit,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
-
+import Button from 'react-bootstrap/Button'
 import styles from "./BuyerSidebar.module.css";
 
 const BuyerSidebar = () => {
   return (
     <div className={styles.sidebar}>
-      <LinkContainer to="/buyers/buyerdashboard">
-        <Nav.Link className={styles.link}>
-          <FontAwesomeIcon className={styles.icon} icon={faColumns} /> Your
-          Information
-        </Nav.Link>
-      </LinkContainer>
-      <LinkContainer to="/buyers/updatebuyer">
-        <Nav.Link className={styles.link}>
-          <FontAwesomeIcon className={styles.icon} icon={faUserEdit} /> Update
-          Information
-        </Nav.Link>
-      </LinkContainer>
-      <LinkContainer to="/buyers/yourorder">
-        <Nav.Link className={styles.link}>
-          <FontAwesomeIcon className={styles.icon} icon={faShoppingCart} /> Your
-          Orders
-        </Nav.Link>
-      </LinkContainer>
+      <div className={styles.wrapper}>
+        <div class={styles.dashboardTitle}>
+          <h3>Dashboard</h3><br /><hr />
+        </div>
+
+        <LinkContainer to="/buyers/buyerdashboard">
+          <Nav.Link className={styles.link}>
+            <div className={styles.iconName}><FontAwesomeIcon className={styles.icon} icon={faColumns} />
+             Your Information </div>
+          </Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/buyers/updatebuyer">
+          <Nav.Link className={styles.link}>
+            <div className={styles.iconName}><FontAwesomeIcon className={styles.icon} icon={faUserEdit} />
+             Update Information</div>
+          </Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/buyers/yourorder">
+          <Nav.Link className={styles.link}>
+            <div className={styles.iconName}><FontAwesomeIcon className={styles.icon} icon={faShoppingCart} />
+             Your Orders</div>
+          </Nav.Link>
+        </LinkContainer>
+      </div>
     </div>
   );
 };

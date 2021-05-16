@@ -17,7 +17,7 @@
   box-sizing: border-box;
   /* background-color: green; */
   color: #5a5a5a;
-  font-family: "Muli",sans-serif;
+  font-family: "Muli", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.875;
@@ -32,11 +32,11 @@ p {
 }
 
 /* main div */
-/* .maincontainer {
-  background-color: red;
+.maincontainer {
+  /* background-color: red; */
   width: -webkit-fill-available;
-  height: 100vh;
-} */
+  min-height: 100vh;
+}
 
 /* About page CSS */
 .aboutDiv {
@@ -63,8 +63,8 @@ p {
   width: 30vh !important;
 }
 
-.buyersellercontainer{
-width: cover;
+.buyersellercontainer {
+  width: cover;
 }
 
 /* Sign up CSS */
@@ -80,10 +80,10 @@ label {
 
 input.form-control,
 input.form-control:focus {
-  background: #f8f8f8;
+  background: #fdfdfd;
 }
 .form-control {
-  background: #f8f8f8 !important;
+  background: #fdfdfd !important;
 }
 
 /* Contact CSS */
@@ -92,9 +92,9 @@ input.form-control:focus {
   margin-top: 3rem;
   top: 50%;
   left: 50%;
-min-height: 450px;
+  min-height: 450px;
+  margin-bottom: 5rem;
 }
-
 
 /* Thank you div */
 .thankyoudiv {
@@ -120,7 +120,7 @@ min-height: 450px;
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
-  border-radius: 0rem!important;
+  border-radius: 0rem !important;
   height: 250px;
 }
 
@@ -144,16 +144,23 @@ min-height: 450px;
   /* width: 25vh; */
 }
 
-.shoppingCart{
+.shoppingCart {
   /* margin: 2rem !important; */
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   margin-top: 2rem;
   width: 75rem;
+}
+
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #000;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+.dropdown-item.active:hover {
+ color:#408c90; 
 }
 /* 
 

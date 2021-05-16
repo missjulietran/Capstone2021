@@ -137,11 +137,6 @@ function UpdateBuyer() {
             />
           </FormGroup>
           <br />
-
-          <br />
-
-          <br />
-          <br />
           <Button
             className="updateBtn"
             color="info"

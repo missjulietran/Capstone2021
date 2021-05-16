@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import useFetch from "../Commons/useFetch";
 import { Button, Col } from "react-bootstrap";
@@ -19,6 +19,8 @@ dotenv.config();
 const ProductDetailPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const auth = useSelector((state) => state.login);
+  const { isBuyer } = auth;
 
   const {
     data: product,
@@ -91,7 +93,7 @@ const ProductDetailPage = () => {
               </Button>
             ) : (
               quantity > 0 &&
-              product && (
+              product && isBuyer &&(
                 <Button
                   onClick={() => {
                     dispatch(

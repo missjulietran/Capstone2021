@@ -2,6 +2,9 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import styles from "./CountdownTimer.module.css";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const Countdown = (props) => {
   //current Date
@@ -24,6 +27,7 @@ const Countdown = (props) => {
   var tick = setTimeout(updateTime, 1000);
   //Event Opening Control
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isClosed, setIsClosed] = React.useState(false)
 
   //Event Launched hook
   React.useEffect(() => {
@@ -31,6 +35,11 @@ const Countdown = (props) => {
       setIsOpen(true);
       clearTimeout(tick);
     }
+    if(remainingToEnd<=0){
+      setIsClosed(true)
+      clearTimeout(tick);
+    } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time, remaining, tick]);
 
   // Calculating the days, hours, minutes and seconds left
@@ -55,7 +64,7 @@ const Countdown = (props) => {
 
   return (
     <div>
-      {isOpen ? (
+      {isOpen ? (!isClosed &&
         <Link to={`${props.main}/Events/${props.event.id}`}>
           <Button variant="primary">Go to event</Button>
         </Link>
@@ -74,14 +83,14 @@ const Countdown = (props) => {
           </span>
         </p>
       )}
-      {isOpen && (
+      {!isClosed? (isOpen &&
         <p>
           time until end <br />
           <span className={styles.span}>
             {`${daysEnd}d ${hoursEnd}h ${minutesEnd}m ${secondsEnd}s`}
           </span>
         </p>
-      )}
+      ):'Event Closed'}
     </div>
   );
 };

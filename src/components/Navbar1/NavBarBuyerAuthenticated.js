@@ -69,7 +69,7 @@ function NavBarBuyerAuthenticated() {
 
             <LinkContainer to="/buyers/Cart">
               <Nav.Link eventKey={5} href="/buyers/Cart">
-                Cart <i className="fas fa-shopping-cart"></i>
+                Cart <i class="fas fa-shopping-cart"></i> {inCart}
               </Nav.Link>
             </LinkContainer>
           </Nav>

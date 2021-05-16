@@ -23,33 +23,34 @@ const Cart = (props) => {
   const user = localStorage.getItem("token");
   const [userInfo, setUserInfo] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_API_SERVER}/buyerDashboard`,
-        {
-          headers: { Authorization: `Bearer ${user}` },
-        }
-      );
-      setUserInfo(data.buyer[0]);
-    };
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    useEffect(()=>{
+        const fetchData=async()=>{
+        const {data}=await axios.get(`${process.env.REACT_APP_API_SERVER}/buyerDashboard`, {
+        headers: { Authorization: `Bearer ${user}` },
+      });
+      await setUserInfo(data.buyer[0])
+      console.log(data.buyer[0])
+      }
+        fetchData()        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+    
+    //Cart Actions
+    const add=(id)=>{
+        props.addQuantity(id)
 
-  //Cart Actions
-  const add = (id) => {
-    props.addQuantity(id);
-  };
-  const minus = (id) => {
-    props.subQuantity(id);
-  };
-  const remove = (id) => {
-    props.removeFromCart(id);
-  };
-  const handleCheckout = async (event) => {
-    setLoading(true);
-    const stripe = await stripePromise;
+    }
+    const minus=(id)=>{
+        props.subQuantity(id)
+    }
+    const remove=(id)=>{
+        props.removeFromCart(id)
+
+    }
+    const handleCheckout=async(event)=>{
+        setLoading(true)
+        axios.post(`${process.env.REACT_APP_API_SERVER}/cartcommit`, {id:userInfo.id, items:props.items});
+        const stripe = await stripePromise;
     //Call your backend to create the Checkout Session
     const response = await fetch(
       `${process.env.REACT_APP_API_SERVER}/create-checkout-session`,
@@ -69,7 +70,9 @@ const Cart = (props) => {
 
   //Styling
 
+
     const lineItem={
+        marginTop:'20px',
         textAlign:"center",
         padding:"2px",
         height:'100px',
@@ -155,6 +158,7 @@ const mapStateToProps=(state)=>{
         total:state.cart.total
     }
 }
+
 
 const mapDispatchToProps = (dispatch) => {
   return {

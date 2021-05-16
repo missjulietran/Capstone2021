@@ -56,7 +56,9 @@ import { Thankyou } from "./components/pages/Thankyou";
 import GiveBack from "./components/pages/GiveBack";
 // import Error from "./components/pages/Error";
 
-//Stripe Payment Cart
+//Stripe Payment Pages
+import PaymentSuccess from './components/pages/PaymentPages/PaymentSuccess.js'
+import PaymentFailure from './components/pages/PaymentPages/PaymentFailure.js'
 
 function App() {
   const PrivateRoute = ({ component, ...rest }) => {
@@ -145,6 +147,7 @@ function App() {
             path="/seller/Categories/:category"
             component={CategoryProductList}
           />
+          
 
           <Route
             exact
@@ -178,6 +181,10 @@ function App() {
             path="/seller/Events/:id"
             component={EventsProductListing}
           />
+
+          {/* Payment Routes */}
+          <Route exact path="/buyers/paymentsuccess" component={PaymentSuccess}/>
+          <Route exact path="/buyers/paymentcancelled" component={PaymentFailure}/>
 
           {/* <Error /> */}
           {/* Footer links */}

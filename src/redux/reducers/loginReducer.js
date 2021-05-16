@@ -9,7 +9,7 @@ import {
 const initialState = {
   isLoading: false,
   isAuthenticated: false || localStorage.getItem("token") != null,
-  // isBuyer: false,
+  isBuyer: false,
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -36,7 +36,7 @@ const loginReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         isLoading: false,
         isAuthenticated: true,
-        // isBuyer: true,
+        isBuyer: true,
       });
     default:
       return state;

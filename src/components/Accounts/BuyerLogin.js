@@ -27,7 +27,7 @@ const BuyerLogin = () => {
   };
   return (
     <div>
-      <h3 className={styles.text}>Logging in as a Buyer</h3>
+      <h3 className={styles.Buyer}>Logging in as a Buyer</h3>
 
       <Form>
         <Form.Group controlId="formBasicEmail">

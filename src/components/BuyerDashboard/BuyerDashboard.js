@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BuyerSidebar from "./sidebar/BuyerSidebar";
 
-import { Card, CardTitle, CardBody, CardText, Col } from "reactstrap";
+// import { Card, CardTitle, CardBody, CardText, Col } from "reactstrap";
+import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
 import "./BuyerDashboard.css";
 import dotenv from "dotenv";
 import axios from "axios";
@@ -39,24 +41,27 @@ dotenv.config()
   };
   return (
     <div className="buyerDashboard d-flex">
-      <div>
+      {/* <div className="sidebar"> */}
         <BuyerSidebar />
-      </div>
+      {/* </div> */}
 
       <div className="buyerDashboardContainer">
         <div className="buyerDetail">
-          <h2>
-            Welcome Back{" "}
-            <span className="buyername">{buyer && buyer.name}</span>!
-          </h2>
+          <h3>
+            Welcome Back{" "}, <span className="buyername"><h3>{buyer && buyer.name}</h3></span>
+          </h3>
         </div>
-        <div className="latestProducts">
-          <h2>Latest Product</h2>
+        
 
-          <div className="latestBox d-flex">
+        
+              <Card className="latestproducts" border="info" >
+    <Card.Header><h4>View the latest Products</h4></Card.Header>
+    <Card.Body>
+      <Card.Text>
+      <div className="latestBox d-flex">
             {latestProducts &&
               latestProducts.map((item, index) => (
-                <Card id={index} className="latestCard">
+                <Card id={index} className="buyercard">
                   <div className="text-center ">
                     <img
                       className="productImage"
@@ -64,19 +69,25 @@ dotenv.config()
                       alt="Product"
                     />
                   </div>
-                  <CardBody>
+                  <Card.Body>
                     <Col className="align-self-center">
-                      <CardTitle>{shortText(item.name)}</CardTitle>
-                      <CardText>Price: ${item.price}/unit</CardText>
+                      <Card.Title>{shortText(item.name)}</Card.Title>
+                      <Card.Text>Price: ${item.price}/unit</Card.Text>
                     </Col>
-                  </CardBody>
+                  </Card.Body>
                 </Card>
               ))}
           </div>
-        </div>
-        <div className="lastOrder">
-          <h2>Your Last Order</h2>
-          <h3>Total: ${latestAmount && latestAmount}</h3>
+      </Card.Text>
+    </Card.Body>
+  </Card>
+
+
+<Card className="latestproducts" border="info" >
+    <Card.Header><h4>View your Last Order</h4></Card.Header>
+    <Card.Body>
+      <Card.Text>
+      <h4>Total: ${latestAmount && latestAmount}</h4>
           <div className="latestOrderBox d-flex">
             {latestOrder &&
               latestOrder.map((item, index) => (
@@ -88,17 +99,20 @@ dotenv.config()
                       alt="Product"
                     />
                   </div>
-                  <CardBody>
+                  <Card.Body>
                     <Col className="align-self-center">
-                      <CardTitle>{shortText(item.name)}</CardTitle>
-                      <CardText>Order Quantity: {item.quantity}</CardText>
-                      <CardText>Price: ${item.price}/unit</CardText>
+                      <Card.Title>{shortText(item.name)}</Card.Title>
+                      <Card.Text>Order Quantity: {item.quantity}</Card.Text>
+                      <Card.Text>Price: ${item.price}/unit</Card.Text>
                     </Col>
-                  </CardBody>
+                  </Card.Body>
                 </Card>
               ))}
           </div>
-        </div>
+      </Card.Text>
+    </Card.Body>
+  </Card>
+
       </div>
     </div>
   );

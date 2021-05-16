@@ -27,7 +27,7 @@ const SellerLogin = (props) => {
   };
   return (
     <div>
-      <h3 className={styles.text}>Logging in as a Seller</h3>
+      <h3 className={styles.Seller}>Logging in as a Seller</h3>
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -54,7 +54,7 @@ const SellerLogin = (props) => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={login}>
+        <Button variant="btn btn-info" type="submit" onClick={login}>
           Submit
         </Button>
         {isLoading && (

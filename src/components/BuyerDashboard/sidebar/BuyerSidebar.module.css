@@ -1,18 +1,45 @@
-.sidebar {
+/* .sidebar {
 
   height: 100%;
   min-height: 100vh;
   width: 20vw;
   padding: 50px;
+} */
+
+.sidebar {
+  width: 240px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  min-height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+  /* overflow: hidden; */
 }
 
+.wrapper {
+  /* padding: 0 10px; */
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  left:0;
+  right:0;
+  top:0;
+  bottom: 0;}
+
 .link {
-  width: 250px;
-  color: #044720;
-  font-size: 18px;
-  font-weight: bolder;
+  width: 239px;
+  /* color: #044720; */
+  /* font-size: 18px; */
+  font-weight: bold;
   list-style-type: none;
   margin-bottom: 40px;
+}
+
+.link:hover {
+  /* background-color: rgb(39, 126, 126); */
+  background-color: white;
+  /* transition: all 0.55s; */
+  
 }
 
 .buyerDashboardContainer {
@@ -20,6 +47,38 @@
 }
 
 .icon {
-  font-size: 18px;
-  margin-right: 10px;
+  float:left;
+  font-size: 20px;
+  margin-right: 10%;
+  margin-top: 05px;
+  flex: 30%;
+  display: grid;
+  place-items:center;
 }
+
+.icon:hover{
+  color:white;
+}
+
+.dashboardTitle {
+  margin-top: 30px;
+  color: #b8b8b8;
+  font-size: 14px;
+  margin-bottom: 40px;
+
+}
+
+.iconName {
+  margin-left: 10px;
+  /* color: grey; */
+  margin-top: 15px;
+  font-size: 11pt;
+  flex: 70%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.iconName:hover {
+  color:rgb(28, 131, 134);
+}
+

@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import "./BuyerSeller.css";
 import SellerLogin from "./SellerLogin";
 import BuyerLogin from "./BuyerLogin";
+import Card from 'react-bootstrap/Card'
+import jumbotronpic from "../../images/jumbotron7.jpeg";
 
 export const BuyerSeller = () => {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+  const [isBuyer, setIsBuyer] = useState("");
+  const handleClickA = () => setIsBuyer(true);
+  const handleClickB = () => setIsBuyer(false);
 
   return (
+
+
     <div
       className="buyersellercontainer"
       style={{
@@ -18,28 +23,36 @@ export const BuyerSeller = () => {
       }}
     >
       <div className="flex-container">
-        <div className="flex-child magenta">
-          <div className="left">
+        <div className="flex-child magenta"
+        style={{background: `url(https://inhabitat.com/wp-content/blogs.dir/1/files/2019/04/eco-products-1-889x592.jpg)`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        borderRadius: "30px",
+        backgroundRepeat: "no-repeat",}}>
+          <div className="left"
+        >
             <h1>
               Are you a{" "}
-              <button className="userButton" onClick={handleClick}>
+              <button className="userButton" onClick={handleClickB}>
                 Buyer
               </button>{" "}
               or a{" "}
-              <button className="userButton" onClick={handleClick}>
+              <button className="userButton" onClick={handleClickA}>
                 Seller
               </button>{" "}
               ?
             </h1>
           </div>
+          
         </div>
 
         <div className="flex-child green">
           <div className="right">
-            {click ? <SellerLogin /> : <BuyerLogin />}
+            <div>{isBuyer ? <SellerLogin /> : <BuyerLogin />}</div>
           </div>
         </div>
       </div>
     </div>
   );
 };
+

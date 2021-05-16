@@ -1,17 +1,21 @@
 import axios from 'axios'
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
+
+
 import {
     ADD_TO_CART,
     ADD_QUANTITY,
     REMOVE_QUANTITY,
     DELETE_FROM_CART
 } from '../types/template'
+dotenv.config();
 
 dotenv.config();
 
 export const addToCartThunk=(id,image,name,price)=>async(dispatch,getState)=>{
     try{
         dispatch({type:ADD_TO_CART, id,image,name,price})
+
         const state= getState().cart
         axios.post(`${process.env.REACT_APP_API_SERVER}/addtocart`, {id})
         await axios.post(`${process.env.REACT_APP_API_SERVER}/cartstatechange`,{

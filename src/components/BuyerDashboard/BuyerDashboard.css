@@ -1,5 +1,7 @@
 .buyerDashboardContainer {
-  margin: 50px;
+  margin-left: 50px;
+  margin-top: 30px;
+  padding-bottom: 70px;
 }
 .latestProducts {
   margin-top: 30px;
@@ -9,9 +11,46 @@
   margin: 10px 10px;
   border: none !important;
   border-radius: 0 !important;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2); */
 }
 .lastOrder {
   margin-top: 50px;
   float: left;
+}
+
+.buyercard {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 0.5rem;
+  padding: 5px 5px 5px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0px;
+  border: none!important;
+  text-align: center;
+  width: 27vh;
+}
+
+.productImage {
+  padding: 10px;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+
+.buyerDetail h3 { 
+  display: inline;
+  color:#408c8d;
+  margin-bottom: 30px;
+}
+.buyerDetail span { 
+  float: center;
+  margin-bottom: 30px;
+}
+
+.latestproducts{
+  margin-top: 45px;
 }

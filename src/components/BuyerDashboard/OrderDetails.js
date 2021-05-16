@@ -44,16 +44,16 @@ function OrderDetails(props) {
         <BuyerSidebar />
       </div>
       <div className="detailContainer">
-        <h1>Order #{orderId}</h1>
+        <h2>Order #{orderId}</h2>
         <Table className="detailBox" borderless>
           <thead>
-            <tr>
+            <tr className="tableborder">
               <th>SKU</th>
               <th>Product</th>
               <th>Price</th>
               <th>Quantity</th>
             </tr>
-          </thead>
+          </thead> 
           {detail &&
             detail.map((item) => (
               <tbody>

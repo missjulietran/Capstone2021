@@ -38,7 +38,8 @@ const Countdown = (props) => {
     if(remainingToEnd<=0){
       setIsClosed(true)
       clearTimeout(tick);
-    }
+    } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time, remaining, tick]);
 
   // Calculating the days, hours, minutes and seconds left

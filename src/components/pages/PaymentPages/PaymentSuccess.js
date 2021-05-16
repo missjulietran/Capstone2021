@@ -1,11 +1,10 @@
-import React,{useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const PaymentSuccess=()=>{
-    const [userInfo, setUserInfo] = useState("");
 
     React.useEffect(()=>{
         const fetchData=async()=>{
@@ -14,7 +13,7 @@ const PaymentSuccess=()=>{
             headers: { Authorization: `Bearer ${user}` },
           });
           console.log(data.buyer[0].id)
-          axios.post('http://localhost:8080/paymentsuccess',{id:data.buyer[0].id})
+          axios.post(`${process.env.REACT_APP_API_SERVER}/paymentsuccess`,{id:data.buyer[0].id})
             }
             fetchData() 
 

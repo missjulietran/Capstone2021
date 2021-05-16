@@ -3,8 +3,6 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import jumbotronpic from "./../../images/jumbotron1.jpeg";
 // import styles from "../pages/Events/Events.module.css"
 
-import Button from "react-bootstrap/Button";
-
 import Container from "react-bootstrap/Container";
 import Events from "./Events/Events";
 

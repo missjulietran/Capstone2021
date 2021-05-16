@@ -77,7 +77,7 @@ const ProductDetailPage = () => {
               Price: ${product && product[0].price.toLocaleString()} / unit
             </h6>
             <br />
-            <h6>MOQ: {product && product[0].units}</h6>
+            <h6>Quantity per unit: {product && product[0].units}</h6>
             <br />
             {quantity > 0 ? (
               <h6>Remaining Quantity: {quantity.toLocaleString()}</h6>

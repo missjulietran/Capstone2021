@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./BuyerSeller.css";
 import SellerLogin from "./SellerLogin";
 import BuyerLogin from "./BuyerLogin";
-import Card from 'react-bootstrap/Card'
-import jumbotronpic from "../../images/jumbotron7.jpeg";
 
 export const BuyerSeller = () => {
   const [isBuyer, setIsBuyer] = useState("");

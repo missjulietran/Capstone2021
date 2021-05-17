@@ -7,7 +7,6 @@ import {
   faUserEdit,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
-import Button from 'react-bootstrap/Button'
 import styles from "./BuyerSidebar.module.css";
 
 const BuyerSidebar = () => {

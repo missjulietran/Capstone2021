@@ -1,71 +1,41 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Still Good is a B2B bulk sale ecommerce platform for companies looking to sell or buy short-shelf life/best before date products.
 
-## Available Scripts
+This file is the front end of our 5 month Full Stack Web Development Immsersive Bootcamp course created by 3 members: @missjulietran, @lukaswan and @kimberlychan1.
 
-In the project directory, you can run:
+You can access our website at https://stillgood.live.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+How this Application works:
+- A buyer or Seller can sign up on our website, then we will verify if they are a legitimate company and respond within a few days
+- Then buyer or seller can log in
+- Sellers can then go login and manage and upload a product, view inventory, revenue generated, and create events on their dashboard
+- Buyers are able to login, see what they’ve purchased, update their business details, and purchase products
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Test logins:
+Seller - username: notLush@test.com // password: 123
+Buyer - username: test3@test.com // password: 123
 
-### `yarn test`
+How to use this Application:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone the github repository to your local machine
+- Run the command, "yarn install" inside the cloned directory
+- Run the command "yarn start" inside the cloned directory to start the application
+- Go to "stillgood.live" to see the rendered pages
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Technologies used to build this application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React.js - for building the user interface
+Redux - To store the state of our variables in React
+React Bootstrap - for stlying
+fontawesome - for their free icons
+JQuery - for easy selection
+Stripe - to handle payments
+React Simple Chatbot - an added feature for simple Q&A chats
+React Date Picker - for selecting when an event will start and end 
+React Chart.js - used to display revenue and sales on the seller dashboard
+Formspree - to send an inquiry from the Contact Us page
+Axios - to make http requests to backend service to fetch data and handle errors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# StillGoodFrontEnd

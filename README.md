@@ -8,17 +8,17 @@ This file is the front end of our 5 month Full Stack Web Development Immsersive 
 You can access our website at https://stillgood.live.
 
 
-How this Application works:
+**How this Application works:
 - A buyer or Seller can sign up on our website, then we will verify if they are a legitimate company and respond within a few days
 - Then buyer or seller can log in
 - Sellers can then go login and manage and upload a product, view inventory, revenue generated, and create events on their dashboard
 - Buyers are able to login, see what they’ve purchased, update their business details, and purchase products
 
-Test logins:
+**Test logins:**
 Seller - username: notLush@test.com // password: 123
 Buyer - username: test3@test.com // password: 123
 
-How to use this Application:
+**How to use this Application:
 
 - Clone the github repository to your local machine
 - Run the command, "yarn install" inside the cloned directory
@@ -26,7 +26,7 @@ How to use this Application:
 - Go to "stillgood.live" to see the rendered pages
 
 
-Technologies used to build this application:
+**Technologies used to build this application:
 
 - React.js - for building the user interface
 - Redux - To store the state of our variables in React

@@ -6,6 +6,8 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUserThunk } from "../../redux/actions/loginAction";
+import logoimage from "../../images/stillgoodglobe.png";
+
 
 function NavBarBuyerAuthenticated() {
   const history = useHistory();
@@ -40,7 +42,7 @@ function NavBarBuyerAuthenticated() {
       <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/buyers">
           <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good <i className="fas fa-seedling"></i>
+          <img src={(logoimage)} className={styles.logoimg} alt="logo" />
           </Navbar.Brand>
         </LinkContainer>
 

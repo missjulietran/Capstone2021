@@ -22,7 +22,8 @@
 }
 
 .navbarSeller {
-  background-color: rgb(255 232 179);
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,0) 48%, rgba(64,140,141,0.6222864145658263) 100%, rgba(0,212,255,1) 100%);
   color: green!important;
 }
 
@@ -60,10 +61,23 @@
 
 .right {
   color: black !important;
+  font-size: 12pt;
+}
+
+.right:hover{
+  color: #408c8d !important;
+}
+.rightgiveback{
+  color: rgb(228, 100, 179)!important;
+  font-size: 12pt;
+}
+.rightgiveback:hover{
+  color:rgb(216, 176, 216)!important;
 }
 
 .logo {
-  color: #238c8c!important;
-  font-weight: bolder;
+  /* color: #238c8c!important;
+  font-weight: bolder; */
   padding-left: 2rem;
 }
+

@@ -3,7 +3,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  background: "#f0f8ff",
+  background: "#f1f1f1",
   fontFamily: "Helvetica Neue",
   headerBgColor: " #5F9EA0",
   headerFontColor: "#fff",

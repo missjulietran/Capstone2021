@@ -37,5 +37,6 @@ Technologies used to build this application:
 - React Chart.js - used to display revenue and sales on the seller dashboard
 - Formspree - to send an inquiry from the Contact Us page
 - Axios - to make http requests to backend service to fetch data and handle errors
+- Figma - for initial wireframing
 
 

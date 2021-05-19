@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./NavBar.module.css";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import logoimage from "../../images/stillgoodglobe.png"
 
 function NavBar() {
   // const [click, setClick] = useState(false);
@@ -12,8 +13,8 @@ function NavBar() {
   return (
       <Navbar collapseOnSelect expand="lg" className={styles.navbarmain}>
         <LinkContainer to="/">
-          <Navbar.Brand href="#home" className={styles.logo}>
-            Still Good <i className="fas fa-seedling"></i>
+          <Navbar.Brand href="#home" className={styles.logo}><img src={(logoimage)} className={styles.logoimg} alt="logo" />
+            {/* Still Good <i className="fas fa-seedling"></i> */}
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -21,17 +22,17 @@ function NavBar() {
           <Nav className="mr-auto"></Nav>
           <Nav className={styles.right}>
             <LinkContainer to="/ishome/GiveBack">
-              <Nav.Link eventKey={2} href="/GiveBack">
+              <Nav.Link className={styles.rightgiveback} eventKey={2} href="/GiveBack">
                 Give Back
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/ishome/BuyerSeller">
-              <Nav.Link eventKey={3} href="/BuyerSeller">
+              <Nav.Link className={styles.right} eventKey={3} href="/BuyerSeller">
                 Log In
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/ishome/SignUp">
-              <Nav.Link eventKey={4} href="/SignUp">
+              <Nav.Link className={styles.right} eventKey={4} href="/SignUp">
                 Sign Up
               </Nav.Link>
             </LinkContainer>

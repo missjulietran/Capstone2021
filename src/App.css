@@ -46,6 +46,7 @@ p {
   box-shadow: 0px 2px 10px rgb(44 45 58 / 10%);
   padding: 2rem;
   margin-top: 50px; */
+  margin-bottom: 5rem;
 }
 .cardbox {
   margin-top: 20px;
@@ -146,10 +147,17 @@ input.form-control:focus {
 
 .shoppingCart {
   /* margin: 2rem !important; */
-  position: absolute;
+  /* position: absolute;
   text-align: center;
   margin-top: 2rem;
   width: 75rem;
+  margin-left:5rem; */
+
+  margin-top: 3rem!important;
+  margin: auto;
+  width: 70%;
+  /* border: 3px solid green; */
+  padding: 10px;
 }
 
 
@@ -162,6 +170,12 @@ input.form-control:focus {
 .dropdown-item.active:hover {
  color:#408c90; 
 }
+
+h2.ourcompany{
+text-align: center;
+justify-content: center;
+}
+
 /* 
 
 

@@ -17,6 +17,13 @@ const ContactUsForm = () => {
     setContent("");
   };
 
+  const sendMail = () => {
+    setModalShow(true)
+    const mailto =
+      `mailto:contact@stillgood.com?subject=${subject}&body=From: ${name}, email: ${email} \n Message: ${content}`;
+    window.location.href = mailto;
+  }
+
   return (
     <Form>
       <Form.Label>Name</Form.Label>
@@ -60,7 +67,7 @@ const ContactUsForm = () => {
         variant="primary"
         type="button"
         className="btn btn-info mt-2 ml-2"
-        onClick={() => setModalShow(true)}
+        onClick={() => sendMail()}
       >
         Submit
       </button>

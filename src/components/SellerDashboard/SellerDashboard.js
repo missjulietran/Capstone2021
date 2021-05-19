@@ -17,7 +17,7 @@ function SellerDashboard() {
   const [order, setOrder] = useState();
 
   const shortText = (longtext) => {
-    const TEXT_LIMIT = 5;
+    const TEXT_LIMIT = 10;
     if (longtext.length > TEXT_LIMIT) {
       return longtext.substring(0, TEXT_LIMIT) + "...";
     } else {

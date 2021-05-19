@@ -13,13 +13,13 @@ export const SignUp = () => {
       {/* <div className="flex-container"> */}
       <div className={styles.buyerseller}>
         <h3>
-          Are you a
+          Please select if you are a
           <button onClick={handleClickA} className="userButton">
-            BUYER
+            Buyer
           </button>{" "}
           or a{" "}
           <button onClick={handleClickB} className="userButton">
-            SELLER
+            Seller
           </button>
         </h3>
       </div>

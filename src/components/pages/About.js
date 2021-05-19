@@ -16,7 +16,7 @@ export const About = () => {
       </Jumbotron>
 
       <Container className="aboutDiv">
-        <h2>Our Company</h2>
+        <h2 className="ourcompany">Our Company</h2>
 
         <Container>
           <Row>

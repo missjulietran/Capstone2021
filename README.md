@@ -26,16 +26,16 @@ How to use this Application:
 
 Technologies used to build this application:
 
-React.js - for building the user interface
-Redux - To store the state of our variables in React
-React Bootstrap - for stlying
-fontawesome - for their free icons
-JQuery - for easy selection
-Stripe - to handle payments
-React Simple Chatbot - an added feature for simple Q&A chats
-React Date Picker - for selecting when an event will start and end 
-React Chart.js - used to display revenue and sales on the seller dashboard
-Formspree - to send an inquiry from the Contact Us page
-Axios - to make http requests to backend service to fetch data and handle errors
+- React.js - for building the user interface
+- Redux - To store the state of our variables in React
+- React Bootstrap - for stlying
+- fontawesome - for their free icons
+- JQuery - for easy selection
+- Stripe - to handle payments
+- React Simple Chatbot - an added feature for simple Q&A chats
+- React Date Picker - for selecting when an event will start and end 
+- React Chart.js - used to display revenue and sales on the seller dashboard
+- Formspree - to send an inquiry from the Contact Us page
+- Axios - to make http requests to backend service to fetch data and handle errors
 
 

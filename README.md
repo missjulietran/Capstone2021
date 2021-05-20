@@ -16,8 +16,8 @@ You can access our website at https://stillgood.live.
 - Buyers are able to login, see what they’ve purchased, update their business details, and purchase products
 
 **Test logins:**
-Seller - username: notLush@test.com // password: 123
-Buyer - username: test3@test.com // password: 123
+- Seller - username: notLush@test.com // password: 123
+- Buyer - username: test3@test.com // password: 123
 
 **How to use this Application:**
 

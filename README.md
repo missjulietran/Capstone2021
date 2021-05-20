@@ -11,7 +11,8 @@ You can access our website at https://stillgood.live.
 **How this Application works:**
 - A buyer or Seller can sign up on our website, then we will verify if they are a legitimate company and respond within a few days
 - Then buyer or seller can log in
-- Sellers can then go login and manage and upload a product, view inventory, revenue generated, and create events on their dashboard
+- Sellers can then go login and manage and upload a product, view inventory, revenue generated, and create events on their dashboard. 
+    - To create an event:  Sign in as a Seller > Account settings (view Dashboard) > Add Event > Add Product tab to add the products you would like to have on the event - Then head over to the home page where you can see the newly created event
 - Buyers are able to login, see what they’ve purchased, update their business details, and purchase products
 
 **Test logins:**
